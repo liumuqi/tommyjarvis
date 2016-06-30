@@ -12,11 +12,11 @@ public class Maxlen {
                 bit[i] = bit[i] | (1 << word.charAt(j) - 'a');
             }
         }
-    int i1=0;
+        int i1=0;
         for (int i = 0; i < len - 1; i++) {
             for (int j = i+1; j < len; j++) {
                 if ((bit[i] & bit[j]) == 0) {
-                     i1= wlen[i] * wlen[j];
+                    i1= wlen[i] * wlen[j];
                     if (max < i1) {
                         max = i1;
                     }
