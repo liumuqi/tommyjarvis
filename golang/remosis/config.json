@@ -1,0 +1,32 @@
+{
+    server: {
+        type: "redis",
+        name: "fdsaal",
+        ip: "172.16.26.130",
+        socket: 11111
+    },
+    collector: {
+        connTimeout: 5,
+        tcpTimeout: 2,
+        acceptType: "application/json",
+        authen: "vvv",
+        collectUrl: "http://remosis.mogujie.com/collect"
+    },
+    redises: [
+        {
+            cluster: 1,
+            ip: "10.13.128.221",
+            port: 6666
+        },
+        {
+            cluster: 1,
+            ip: "10.13.128.221",
+            port: 6667
+        },
+        {
+            cluster: 1,
+            ip: "10.13.128.221",
+            port: 6668
+        }
+    ]
+}

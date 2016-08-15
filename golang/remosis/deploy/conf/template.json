@@ -1,0 +1,1 @@
+{"server":{"ctype":"redis","name":"fdsaal","ip":"10.13.128.221","socket":11111},"collector":{"alarmUrl":"http:\/\/remosis.mogujie.com\/collect","collectUrl":"http:\/\/remosis.mogujie.com\/collect","authen":"vvv","acceptType":"application\/json","connTimeout":2},"redises":[{"cluster":1,"ip":"10.13.128.221","port":2222},{"cluster":1,"ip":"10.13.128.221","port":2223}]}
