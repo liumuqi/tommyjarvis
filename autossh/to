@@ -1,0 +1,58 @@
+#!/usr/bin/expect -f
+#access 自动登陆线上机器
+#use ./ssh.sh ip ?jx (第二个参数指定去那个机房,为空默认去无锡机房，想去嘉兴机房请输入字母：jx)
+#wiki http://wiki.mogujie.org/pages/viewpage.action?pageId=35000903
+set timeout 300
+set ip [lindex $argv 0 ]
+set wuxi [lindex $argv 1 ]
+set strJumpIp "10.11.2.103"
+if {"$wuxi" == "jx"} { set strJumpIp "10.13.0.23" }
+set uname qishan
+set password xxxxx
+spawn ssh -p 10022 $uname@$strJumpIp
+if {"$wuxi" == "jx"} {
+    expect {
+        "*password*" {
+            send "$password\n";
+            expect {
+                "\$*" {
+                    send "sudo su -\n";
+                    expect {
+                        "*password*" {
+                            send "$password\n";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+if {"$wuxi" != "jx"} {   
+    expect {
+        "*password*" {
+            send "$password\n";
+            expect {
+                "*>*" {
+                    send "$ip\n";
+                    expect {
+                        "*password*" {
+                            send "$password\n";
+                            expect {
+                                "\$*" {
+                                    send "sudo su -\n";
+                                    expect {
+                                        "*password*" {
+                                            send "$password\n";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+interact

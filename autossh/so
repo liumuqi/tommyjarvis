@@ -1,0 +1,50 @@
+#!/bin/bash
+ips=(
+"10.17.246.20-webp"
+"q-退出"
+)
+echo "选择要链接的服务器"
+address=""
+PS3='请选择:'
+select ip in "${ips[@]}"
+do
+	ip_=`echo "$ip" |awk -F '-' '{print $1}'`
+	address="$ip_"
+    break
+done
+
+to_ip=""
+sd_ip=""
+case $address in
+	10.11.2.103)
+		sd_ip="$address"
+		;;
+	10.11.*.*)
+		to_ip="$address"
+		;;
+	10.19.*.*)
+		to_ip="$address"
+		;;
+	10.17.*.*)
+		to_ip="$address"
+		;;
+	10.15.*.*)
+		to_ip="$address"
+		;;
+	10.13.*.*)
+		sd_ip="$address"
+		;;
+	*)
+		exit 0
+		;;
+esac
+echo "-------------------------------go to $address--------------------------------"
+
+if [[ $to_ip != "" ]];then
+	/Users/lmq/bin/to $address
+elif [[ $sd_ip != "" ]];then
+	/Users/lmq/bin/sshdev $address
+else
+	echo "error..."
+fi
+
