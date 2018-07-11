@@ -4,6 +4,7 @@ import utils.DateUtils;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -20,8 +21,32 @@ public class StreamPartitions {
                 .thenComparing(e -> e.getB());
         return comparator;
     }
+
+    public static Double ratio(String PARTION_SOLVE, List<Domain> rtps, List<Integer> adcodes,
+                               List<Integer> hours, List<Integer> ranks) {
+        HashSet<List<Domain>> partitions = partitions(rtps, adcodes, hours, ranks);
+        Map<String, Long> map = groupbyState(partitions);
+        Integer total = map.values().parallelStream().collect(Collectors.summingInt(d -> d.intValue()));
+        Long partCount = map.get(PARTION_SOLVE);
+        partCount = partCount == null ? 0 : partCount;
+        if (total == null || total == 0) {
+            return 0D;
+        }
+        return partCount * 1.0 * 100 / total;
+    }
+
+    private static Map<String, Long> groupbyState(HashSet<List<Domain>> groupSet) {
+        return groupSet.parallelStream().collect(Collectors.groupingBy(d -> {
+            List<Domain> domains = d.parallelStream()
+                    .filter(e -> !e.getA().equals(e.getB()))
+                    .collect(Collectors.toList());
+            String state = domains.size() == 0 ? "allsolve" : (domains.size() < d.size() ? "partsolve" : "nonesolve");
+            return state;
+        }, Collectors.counting()));
+    }
+
     public static HashSet<List<Domain>> partitions(List<Domain> rtps, List<Integer> adcodes,
-                                                            List<Integer> hours, List<Integer> ranks) {
+                                                   List<Integer> hours, List<Integer> ranks) {
         Stream<Domain> congestionDomainStream = StreamSupport.stream(
                 new DomainSpliterator(rtps, 0, rtps.size()), true);
         ArrayList<List<Domain>> groups = congestionDomainStream
