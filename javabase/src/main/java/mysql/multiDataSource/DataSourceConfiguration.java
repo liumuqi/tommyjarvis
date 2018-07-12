@@ -20,21 +20,15 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * @author muqi.lmq
- * @date 25/09/2017.
- */
 @Configuration
 //@AutoConfigureBefore(XXConfiguration.class)
-@MapperScan(basePackages = "xxx.dao", annotationClass = DataSourceScan.class, sqlSessionFactoryRef = BaseDataSourceConfiguration.SQL_SESSION_FACTORY_NAME)
-public class BaseDataSourceConfiguration {
+@MapperScan(basePackages = "xxx.dao", annotationClass = DataSourceScan.class, sqlSessionFactoryRef = DataSourceConfiguration.SQL_SESSION_FACTORY_NAME)
+public class DataSourceConfiguration {
     public static final String DATA_SOURCE_NAME = "mysqlSqlDatasource";
     public static final String JDBC_TEMPLATE_NAME = "mysqlJdbcTemplate";
     public static final String SQL_SESSION_FACTORY_NAME = "mysqlSqlSessionFactory";
-    private static final Logger LOGGER = LoggerFactory.getLogger(BaseDataSourceConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DataSourceConfiguration.class);
 
-    //    @Autowired
-//    private BaseConfig baseConfig;
     @Autowired
     private ResourceLoader resourceLoader;
 

@@ -8,10 +8,6 @@ import utils.DateUtils;
 
 import java.io.IOException;
 
-/**
- * @author muqi.lmq
- * @date 16/10/2017.
- */
 public class JacksonSerializers {
 
     /**
@@ -31,7 +27,6 @@ public class JacksonSerializers {
     public static class StateJsonSerializer extends JsonSerializer<Integer> {
         @Override
         public void serialize(Integer value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
-//            BaseStateEnum baseStateEnum = BaseStateEnum.valueOfCode(value);
             String s = "未知";
             gen.writeString(s);
         }
@@ -42,7 +37,7 @@ public class JacksonSerializers {
      */
     public static class AdcodeSerializer extends JsonSerializer<Integer> {
 //        @Autowired
-//        private SystemService systemService;
+//        private SService sService;
 
         public AdcodeSerializer() {
             SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
@@ -50,7 +45,6 @@ public class JacksonSerializers {
 
         @Override
         public void serialize(Integer value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
-//            String cityByAdcode = systemService.getCityByAdcode(value);
             gen.writeString("");
         }
     }
