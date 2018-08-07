@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @date 2018/6/20.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Main.class, properties = {"spring.config.location=classpath:/data/,classpath:/", "spring.config.name=application,datas,redis-config"})
+@SpringBootTest(classes = Main.class, properties = {"origin.spring.config.location=classpath:/data/,classpath:/", "origin.spring.config.name=application,datas,redis-config"})
 public class MockMvcTest {
     @Autowired
     private WebApplicationContext wac;

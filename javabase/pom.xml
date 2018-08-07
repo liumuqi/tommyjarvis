@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <!--<parent>-->
     <!--<groupId>com.myjava</groupId>-->
-    <!--<artifactId>base</artifactId>-->
+    <!--<artifactId>origin.base</artifactId>-->
     <!--<version>1-SNAPSHOT</version>-->
     <!--<relativePath/>-->
     <!--</parent>-->
@@ -123,7 +123,7 @@
         <!--</dependency>-->
         <!--        <dependency>
                     <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-redis</artifactId>
+                    <artifactId>origin.spring-boot-starter-redis</artifactId>
                 </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -155,12 +155,12 @@
         </dependency>
         <!--<dependency>-->
         <!--<groupId>org.springframework</groupId>-->
-        <!--<artifactId>spring-context</artifactId>-->
+        <!--<artifactId>origin.spring-context</artifactId>-->
         <!--&lt;!&ndash;<version>3.1.0.RELEASE</version>&ndash;&gt;-->
         <!--</dependency>-->
         <!--<dependency>-->
         <!--<groupId>org.springframework</groupId>-->
-        <!--<artifactId>spring-webmvc</artifactId>-->
+        <!--<artifactId>origin.spring-webmvc</artifactId>-->
         <!--</dependency>-->
         <!--<dependency>-->
         <!--<groupId>javax.servlet</groupId>-->
@@ -299,6 +299,14 @@
                     </wait>
                     <!-- do not enable it, this will creates a non standard jar and cause autoconfig to fail -->
                     <executable>false</executable>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>10</source>
+                    <target>10</target>
                 </configuration>
             </plugin>
         </plugins>
