@@ -226,7 +226,7 @@ public class JenkinsMain {
      */
     public List<QueueItem> fetchAllJobQueue(String jobId, Type type, JenkinsTree<JobWithDetails> jobs) {
         List<String> jobNames = JenkinsTree.transToList(jobs).parallelStream().map(Job::getName).collect(Collectors.toList());
-        Queue queue = null;
+        com.offbytwo.jenkins.model.Queue queue = null;
         try {
             queue = jenkinsServer.getQueue();
         } catch (IOException e) {

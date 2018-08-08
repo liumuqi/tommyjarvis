@@ -8,18 +8,19 @@ import java.util.concurrent.locks.LockSupport;
  * @date 2018/4/27.
  */
 public class ParkTest {
-    private static volatile int x=0;
+    private static volatile int x = 0;
+
     public static void main(String[] args) throws InterruptedException {
-        Thread thread_a = new Thread(()->{
+        Thread thread_a = new Thread(() -> {
             System.out.println(">>>thread_a park");
-            if (x==1) {
-                
+            if (x == 1) {
+
             }
             LockSupport.park();
             System.out.println("a");
         });
 
-        Thread thread_b = new Thread(()->{
+        Thread thread_b = new Thread(() -> {
             System.out.println(">>>thread_b park");
             LockSupport.park();
             LockSupport.unpark(thread_a);
