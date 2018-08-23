@@ -4,9 +4,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -75,4 +77,34 @@ public class Jacksons {
             return null;
         }
 
+    public static JsonNode mergeNode(JsonNode mainNode, JsonNode updateNode) {
+        Iterator<String> fieldNames = updateNode.fieldNames();
+        while (fieldNames.hasNext()) {
+            String fieldName = fieldNames.next();
+            JsonNode jsonNode = mainNode.get(fieldName);
+            if (null != jsonNode && (jsonNode.isObject())) {
+                mergeNode(jsonNode, updateNode.get(fieldName));
+            } else if (null != jsonNode && (jsonNode.isArray())) {
+                mergeArray(jsonNode, updateNode.get(fieldName));
+            } else {
+                ((ObjectNode) mainNode).set(fieldName, updateNode.get(fieldName));
+            }
+        }
+        return mainNode;
+    }
+
+    public static void mergeArray(JsonNode mainNode, JsonNode updateNode) {
+        for (int i = 0; i < updateNode.size(); i++) {
+            JsonNode jsonNode = mainNode.get(i);
+            if (null != jsonNode && jsonNode.isObject()) {
+                mergeNode(jsonNode, updateNode.get(i));
+            } else if (null != jsonNode && (jsonNode.isArray())) {
+                mergeArray(jsonNode, updateNode.get(i));
+            } else if (null == jsonNode) {
+                ((ArrayNode) mainNode).add(updateNode.get(i));
+            } else {
+                ((ArrayNode) mainNode).set(i, updateNode.get(i));
+            }
+        }
+    }
 }

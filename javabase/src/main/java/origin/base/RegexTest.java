@@ -6,7 +6,7 @@ package origin.base;
  */
 public class RegexTest {
     public static void main(String[] args) {
-        //加上_%就会很快 是因为回溯问题
+        //加上_%就会很快 是因为回溯问题  正则有贪婪和非贪婪之分
 //        String badRegex = "^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~_%\\\\/])+$";
         String badRegex = "^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)(([A-Za-z0-9-~]+).)++([A-Za-z0-9-~\\\\/])++$";
         String bugUrl = "http://www.fapiao.com/dddp-web/pdf/download?request=6e7JGxxxxx4ILd-kExxxxxxxqJ4-CHLmqVnenXC692m74H38sdfdsazxcUmfcOH2fAfY1Vw__%5EDadIfJgiEf";
