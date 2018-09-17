@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
+ * configure alias configruation in mysqlSqlSessionFactory
  * @author muqi.lmq
  * @date 04/01/2018.
  */
