@@ -114,7 +114,6 @@ public class StreamPartitions {
             for (; index < endIndex; index++)
                 action.accept(lists.get(index));
         }
-
         @Override
         public boolean tryAdvance(Consumer<? super Domain> action) {
             if (index < endIndex) {
@@ -123,7 +122,6 @@ public class StreamPartitions {
             }
             return false;
         }
-
         @Override
         public Spliterator<Domain> trySplit() {
             if ((endIndex - index) <= PARTITION_SIZE) {
@@ -157,7 +155,6 @@ public class StreamPartitions {
         public long estimateSize() {
             return endIndex - index;
         }
-
         @Override
         public int characteristics() {
             return ORDERED | SIZED | SUBSIZED | NONNULL | CONCURRENT;

@@ -1,0 +1,9 @@
+[package]
+name = "study_rust"
+version = "0.1.0"
+authors = ["muqi.lmq <muqi.lmq@autonavi.com>"]
+
+[profile.dev]
+debug = true
+
+[dependencies]

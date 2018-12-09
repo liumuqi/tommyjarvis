@@ -10,7 +10,10 @@ func bar() int {
 	*x = 1
 	return *x
 }
+
 //go run -gcflags '-m -l' mem.go
 func main() {
+	foo()
+	bar()
 	println("over")
 }
