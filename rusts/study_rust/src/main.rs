@@ -1,37 +1,19 @@
-extern crate study_rust;
+//extern crate study_rust;
 
-use std::fs::{self, File};
-use std::io::{self, Write};
-use std::io::{BufRead, BufReader};
+use std::io;
+use std::io::Write;
 use std::string::String;
 
-//use std::io::BufReader; use std::io::BufRead;
+use crate::base_concept::custom_impl_inherit::FullName;
+use crate::base_concept::custom_impl_inherit::Player;
 
-
+mod base_concept;
 mod ownship_test;
 mod other_test;
+mod file_op_test;
 
+#[warn(unreachable_code)]
 fn main() {
-    let file = File::open("src/lib.rs").expect("file not found");
-    let buf_reader = BufReader::new(file);
-
-    for line in buf_reader.lines() {
-        println!("{}", line.unwrap());
-    }
-//    fs::create_dir("some_dir").expect("Can not create the directry!");
-//    File::create("some_dir/empty.txt").expect("Can not create the file!");
-    ownship_test::copy_test();
-    study_rust::hello();
-    other_test::other_test_hello();
-    let mut a = vec![1, 2, 3];
-
-    let b = change_and_get_first_element(&mut a);
-
-    println!("{:?} {}", a, b); // [4, 2, 3] 4
-    println!("Hello, world! 你好,我这是中文");
-    let mut s = String::with_capacity(100);
-    s.push_str("中文");
-    println!("{}", s);
 
 
     let x = 42;
@@ -64,7 +46,6 @@ fn main() {
     //let aas3 = my_fn_1(aas2);
     my_fn_1(&mut aas2);
     println!("myfn1 invoked aas3 :{}", aas2);
-    println!("s :{}", s);
     let ss = test_fn2(s);
     println!("ss :{} ", ss);
 
@@ -82,7 +63,7 @@ fn main() {
     io::stdout().flush().unwrap();
     println!("===========================================");
 
-    let calcxx = calc(x);
+    let calcxx = calc(22);
     println!("x: {}", x);
     println!("calcxx: {}", calcxx);
 
@@ -108,7 +89,7 @@ fn main() {
 
 
 //    slice
-    let a: [i32; 4] = [1, 2, 3, 4];//Parent Array
+    let a: [i32; 4] = [1, 2, 3,5 ];//Parent Array
 
     let b: &[i32] = &a; //Slicing whole array
     let c = &a[0..4]; // From 0th position to 4th(excluding)
@@ -160,6 +141,15 @@ fn main() {
     let a = 15;
     let b = (a as f64) / 2.0; //7.5
 
+    base_concept::custom_error::main();
+    base_concept::custom_impl_inherit::read_ext_read();
+    base_concept::custom_impl_inherit::read_ext_read();
+    base_concept::custom_impl_inherit::read_ext_read();
+    file_op_test::file_op::test_file_op();
+    ownship_test::copy_test();
+    study_rust::hello();
+    other_test::other_test_hello();
+    study_rust::test_panic();
 //    & &mut *
 //    The & or &mut operators are used for borrowing and * operator for Dereferencing.
 
@@ -167,14 +157,14 @@ fn main() {
     //optimistic code
     let team_size = 7;
     let team_size_in_text = if team_size < 5 {
-        "Small" //⭐️no ;
+        "Small"; //⭐️no ;
     } else if team_size < 10 {
-        "Medium"
+        "Medium";
     } else {
-        "Large"
+        "Large";
     };
-    println!("Current team size : {}", team_size_in_text);
-    let is_below_eighteen = if team_size < 18 { true } else { false };
+    println!("Current team size : {:#?}", team_size_in_text);
+    let is_below_eighteen = if team_size < 18 { true; } else { false; };
 
 
     //match
@@ -219,30 +209,30 @@ fn main() {
                 break 'outer_loop; // kill outer_loop
             } else if b2 == 5 {
                 break 'inner_loop;
-            }
+            };
             b2 += 1;
-        }
+        };
         b1 += 1;
-    }
+    };
 
     // Outer break
     'outer_for: for c1 in 1..6 { //set label outer_for
         'inner_for: for c2 in 1..6 {
             println!("Current Value 2 : [{}][{}]", c1, c2);
-            if c1 == 2 && c2 == 3 { break 'outer_for; } //kill outer_for
-        }
-    }
+            if c1 == 2 && c2 == 3 { break 'outer_for; }; //kill outer_for
+        };
+    };
 
     // Working with arrays/vectors
     let group: [&str; 4] = ["Mark", "Larry", "Bill", "Steve"];
 
     for n in 0..group.len() { //group.len() = 4 -> 0..4 👎 check group.len()on each iteration
         println!("Current Person : {}", group[n]);
-    }
+    };
 
     for person in group.iter() { //👍 group.iter() turn the array into a simple iterator
         println!("Current Person : {}", person);
-    }
+    };
 
     //vec!
     let mut a2: Vec<i32> = Vec::new();
@@ -259,16 +249,16 @@ fn main() {
 
     for i in &v {
         println!("A reference to {}", i);
-    }
+    };
 
     for i in &mut v {
         *i = *i + 2;
         println!("A mutable reference to {}", i);
-    }
+    };
 
     for i in v {
         println!("Take ownership of the vector and its element {}", i);
-    }
+    };
 
     println!(" {} : =============== start ", "rust quiz 1");
     let (.., x, y) = (1, 2, ..);
@@ -354,10 +344,10 @@ fn main() {
     println!("Player 02: {}", player_2.full_name_trait());
     println!(" {} : impl for struct =============== end", " ========== ");
 
-    let kitty = Cat { sound: "Meow".to_string() };
-    let the_bell = Bell { sound: "Ding Dong".to_string() };
-    make_sound(&kitty); // Meow!
-    make_sound(&the_bell); // Ding Dong!
+    let kitty = base_concept::custom_impl_inherit::Cat { sound: "Meow".to_string() };
+    let the_bell = base_concept::custom_impl_inherit::Bell { sound: "Ding Dong".to_string() };
+    base_concept::custom_impl_inherit::make_sound(&kitty); // Meow!
+    base_concept::custom_impl_inherit::make_sound(&the_bell); // Ding Dong!
 
     phrases::greetings::hello();
 }
@@ -458,113 +448,6 @@ fn function5<'a>(x: &'a str, y: &'a str) -> &'a str { "e".trim_right() }
 fn function6<'a, 'b>(x: &'a str, y: &'b str) -> &'a str { "f".trim_right() }
 
 //=============lifetime on funcion end=========================================
-
-fn change_and_get_first_element(a: &mut Vec<i32>) -> i32 {
-    a[0] = 4;
-    a[0]
-}
-
-//==============================================
-//Trait objects
-//🔎 While Rust favors static dispatch, it also supports dynamic dispatch through a mechanism called ‘trait objects.’
-trait GetSound {
-    fn get_sound(&self) -> String;
-}
-
-struct Cat {
-    sound: String,
-}
-
-impl GetSound for Cat {
-    fn get_sound(&self) -> String {
-        self.sound.clone()
-    }
-}
-
-struct Bell {
-    sound: String,
-}
-
-impl GetSound for Bell {
-    fn get_sound(&self) -> String {
-        self.sound.clone()
-    }
-}
-
-fn make_sound<T: GetSound>(t: &T) {
-    println!("{}!", t.get_sound())
-}
-
-//==============================================
-//Traits with generics
-trait From<T> {
-    fn from(T) -> Self;
-}
-
-impl From<u8> for u16 {
-    fn from(_: u8) -> Self {
-        unimplemented!()
-    }
-}
-
-//=========trait inherits===========
-trait PersonI {
-    fn full_name(&self) -> String;
-}
-
-trait Employee: PersonI {
-    //Employee inherit from person trait
-    fn job_title(&self) -> String;
-}
-
-trait ExpatEmployee: Employee + FullName {
-    //ExpatEmployee inherit from Employee and Expat traits
-    fn additional_tax(&self) -> f64;
-}
-//====================
-
-//⭐️ As you can see methods take a special first parameter, the type itself. It can be either self, &self, or &mut self; self if it’s a value on the stack (taking ownership), &self if it’s a reference, and &mut self if it’s a mutable reference.
-trait FullName {
-    fn full_name_trait(&self) -> String;
-}
-
-impl FullName for Player {
-    fn full_name_trait(&self) -> String {
-        format!("{} {}", self.first_name, self.last_name)
-    }
-}
-
-
-//====== impl for struct
-#[derive(Debug)]
-struct Player {
-    first_name: String,
-    last_name: String,
-}
-
-impl Player {
-    //Impls with Associated functions
-//Some other languages support static methods. At such times, we call a function directly through the class without creating an object. In Rust, we call them Associated Functions. we use :: instead of . when calling them from struct.
-//ex. Person::new(“Elon Musk Jr”);
-//    / we have used :: notation for `new()` and . notation for `full_name()`
-// 🔎 Also in here we have used `Method Chaining`. Instead of using two statements for new() and full_name()
-// calls, we can use a single statement with Method Chaining.
-// ex. player.add_points(2).get_point_count();
-    fn new(first_name: String, last_name: String) -> Player {
-        Player {
-            first_name: first_name,
-            last_name: last_name,
-        }
-    }
-    fn full_name(&self) -> String {
-        format!("{} {}", self.first_name, self.last_name)
-    }
-
-    fn full_name2(self) -> String {
-        format!("haha2 : {}", self.first_name)
-    }
-}
-//====== impl for struct end
 
 // 01 - - - - - - - - - - - - - - - - - - - - - -
 fn get_id_by_username(username: &str) -> Option<usize> {

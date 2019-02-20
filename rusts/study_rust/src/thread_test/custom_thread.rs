@@ -1,4 +1,3 @@
-crate thread_test;
 use std::thread;
 
 pub fn test_thread() {
