@@ -14,8 +14,6 @@ mod file_op_test;
 
 #[warn(unreachable_code)]
 fn main() {
-
-
     let x = 42;
     let aa = x;
     println!("aa:{:05}, x:{:07} ", aa, x);
@@ -46,6 +44,7 @@ fn main() {
     //let aas3 = my_fn_1(aas2);
     my_fn_1(&mut aas2);
     println!("myfn1 invoked aas3 :{}", aas2);
+    let s = String::from("vv");
     let ss = test_fn2(s);
     println!("ss :{} ", ss);
 
@@ -89,7 +88,7 @@ fn main() {
 
 
 //    slice
-    let a: [i32; 4] = [1, 2, 3,5 ];//Parent Array
+    let a: [i32; 4] = [1, 2, 3, 5];//Parent Array
 
     let b: &[i32] = &a; //Slicing whole array
     let c = &a[0..4]; // From 0th position to 4th(excluding)

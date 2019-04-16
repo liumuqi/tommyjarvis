@@ -8,8 +8,8 @@ pub fn hello() {
     let mut s = String::with_capacity(100);
     s.push_str("中文");
     println!("{}", s);
-
 }
+
 fn change_and_get_first_element(a: &mut Vec<i32>) -> i32 {
     a[0] = 4;
     a[0]
@@ -27,6 +27,7 @@ pub fn complex_function() -> Option<&'static str> {
     println!("{}", x); // "abc" ; if you change line 19 `false` to `true`
     Some("")
 }
+
 fn get_an_optional_value() -> Option<&'static str> {
 
     //if the optional value is not empty

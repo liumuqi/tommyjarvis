@@ -23,8 +23,16 @@
         <protostuff.version>1.5.2</protostuff.version>
         <spring-cloud.version>Dalston.RC1</spring-cloud.version>
         <platform-bom.version>2.0.8.RELEASE</platform-bom.version>
+        <scala.version>2.12.8</scala.version>
+        <encoding>UTF-8</encoding>
+        <gatling.version>3.0.3</gatling.version>
+        <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>${gatling.version}</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -37,9 +45,9 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>com.google.inject.extensions</groupId>-->
-            <!--<artifactId>guice-multibindings</artifactId>-->
-            <!--<version>4.2.2</version>-->
+        <!--<groupId>com.google.inject.extensions</groupId>-->
+        <!--<artifactId>guice-multibindings</artifactId>-->
+        <!--<version>4.2.2</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>com.googlecode.juniversalchardet</groupId>
@@ -206,9 +214,85 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase</artifactId>
+            <version>0.94-adh3u11.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>jdk.tools</groupId>
+                    <artifactId>jdk.tools</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+            <version>1.0.0.1</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.hadoop.thirdparty.guava</groupId>-->
+            <!--<artifactId>guava</artifactId>-->
+            <!--<version></version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.skyscreamer</groupId>
+            <artifactId>jsonassert</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-app</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-recorder</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-app</artifactId>
+                <version>${gatling.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-recorder</artifactId>
+                <version>${gatling.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.gatling.highcharts</groupId>
+                <artifactId>gatling-charts-highcharts</artifactId>
+                <version>${gatling.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
@@ -303,7 +387,7 @@
             <id>bintray</id>
         </profile>
     </profiles>
-        <!--<activeProfile>bintray</activeProfile>-->
+    <!--<activeProfile>bintray</activeProfile>-->
     <build>
         <finalName>mytest</finalName>
         <resources>
@@ -326,7 +410,73 @@
                 </excludes>
             </resource>
         </resources>
+        <testSourceDirectory>src/test/scala</testSourceDirectory>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>scala-maven-plugin</artifactId>
+                    <version>${scala-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>2.2.4</version>
+                <configuration>
+                    <!-- 测试脚本 -->
+                    <simulationClass>TestingSimulation</simulationClass>
+                    <!-- 结果输出地址 -->
+                    <resultsFolder>gatling</resultsFolder>
+                    <disableCompiler>true</disableCompiler>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <args>
+                                <arg>-target:jvm-1.8</arg>
+                                <arg>-deprecation</arg>
+                                <arg>-feature</arg>
+                                <arg>-unchecked</arg>
+                                <arg>-language:implicitConversions</arg>
+                                <arg>-language:postfixOps</arg>
+                            </args>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.10</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/dependencies</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                            <includeScope>compile</includeScope>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -367,7 +517,8 @@
                 </executions>
                 <configuration>
                     <classpathElements>
-                        <classpathElement>/Users/qishan/Documents/code/github/deep/tommyjarvis/javabase/target</classpathElement>
+                        <classpathElement>/Users/qishan/Documents/code/github/deep/tommyjarvis/javabase/target
+                        </classpathElement>
                     </classpathElements>
                 </configuration>
             </plugin>

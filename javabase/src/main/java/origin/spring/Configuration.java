@@ -4,12 +4,14 @@ import com.offbytwo.jenkins.JenkinsServer;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.SchedulingConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.scheduling.config.ScheduledTaskRegistrar;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
@@ -17,6 +19,7 @@ import origin.spring.websocket.SocketProcessor;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Collection;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -34,14 +37,37 @@ import java.util.concurrent.ThreadPoolExecutor;
 @AutoConfigureAfter(Configuration.class)
 public class Configuration {
 
-    public class BaseProcessConfiguration implements AsyncConfigurer, SchedulingConfigurer, WebSocketConfigurer {
+    public class BaseProcessConfiguration extends WebMvcConfigurerAdapter implements AsyncConfigurer, SchedulingConfigurer, WebSocketConfigurer {
 //        @Autowired
 //        private BaseConfig baseConfig;
 
-//    @Bean
+        //    @Bean
 //    public MethodValidationInterceptor MethodValidationInterceptor() {
 //        return new MethodValidationInterceptor();
 //    }
+        @Override
+        public void addFormatters(FormatterRegistry registry) {
+            registry.removeConvertible(String.class, Collection.class);
+            registry.addConverter(new CustomStringToCollectionConverter((GenericConversionService) registry));
+        }
+//     springboot 1.x下
+//        @Bean
+//       import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+//        public EmbeddedServletContainerCustomizer containerCustomizer() {
+//            return container -> {
+//                container.addErrorPages(new ErrorPage(HttpStatus.BAD_REQUEST, "/error"));
+//                container.addErrorPages(new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/error"));
+//                container.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND, "/error"));
+//            };
+//        }
+        //springboot 2 server.error.whitelabel.enabled=false
+        //or
+        //spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration
+        //
+        //#for Spring Boot 2.0
+        //#spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+        //add @EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class})
+
 
         @Bean(name = "baseAsyncExe")
         public Executor getAsyncExecutor() {

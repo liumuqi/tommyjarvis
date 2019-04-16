@@ -35,4 +35,17 @@ public class MockMvcTest {
     public void jobInfoSelect() throws Exception {
         this.mockMvc.perform(get("/job/select")).andDo(log()).andExpect(status().isOk());
     }
+    public void test() throws Exception{
+        MockHttpServletRequestBuilder builder =
+                MockMvcRequestBuilders.get("/test");
+
+
+        this.mockMvc.perform(builder)
+                .andExpect(MockMvcResultMatchers.request()
+                        .asyncStarted())
+                .andExpect(MockMvcResultMatchers.request()
+                        .asyncResult("async result"))
+                .andExpect(MockMvcResultMatchers.status()
+                        .isOk());
+    }
 }

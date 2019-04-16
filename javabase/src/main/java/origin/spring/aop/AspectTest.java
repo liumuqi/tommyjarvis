@@ -27,17 +27,17 @@ public class AspectTest {
     @Component
     public class ExecutionAspect {
 
-        @Before("execution(* wokao666.club.myapp.aspectJ.*.before*(..))")
+        @Before("execution(* club.myapp.aspectJ.*.before*(..))")
         public void doBefore(JoinPoint joinPoint) throws Throwable {
             System.err.println("这是一个前置通知，在方法调用之前被执行！！！");
         }
 
-        @After("execution(* wokao666.club.myapp.aspectJ.*.after*(..))")
+        @After("execution(* club.myapp.aspectJ.*.after*(..))")
         public void doAfter(JoinPoint joinPoint) throws Throwable {
             System.err.println("这是一个后置通知，在方法调用之后被执行！！！");
         }
 
-        @Around("execution(* wokao666.club.myapp.aspectJ.*.around*(..))")
+        @Around("execution(* club.myapp.aspectJ.*.around*(..))")
         public void doAround(ProceedingJoinPoint joinPoint) throws Throwable {
             System.err.println("这是一个环绕通知，在方法调用前后都会执行！！！");
             System.err.println("执行前");
@@ -57,7 +57,7 @@ public class AspectTest {
         @Aspect
         @Component
         public class AnnotationAspect {
-            @Around("@annotation(wokao666.club.myapp.annotation.RpcService)")
+            @Around("@annotation(club.myapp.annotation.RpcService)")
             public void doAround(ProceedingJoinPoint joinPoint) throws Throwable {
                 System.err.println("这是一个环绕通知，在方法调用前后都会执行！！！");
                 System.err.println("执行前");

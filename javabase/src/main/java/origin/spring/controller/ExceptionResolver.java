@@ -2,9 +2,15 @@ package origin.spring.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolationException;
@@ -12,8 +18,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@ControllerAdvice
-public class ExceptionResolver {
+@ControllerAdvice(annotations = CommonMapping.class)
+public class ExceptionResolver extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity<RespJson<Integer>> handleException(HttpServletRequest req, Exception ex) {
         RespJson<Integer> rj = new RespJson<>();
@@ -32,5 +38,15 @@ public class ExceptionResolver {
             rj.setMessage("service error=> " + ex.getMessage());
             return new ResponseEntity<>(rj, HttpStatus.OK);
         }
+    }
+
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public Object processValidationError(MethodArgumentNotValidException ex) {
+        BindingResult result = ex.getBindingResult();
+        List<FieldError> fieldErrors = result.getFieldErrors();
+        return null;
     }
 }

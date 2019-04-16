@@ -1,8 +1,7 @@
 use std::fs::{self, File};
 
-pub fn fs_read(){
+pub fn fs_read() {}
 
-}
 #[cfg(test)]
 mod tests {
     #[test]

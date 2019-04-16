@@ -8,13 +8,44 @@ import com.google.inject.name.Names;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 
-@ImplementedBy(SimpleHelloPrinter.class)
+//@ImplementedBy(SimpleHelloPrinter.class)
 interface IHelloPrinter {
     void print();
+}
+
+@ProvidedBy(WwwServiceProvider.class)
+interface Service {
+    void execute();
+}
+
+class ServiceProvider_One implements Service {
+
+    @Override
+    public void execute() {
+        System.out.println("ServiceProvider_One service provider one");
+    }
+}
+
+class WwwServiceProvider implements Provider<Service> {
+    @Override
+    public Service get() {
+        return new ServiceProvider_One();
+    }
+}
+
+class ServiceContainer {
+    @Inject
+    private Service service;
+
+    public void exe() {
+        service.execute();
+    }
 }
 
 class ThreadServiceScope implements Scope {
@@ -91,19 +122,43 @@ public class Sample {
         System.out.println(sample2.printers.size());
         System.out.println(sample2.printers2.size());
         System.out.println("===========scopes test===========================");
+        List<Thread> ts = new ArrayList<>();
+        Injector injector3 = Guice.createInjector(new Module() {
+            @Override
+            public void configure(Binder binder) {
+                binder.bind(Service.class).to(ServiceProvider_One.class).in(new ThreadServiceScope());
+            }
+        });
         for (int i = 0; i < 3; i++) {
-            new Thread("Thread-" + i) {
+            Thread thread = new Thread("Thread-" + i) {
                 public void run() {
                     for (int m = 0; m < 3; m++) {
-                        System.out.println(String.format("%s-%d:%d", getName(), m, injector2.getInstance(IHelloPrinter.class).hashCode()));
+                        System.out.println(String.format("%s-%d:%d", getName(), m, injector3.getInstance(Service.class).hashCode()));
+                        //不能同时跑,因为threadlocal里面 又放ServiceProvider_one又放IHelloPrinter  获取的时候
+//                        会有java.lang.ClassCastException: guice.tutorial.ServiceProvider_One cannot be cast to guice.tutorial.IHelloPrinter
+//                        System.out.println(String.format("injector2 %s-%d:%d", getName(), m, injector2.getInstance(Key.get(IHelloPrinter.class, Names.named("ici"))).hashCode()));
+//                        System.out.println(String.format("injector2 %s-%d:%d", getName(), m, injector2.getInstance(Key.get(IHelloPrinter.class, Names.named("simple"))).hashCode()));
                         try {
                             Thread.sleep(50L);
                         } catch (Exception e) {
                         }
                     }
                 }
-            }.start();
+            };
+            thread.start();
+            ts.add(thread);
         }
+        ts.stream().forEach(t -> {
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        System.out.println("========no module provider=============");
+        ServiceContainer instance = Guice.createInjector().getInstance(ServiceContainer.class);
+        instance.exe();
+        System.out.println("========no module provider end=============");
     }
 
     public void hello() {
@@ -142,12 +197,20 @@ class ComplexHelloPrinter implements IHelloPrinter {
 }
 
 class SampleModule extends AbstractModule {
+
     @Override
     protected void configure() {
 //        bind(IHelloPrinter.class).to(ComplexHelloPrinter.class);
         bind(HelloPrinter.class).annotatedWith(Names.named("hello")).to(HelloPrinter.class);
-        bind(IHelloPrinter.class).annotatedWith(Names.named("simple")).to(SimpleHelloPrinter.class);
-        bind(IHelloPrinter.class).annotatedWith(Names.named("complex")).to(ComplexHelloPrinter.class);
+        bind(IHelloPrinter.class).annotatedWith(Names.named("simple")).to(SimpleHelloPrinter.class).in(new ThreadServiceScope());
+        bind(IHelloPrinter.class).annotatedWith(Names.named("complex")).to(ComplexHelloPrinter.class).in(Scopes.SINGLETON);
+        bind(IHelloPrinter.class).annotatedWith(Names.named("ici")).to(ComplexHelloPrinter.class).in(new ThreadServiceScope());
+
+
+//        binder.bind(Service.class).to(ServiceProvider_One.class).in(new ThreadServiceScope());
+
+        super.binder().bind(IHelloPrinter.class).annotatedWith(Names.named("ici")).to(ComplexHelloPrinter.class).in(new ThreadServiceScope());
+
 
         Multibinder<IHelloPrinter> printers = Multibinder.newSetBinder(binder(), IHelloPrinter.class, Names.named("set1"));
         printers.addBinding().to(SimpleHelloPrinter.class);
