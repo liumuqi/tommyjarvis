@@ -19,6 +19,7 @@ mod patterns;
 mod unsafes;
 mod thread_web;
 mod other_hard;
+mod examples;
 
 #[allow(unused_variables)]
 #[warn(unreachable_code)]

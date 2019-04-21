@@ -22,11 +22,11 @@ pub mod single_web_mod {
 //        let response = format!("HTTP/1.1 200 OK\r\n\r\n{}", contents);
 //        stream.write(response.as_bytes()).unwrap();  //&[u8] -> bytes
 //        stream.flush().unwrap();  //阻塞知道写完
-        route(Box::new(buffer), stream);
+        route(Box::new(&buffer), stream);
 //        println!("{:?}", dbg!(stream));
     }
 
-    fn route(buffer: Box<[u8; 512]>, mut stream: TcpStream) {
+    fn route(buffer: Box<&[u8]>, mut stream: TcpStream) {
         let get = b"GET / HTTP/1.1\r\n";  //b
 
         if buffer.starts_with(get) {

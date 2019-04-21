@@ -14,4 +14,10 @@ fn main_test_own_ship() {
         active: true,
         sign_in_count: 1,
     };
+    // 编译通过，4、5两行交换就编译不过。
+    let mut i = 0;
+    let r = &mut i;
+    let rf: &mut u32 = r; // 和 let rf = r; 行为不同。
+    *rf = 3;
+    *r = 2;
 }
