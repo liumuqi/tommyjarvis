@@ -8,10 +8,19 @@ use crate::base_concept::custom_impl_inherit::FullName;
 use crate::base_concept::custom_impl_inherit::Player;
 
 mod base_concept;
-mod ownship_test;
-mod other_test;
-mod file_op_test;
+mod ownshiptest;
+mod file_ops;
+mod trait_concept;
+mod main_test;
+mod threads;
+mod indexes;
+mod dyn_struct;
+mod patterns;
+mod unsafes;
+mod thread_web;
+mod other_hard;
 
+#[allow(unused_variables)]
 #[warn(unreachable_code)]
 fn main() {
     let x = 42;
@@ -37,7 +46,7 @@ fn main() {
 //    println!("{:?} {:?}", a, b);
 
 
-    let aas = String::from("heello");
+    let aas = String::from("hello");
     let mut aas2 = aas;
     println!("aas2 : {}", aas2);
     //println!("aas: {}",aas)
@@ -144,10 +153,10 @@ fn main() {
     base_concept::custom_impl_inherit::read_ext_read();
     base_concept::custom_impl_inherit::read_ext_read();
     base_concept::custom_impl_inherit::read_ext_read();
-    file_op_test::file_op::test_file_op();
-    ownship_test::copy_test();
+    file_ops::file_ops_file::test_file_op();
+    ownshiptest::copy_test();
     study_rust::hello();
-    other_test::other_test_hello();
+//    main_test::other_test_hello();
     study_rust::test_panic();
 //    & &mut *
 //    The & or &mut operators are used for borrowing and * operator for Dereferencing.
@@ -425,26 +434,26 @@ enum Enum<'a> {
 //=============lifetime on funcion start=========================================
 //Lifetimes are denoted with an apostrophe. By convention, a lowercase letter is used for naming. Usually starts with 'a and follows alphabetic order when we need to add multiple lifetime annotations.
 // no inputs, return a reference
-fn function1<'t>() -> &'t str { "1".trim_right() }
+fn function1<'t>() -> &'t str { "1".trim_end() }
 
 // single input
-fn function2<'a>(x: &'a str) -> &'a str { "b".trim_right() }
+fn function2<'a>(x: &'a str) -> &'a str { "b".trim_end() }
 
 // single input and output, both has same lifetime
 // output should live at least as long as input exists
-fn function3<'a>(x: &'a str) -> &'a str { "c".trim_right() }
+fn function3<'a>(x: &'a str) -> &'a str { "c".trim_end() }
 
 // multiple inputs, only one input and the output share same lifetime
 // output should live at least as long as y exists
-fn function4<'a>(x: i32, y: &'a str) -> &'a str { "d".trim_right() }
+fn function4<'a>(x: i32, y: &'a str) -> &'a str { "d".trim_end() }
 
 // multiple inputs. both inputs and the output share same lifetime
 // output should live at least as long as x and y exist
-fn function5<'a>(x: &'a str, y: &'a str) -> &'a str { "e".trim_right() }
+fn function5<'a>(x: &'a str, y: &'a str) -> &'a str { "e".trim_end() }
 
 // multiple inputs. inputs can have diffent lifetimes 🔎
 // output should live at least as long as x exists
-fn function6<'a, 'b>(x: &'a str, y: &'b str) -> &'a str { "f".trim_right() }
+fn function6<'a, 'b>(x: &'a str, y: &'b str) -> &'a str { "f".trim_end() }
 
 //=============lifetime on funcion end=========================================
 
