@@ -1,3 +1,5 @@
+use std::mem::size_of;
+
 struct impportant<'a> {
     p: &'a str
 }
@@ -16,6 +18,17 @@ pub fn is_copy_main() {
     is_copy("hello");
     is_copy(a_interface);
     print!("test");
+    println!("size of isize            : {}", size_of::<isize>() );
+    println!("size of Option<isize>    : {}", size_of::<Option<isize>>() );
+
+    println!("size of &isize           : {}", size_of::<&isize>() );
+    println!("size of Box<isize>       : {}", size_of::<Box<isize>>() );
+
+    println!("size of Option<&isize>     : {}", size_of::<Option<&isize>>() );
+    println!("size of Option<Box<isize>> : {}", size_of::<Option<Box<isize>>>() );
+
+    println!("size of *const isize     : {}", size_of::<* const isize>() );
+    println!("size of Option<*const isize> : {}", size_of::<Option<*const isize>>() );
 }
 
 pub fn base(x: i32) {
