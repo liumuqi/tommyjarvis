@@ -21,3 +21,16 @@ fn main_test_own_ship() {
     *rf = 3;
     *r = 2;
 }
+
+#[test]
+fn ship_main() {
+
+    let b = foo("world");
+    println!("b:{}", b);
+
+}
+
+fn foo(x: &str) -> String {
+    let a = "Hello, ".to_string() + x;
+    a
+}
