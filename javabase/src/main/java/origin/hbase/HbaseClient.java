@@ -79,54 +79,57 @@ public class HbaseClient {
 //        return result;
 //    }
 
-//
-//    public Map<String, List<String>> getBatch(String tableName, String family, List<String> rowKeyLists) {
-//        Map<String, List<String>> resultValue = new TreeMap<>();
+// public Map<String, List<String>> getBatch(String tableName, String family, Map<String, List<String>> rowKeyAndColumns) {
+//        Map<String, List<String>> result = new TreeMap<>();
 //        try {
-//            List<Get> getList = new ArrayList<>();
+//            List<Get> getList = new ArrayList<Get>();
 //            HTable table = (HTable) hTablePool.getTable(tableName);
-//
-//            for (String rowKey : rowKeyLists) {
+//            for (String rowKey : rowKeyAndColumns.keySet()) {
 //                Get get = new Get(Bytes.toBytes(rowKey));
-//                get.addFamily(Bytes.toBytes(family));
+//                List<String> columns = rowKeyAndColumns.get(rowKey);
+//                if (columns != null && columns.size() != 0) {
+//                    for (String column : columns) {
+//                        get.addColumn(Bytes.toBytes(family), Bytes.toBytes(column));
+//                    }
+//                } else {
+//                    get.addFamily(Bytes.toBytes(family));
+//                }
 //                getList.add(get);
 //            }
 //            try {
 //                Result[] rsArray = table.get(getList);
-//                int size = rsArray.length;
-//                for (int i = 0; i < size; i++) {
-//                    Result rs = rsArray[i];
-//                    List<String> result = new ArrayList<>();
-//                    if (rs != null && rs.list() != null) {
-//                        for (KeyValue kv : rs.list()) {
-//                            if (kv != null) {
-//                                String value = Bytes.toString(kv.getValue());
-//                                String[] dataArray = StringUtils.split(value, ",");
-//                                if (dataArray.length >= 3) {
-//                                    String userId = dataArray[0];
-//                                    if (resultValue.containsKey(userId)) {
-//                                        result = resultValue.get(userId);
-//                                        result.add(StringUtils.trim(dataArray[2]));
-//                                    } else {
-//                                        result.add(StringUtils.trim(dataArray[2]));
-//                                        resultValue.put(userId, result);
-//                                    }
-//                                }
-//
-//
+//                Map<String, Result> rowDetail = Arrays.stream(rsArray).filter(r -> r.getRow() != null).collect(Collectors.toMap(rs -> Bytes.toString(rs.getRow()), rs -> rs));
+//                result = rowKeyAndColumns.entrySet().stream().map(r -> {
+//                    Map<String, List<String>> rt = new HashMap<>();
+//                    String rowKey = r.getKey();
+//                    List<String> columns = r.getValue();
+//                    Result d = rowDetail.get(rowKey);
+//                    List<String> columnsValues = new ArrayList<>(columns.size());
+//                    if (d != null) {
+//                        List<KeyValue> keyValues = d.list();
+//                        Map<String, String> kvs = keyValues.stream().collect(Collectors.toMap(kv -> Bytes.toString(kv.getQualifier()), kv -> Bytes.toString(kv.getValue())));
+//                        for (String c : columns) {
+//                            String s = kvs.get(c);
+//                            if(s==null) {
+//                                continue;
 //                            }
+//                            columnsValues.add(s);
 //                        }
+//                        rt.put(rowKey, columnsValues);
 //                    }
-//
-//                }
-//
+//                    return rt;
+//                }).filter(r -> r.size() > 0).flatMap(d -> d.entrySet().stream()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+//                        (v1, v2) -> {
+//                            LogUtils.LOG_BIZ_ERR.error("[hbase][getBatch][duplicate] v1:{},v2{}", v1, v2);
+//                            return null;
+//                        }, TreeMap::new));
 //            } finally {
 //                table.close();
 //            }
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-//        return resultValue;
+//        return result;
 //    }
 //        public Map<String, List<String>> getBatch(String tableName, List<RowKeyAndColumn> rowKeyAndColumns, String family) {
 //            Map<String, List<String>> result = new TreeMap<>();

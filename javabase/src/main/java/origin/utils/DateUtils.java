@@ -19,6 +19,19 @@ public class DateUtils {
     public static final int ONE_MINUTE_SECONDES = 1 * 60;
     private static String zoneId = "Asia/Shanghai";
 
+    public static long[] getDayHourMinSec(long seconds) {
+        seconds = seconds + 8 * 60 * 60;
+        long sec = seconds % 60;
+        long minutes = seconds % 3600 / 60;
+        long hours = seconds % 86400 / 3600;
+        long days = seconds / 86400;
+        long[] r = {days, hours, minutes, sec};
+        return r;
+    }
+
+    public static long getSecond(long[] hourMinSec) {
+        return hourMinSec[0] * 86400 + hourMinSec[1] * 3600 + hourMinSec[2] * 60 + hourMinSec[3] - 8 * 60 * 60;
+    }
     /**
      * 根据日期获取unix timestamp
      *

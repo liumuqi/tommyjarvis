@@ -30,6 +30,11 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.14.1</version>
+        </dependency>
+        <dependency>
             <groupId>io.gatling.highcharts</groupId>
             <artifactId>${gatling.version}</artifactId>
         </dependency>
@@ -235,9 +240,9 @@
             <version>1.0.0.1</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.apache.hadoop.thirdparty.guava</groupId>-->
-            <!--<artifactId>guava</artifactId>-->
-            <!--<version></version>-->
+        <!--<groupId>org.apache.hadoop.thirdparty.guava</groupId>-->
+        <!--<artifactId>guava</artifactId>-->
+        <!--<version></version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.apache.commons</groupId>

@@ -1,4 +1,4 @@
-package origin.utils.bttracetest;
+package origin.perf.bttracetest;
 
 import java.util.Random;
 
