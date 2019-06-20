@@ -134,7 +134,7 @@ function print_dump(data, showMetatable, lastCount)
     end
 end
 
-local A1, A2 = 727595, 798405  -- 5^17=D20*A1+A2
+local A1, A2 = 727595+os.clock(), 798405+os.clock()  -- 5^17=D20*A1+A2
 local D20, D40 = 1048576, 1099511627776  -- 2^20, 2^40
 local X1, X2 = 0, 1
 function rand()
@@ -146,13 +146,19 @@ function rand()
     return V/D40
 end
 local function randomTime()
-    math.randomseed(rand()*1000000000)
+    math.randomseed(rand()*100000000)
     --offset=math.random(1,7)*86400
-    offset=math.random(120*5,86400*3.4)
-    startTime=os.date("%Y-%m-%d %X",1551628800-offset)
-    endTime=os.date("%Y-%m-%d %X",1551628800+offset)
+    offset=math.random(120,86400)
+    startTime=os.date("%Y-%m-%d %X",1546272000)
+    endTime=os.date("%Y-%m-%d %X",1546272000+offset)
     return {startTime,endTime}
 end
+for i=100,1,-1 do
+    data= randomTime()
+    --print(data[1])
+    print(data[2])
+end
+
 
 local function urlEncode(s)
     s = string.gsub(s, "([^%w%.%- ])", function(c) return string.format("%%%02X", string.byte(c)) end)
