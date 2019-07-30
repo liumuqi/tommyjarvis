@@ -39,7 +39,7 @@ public class PhaserExample {
              *       -> set phase = phase + 1
              * </pre>
              *
-             * This causes another iteration for all thread parties in a new phase (cycle).
+             * This causes another iteration for all threads parties in a new phase (cycle).
              *
              */
             protected boolean onAdvance(int phase, int registeredParties) {
@@ -79,14 +79,14 @@ public class PhaserExample {
          * "face advances" means that all threads reached the barrier and therefore all threads are synchronized and can
          * continue processing.
          */
-        dumpPhaserState("Before main thread arrives and deregisters", phaser);
+        dumpPhaserState("Before main threads arrives and deregisters", phaser);
         /**
-         * The arrival and deregistration of the main thread allows the other threads to start working. This is because
+         * The arrival and deregistration of the main threads allows the other threads to start working. This is because
          * now the registered parties equal the arrived parties.
          */
         phaser.arriveAndDeregister();
-        dumpPhaserState("After main thread arrived and deregistered", phaser);
-        System.out.println("origin.Main thread will terminate ...");
+        dumpPhaserState("After main threads arrived and deregistered", phaser);
+        System.out.println("origin.Main threads will terminate ...");
     }
     private void dumpPhaserState(String when, Phaser phaser) {
         System.out.println(when + " -> Registered: " + phaser.getRegisteredParties() + " - Unarrived: "

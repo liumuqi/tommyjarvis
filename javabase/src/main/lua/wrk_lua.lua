@@ -11,13 +11,13 @@
 --function wrk.connect(addr)
 
 --Setup阶段 setup是在线程创建之后，启动之前。
---function setup(thread)
+--function setup(threads)
 
 -- thread提供了1个属性，3个方法
--- thread.addr 设置请求需要打到的ip
--- thread:get(name) 获取线程全局变量
--- thread:set(name, value) 设置线程全局变量
--- thread:stop() 终止线程
+-- threads.addr 设置请求需要打到的ip
+-- threads:get(name) 获取线程全局变量
+-- threads:set(name, value) 设置线程全局变量
+-- threads:stop() 终止线程
 
 
 -- Running阶段
@@ -182,7 +182,7 @@ function init(args)
     requests  = 0
     responses = 0
     statuses = {}
-    local msg = "thread %d created"
+    local msg = "threads %d created"
     print(msg:format(id))
 end
 
@@ -215,7 +215,7 @@ function done(summary, latency, requests)
         thread:stop()
         local s_s=""
         --for i,v in ipairs(stat) do s_s= s_s.."\ncode:"..i..": "..v end
-        local msg = "thread %d made %d requests and got %d responses.\nstats: %s \n err_connect: %d , err_read: %d, err_write: %d, err_status: %d, err_timeout: %d"
+        local msg = "threads %d made %d requests and got %d responses.\nstats: %s \n err_connect: %d , err_read: %d, err_write: %d, err_status: %d, err_timeout: %d"
         print(msg:format(id, requests, responses,s_s,summary.errors.connect,summary.errors.read,summary.errors.write,summary.errors.status,summary.errors.timeout))
         print("=============================")
     end

@@ -1,0 +1,3 @@
+[submodule "rusts/Hands-On-Data-Structures-and-Algorithms-with-Rust"]
+	path = rusts/Hands-On-Data-Structures-and-Algorithms-with-Rust
+	url = https://github.com/PacktPublishing/Hands-On-Data-Structures-and-Algorithms-with-Rust.git

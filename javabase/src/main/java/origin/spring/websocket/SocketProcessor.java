@@ -1,12 +1,12 @@
 package origin.spring.websocket;
 
 import com.google.common.eventbus.Subscribe;
-import origin.eventbus.EventSubProcessor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
+import origin.eventbus.EventSubProcessor;
 import origin.utils.Jacksons;
 
 import javax.annotation.PostConstruct;

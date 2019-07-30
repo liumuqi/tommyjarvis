@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
  * @date 22/12/2016.
  */
 public class EventSubProcessor {
-        private static AsyncEventBus eventBus = new AsyncEventBus(Executors.newWorkStealingPool(10));
+    private static AsyncEventBus eventBus = new AsyncEventBus(Executors.newWorkStealingPool(10));
 
     private EventSubProcessor() {
     }

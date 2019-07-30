@@ -15,10 +15,11 @@ public class BaseNio {
     public static void main(String[] args) throws IOException {
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.configureBlocking(false);
-        ServerSocket socket = serverSocketChannel.socket();
+//        ServerSocket socket = serverSocketChannel.socket();
         int port = 8080;
         SocketAddress endPoit = new InetSocketAddress(port);
-        socket.bind(endPoit);
+//        socket.bind(endPoit);
+        serverSocketChannel.bind(endPoit);
 
         Selector selector = Selector.open();
         SelectionKey register = serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);

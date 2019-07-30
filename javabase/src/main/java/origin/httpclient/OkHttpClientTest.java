@@ -1,4 +1,16 @@
-public class OkHttpClient {
+import okhttp3.*;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.http.HttpStatus;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+public class OkHttpClientTest {
     private static OkHttpClient client = new OkHttpClient();
 
     public static HttpResult get(String url, List<String> headers, Map<String, String> paramValues) throws IOException {

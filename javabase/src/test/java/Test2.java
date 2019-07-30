@@ -112,8 +112,8 @@ public class Test2 {
     }
 
     /**
-     * Make thread a run faster than thread b,
-     * then thread b will be interruted after about 1s.
+     * Make threads a run faster than threads b,
+     * then threads b will be interruted after about 1s.
      *
      * @param a
      * @param b
