@@ -10,3 +10,7 @@ fn main() {
     println!("result:{:?},your input:{}",result,ss)
 }
 
+exten "C" fn fast_blank(buf: Buf) -> bool {
+    buf.as_slice().chars().all(|c| c.is_whitespace())
+}
+

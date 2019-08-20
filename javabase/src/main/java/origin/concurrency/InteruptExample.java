@@ -23,21 +23,23 @@ public class InteruptExample {
         });
         t.start();
         t.interrupt();
-        for (int i = 0; i < 10; i++) {
-            new Thread(new Runnable() {
-                public void run() {
-                    InteruptExample test = new InteruptExample();
-                    test.say();
-                }
-            }).start();
-        }
+//        for (int i = 0; i < 10; i++) {
+//            new Thread(new Runnable() {
+//                public void run() {
+//                    InteruptExample test = new InteruptExample();
+//                    test.say();
+//                }
+//            }).start();
+//        }
     }
 
     public void say() {
         try {
             lock.lock();
-            while (true) {
+            int i=0;
+            while (i<3) {
                 try {
+                    i++;
                     condition.await();
                 } catch (InterruptedException e) {
                     System.out.println("interrupted");

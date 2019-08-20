@@ -3,3 +3,4 @@ pub mod custom_error;
 pub mod structs;
 pub mod custom_closure;
 pub mod iters;
+pub mod base;
