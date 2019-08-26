@@ -25,7 +25,7 @@ import java.lang.annotation.*;
 public class AspectTest {
     @Aspect
     @Component
-    public class ExecutionAspect {
+    public static class ExecutionAspect {
 
         @Before("execution(* club.myapp.aspectJ.*.before*(..))")
         public void doBefore(JoinPoint joinPoint) throws Throwable {
@@ -56,7 +56,7 @@ public class AspectTest {
 
         @Aspect
         @Component
-        public class AnnotationAspect {
+        public static class AnnotationAspect {
             @Around("@annotation(club.myapp.annotation.RpcService)")
             public void doAround(ProceedingJoinPoint joinPoint) throws Throwable {
                 System.err.println("这是一个环绕通知，在方法调用前后都会执行！！！");
