@@ -1,11 +1,16 @@
 //extern crate study_rust;
+#![feature(specialization)]//泛型特化需要添加此特征
+#![feature(associated_type_defaults)]//关联类型
+#![feature(generators,generator_trait)]
 
 use std::io;
-use std::io::Write;
+use std::io::{Write};
 use std::string::String;
 
 use crate::base_concept::custom_impl_inherit::FullName;
 use crate::base_concept::custom_impl_inherit::Player;
+use num_traits::real::Real;
+use crate::trait_concept::trait_for_trait::Example;
 
 mod base_concept;
 mod ownshiptest;
@@ -20,12 +25,17 @@ mod unsafes;
 mod thread_web;
 mod other_hard;
 mod examples;
+mod lambda;
+mod coroutines;
 
 #[allow(unused_variables)]
 #[warn(unreachable_code)]
+
 fn main() {
     let x = 42;
     let aa = x;
+    println!("file:{}, line:{}", file!(), line!());
+
     println!("aa:{:05}, x:{:07} ", aa, x);
 
 //    ⭐️ When assigning a variable binding to another variable binding or when passing it to a function(Without referencing), if its data type is a
@@ -249,10 +259,21 @@ fn main() {
     let mut b3 = vec![9i32, 2, 3];//sufixing 1st value with data type
 
     let mut b4 = vec![1, 2, 3];
-    let mut b5: Vec<i32> = vec![1, 2, 3];
+    let mut b5: Vec<i32> = vec![0,1, 2, 3,4,5,6,7,8,9];
     let mut b6 = vec![1i32, 2, 3];
     let mut b7 = vec![0; 10]; //ten zeroes
 
+    println!("Removed:============================");
+    let drain = b5.drain(1..3);
+    for i in drain {
+        println!("i:{}",i);
+    }
+//    std::mem::forget(drain);
+    println!("left:");
+    for i in b5.iter() {
+        println!("i:{}",i);
+    }
+    println!("End Removed:============================");
     //vec! iterator
     let mut v = vec![1, 2, 3, 4, 5];
 
@@ -359,6 +380,30 @@ fn main() {
     base_concept::custom_impl_inherit::make_sound(&the_bell); // Ding Dong!
 
     phrases::greetings::hello();
+
+    println!("======base_concept::base::test();=================================");
+    base_concept::base::test();
+    ownshiptest::life_scope_test::test();
+    println!("======trait_for_trait test;=================================");
+    let v1 = vec![1,2,3];
+    let v2=1_i32;
+    let v3 = "hello";
+    v1.call_e();
+    v2.call_e();
+    v3.call_e();
+    println!("-----------------");
+    Example::call_e(&v1);
+    Example::call_e(&v3);
+    Example::call_e(&v2);
+    println!("lambda======================");
+    lambda::closure::c_test();
+    println!("impl trait======================");
+    let ifi = base_concept::iters::fooIter(5);
+    for x in ifi {
+        println!("x:{}",x);
+    }
+    println!("coroutines======================");
+    coroutines::base_coroutine::test_coroutine();
 }
 
 //=============lifetime on With Impls and Traits start=========================================

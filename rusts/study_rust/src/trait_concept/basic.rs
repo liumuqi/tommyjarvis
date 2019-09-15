@@ -12,6 +12,7 @@ impl Summary for TraitStArticle {
     }
 }
 
+
 impl Summary for TraitStUser {
     fn summarize(&self) -> String {
         return format!("impl summary for trait st user");
@@ -19,7 +20,7 @@ impl Summary for TraitStUser {
 }
 
 //true for user false for article
-pub fn returns_summarizable(switch: bool) -> Box<dyn Summary> {
+pub fn returns_summarizable(switch: bool) -> Box<dyn Summary> where  {
     if !switch {
         //error when open
 //        #[derive(Debug)]

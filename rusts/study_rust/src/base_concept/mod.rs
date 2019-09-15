@@ -4,3 +4,5 @@ pub mod structs;
 pub mod custom_closure;
 pub mod iters;
 pub mod base;
+pub mod fun;
+pub mod ft;

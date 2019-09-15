@@ -172,7 +172,7 @@ fn test_ad() {
         Box::new(|| ())
     }
 
-    fn bar(flag: bool)  {  //返回never, diverging function, 岔路函数？
+    fn bar(flag: bool) {  //返回never, diverging function, 岔路函数？
         if flag {
             println!("nve")
         } else {
