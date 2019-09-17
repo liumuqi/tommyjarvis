@@ -29,27 +29,27 @@ public class WebFluxFileMain {
         SpringApplication.run(WebFluxFileMain.class, args);
     }
 
-    @GetMapping(value = "files/{name}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    Flux<String> files(@PathVariable String name) {
-        return null;
-//        return Flux.create((FluxSink<String> sink) -> {
-//            FluxSink<String> serialize = sink.next(name);
-//            serialize.setCancellation(() -> filesChannel().unsubscribe(handler));
-//            filesChannel().subscribe(handler);
-//        });
-    }
+//    @GetMapping(value = "files/{name}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+//    Flux<String> files(@PathVariable String name) {
+//        return null;
+////        return Flux.create((FluxSink<String> sink) -> {
+////            FluxSink<String> serialize = sink.next(name);
+////            serialize.setCancellation(() -> filesChannel().unsubscribe(handler));
+////            filesChannel().subscribe(handler);
+////        });
+//    }
 
-    @Bean
-    public IntegrationFlow inboundFlow(@Value("${input-dir:file://${HOME}/Desktop/in}") File in) {
-        System.out.println(in.getAbsolutePath());
-        return IntegrationFlows.from(Files.inboundAdapter(in).autoCreateDirectory(true), poller -> poller.poller(spec -> spec.fixedRate(1000L)))
-                .transform(File.class, File::getAbsolutePath)
-                .channel(filesChannel())
-                .get();
-    }
+//    @Bean
+//    public IntegrationFlow inboundFlow(@Value("${input-dir:file://${HOME}/Desktop/in}") File in) {
+//        System.out.println(in.getAbsolutePath());
+//        return IntegrationFlows.from(Files.inboundAdapter(in).autoCreateDirectory(true), poller -> poller.poller(spec -> spec.fixedRate(1000L)))
+//                .transform(File.class, File::getAbsolutePath)
+//                .channel(filesChannel())
+//                .get();
+//    }
 
-    @Bean
-    SubscribableChannel filesChannel() {
-        return MessageChannels.publishSubscribe().get();
-    }
+//    @Bean
+//    SubscribableChannel filesChannel() {
+//        return MessageChannels.publishSubscribe().get();
+//    }
 }

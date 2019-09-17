@@ -29,7 +29,7 @@ public class RLock {
                 System.out.println("r1 trylocked ===========================");
                 try {
                     System.out.println("r1 begin sleep");
-                    Thread.currentThread().sleep(80000);
+                    Thread.currentThread().sleep(8000);
                     System.out.println("notEmpty begin await");
                     notEmpty.await();
                     System.out.println("r1 running await after===========================");

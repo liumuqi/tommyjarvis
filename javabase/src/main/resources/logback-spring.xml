@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <!--待修改-->
-    <include resource="com/origin.spring/boot/logging/logback/origin.base.xml"/>
-    <springProperty name="logging.biz.info.file" scope="context" source="logging.biz.info.file"/>
-    <springProperty name="logging.biz.err.file" scope="context" source="logging.biz.err.file"/>
-    <springProperty name="logging.sal.info.file" scope="context" source="logging.sal.info.file"/>
-    <springProperty name="logging.sal.err.file" scope="context" source="logging.sal.err.file"/>
-    <springProperty name="logging.web.info.file" scope="context" source="logging.web.info.file"/>
-    <springProperty name="logging.web.err.file" scope="context" source="logging.web.err.file"/>
-    <springProperty name="logging.redis.err.file" scope="context" source="logging.redis.err.file"/>
+<!--    <include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <springProperty name="logging.file" scope="context" source="logging.file"/>
+    <springProperty name="logging.path" scope="context" source="logging.path"/>
+    <springProperty name="logging.pattern.file" scope="context" source="logging.pattern.file"/>
+    <springProperty name="logging.pattern.console" scope="context" source="logging.pattern.console"/>
+    <springProperty name="spring.application.name" scope="context" source="spring.application.name"/>
 
+    <property name="LOG_PATH" value="${logging.path:-${user.home}/${spring.application.name}/logs}"/>
+    <property name="LOG_FILE" value="${logging.file:-${LOG_PATH}/application.log}"/>
+    <property name="EUREKA_LOG_FILE" value="${LOG_PATH}/eureka.log"/>
+
+    <property name="CUSTOMIZABLE_CONSOLE_LOG_PATTERN" value="${logging.pattern.console:-${CONSOLE_LOG_PATTERN}}"/>
+    <property name="CUSTOMIZABLE_FILE_LOG_PATTERN" value="${logging.pattern.file:-${FILE_LOG_PATTERN}}"/>
+
+
+    <appender name="APPLICATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <encoder>
+            <pattern>${CUSTOMIZABLE_FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+            <maxFileSize>50MB</maxFileSize>
+            <totalSizeCap>20GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CUSTOMIZABLE_CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
 
     <property name="BIZ_LOG_INFO_FILE"
               value="${logging.biz.info.file:-${LOG_PATH}/${origin.spring.application.name}.biz.info.log}"/>

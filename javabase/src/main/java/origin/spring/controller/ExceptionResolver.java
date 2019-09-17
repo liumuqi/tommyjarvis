@@ -41,12 +41,12 @@ public class ExceptionResolver extends ResponseEntityExceptionHandler {
     }
 
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ResponseBody
-    public Object processValidationError(MethodArgumentNotValidException ex) {
-        BindingResult result = ex.getBindingResult();
-        List<FieldError> fieldErrors = result.getFieldErrors();
-        return null;
-    }
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    @ResponseBody
+//    public Object processValidationError(MethodArgumentNotValidException ex) {
+//        BindingResult result = ex.getBindingResult();
+//        List<FieldError> fieldErrors = result.getFieldErrors();
+//        return null;
+//    }
 }
