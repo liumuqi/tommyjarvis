@@ -6,3 +6,4 @@ pub mod iters;
 pub mod base;
 pub mod fun;
 pub mod ft;
+pub mod cells;

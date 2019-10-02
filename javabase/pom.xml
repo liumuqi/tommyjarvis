@@ -30,6 +30,7 @@
         <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
     </properties>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-rsocket -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-rsocket</artifactId>
@@ -242,8 +243,8 @@
         </dependency>
         <dependency>
             <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase</artifactId>
-            <version>0.94-adh3u11.2</version>
+            <artifactId>hbase-client</artifactId>
+            <version>0.99.2</version>
             <exclusions>
                 <exclusion>
                     <groupId>jdk.tools</groupId>
@@ -258,7 +259,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-core</artifactId>
-            <version>1.0.0.1</version>
+            <version>1.2.1</version>
         </dependency>
         <!--<dependency>-->
         <!--<groupId>org.apache.hadoop.thirdparty.guava</groupId>-->
@@ -371,6 +372,20 @@
                 <maven.compiler.target>1.8</maven.compiler.target>
                 <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
             </properties>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <name>central repo</name>
+<!--                    <url>https://repo.spring.io/libs-milestone/</url>-->
+                    <url>https://repo1.maven.org/maven2/</url>
+                    <layout>default</layout>
+                </repository>
+<!--                <repository>-->
+<!--                    <id>hbase</id>-->
+<!--                    <name>central main</name>-->
+<!--                    <url>https://repo1.maven.org/maven2/</url>-->
+<!--                </repository>-->
+            </repositories>
             <pluginRepositories>
                 <pluginRepository>
                     <snapshots>
@@ -408,29 +423,6 @@
                 <maven.compiler.target>1.8</maven.compiler.target>
                 <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
             </properties>
-        </profile>
-        <profile>
-            <repositories>
-                <repository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>central</id>
-                    <name>bintray-central</name>
-                    <url>https://jcenter.bintray.com</url>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>central</id>
-                    <name>bintray-central</name>
-                    <url>https://jcenter.bintray.com</url>
-                </pluginRepository>
-            </pluginRepositories>
-            <id>bintray</id>
         </profile>
     </profiles>
     <!--<activeProfile>bintray</activeProfile>-->

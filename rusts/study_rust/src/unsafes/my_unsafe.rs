@@ -30,8 +30,6 @@ fn test_main_unsafe() {
         println!("Absolute value of -3 according to C: {}", abs(-13));
     }
     call_from_c();
-
-
 }
 
 fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
@@ -53,6 +51,7 @@ unsafe fn dangerous() {   //unsafe声明
 
 
 //让其他语言调用rust
+#[crate_type = "staticlib"]
 #[no_mangle]
 pub extern "C" fn call_from_c() {
     println!("Just called a Rust function from C!");

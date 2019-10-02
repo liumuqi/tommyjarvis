@@ -1,5 +1,8 @@
+[workspace]
+members=["cargo_new_lib","cargo_two"]
 [package]
 name = "study_rust"
+build ="build.rs"
 version = "0.1.0"
 authors = ["muqi.lmq <muqi.lmq@autonavi.com>"]
 edition = "2018"
@@ -7,6 +10,8 @@ edition = "2018"
 [profile.dev]
 debug = true
 opt-level = 0
+[build-dependencies]
+rand = "0.7.2"
 
 [dependencies]
 ndarray = "0.12.1"
