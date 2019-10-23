@@ -17,6 +17,7 @@ public class DateUtils {
     public static final String FORMAT_1 = "yyyy-MM-dd HH:mm:ss";
     public static final String FORMAT_2 = "yyyy-MM-dd";
     public static final int ONE_MINUTE_SECONDES = 1 * 60;
+    public static final String PATTERN_01 = "yyyyMMddHHmmss";
     private static String zoneId = "Asia/Shanghai";
 
     public static long[] getDayHourMinSec(long seconds) {

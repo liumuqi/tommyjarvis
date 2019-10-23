@@ -20,25 +20,20 @@ public class BaseNio {
         SocketAddress endPoit = new InetSocketAddress(port);
 //        socket.bind(endPoit);
         serverSocketChannel.bind(endPoit);
-
         Selector selector = Selector.open();
-        SelectionKey register = serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+        serverSocketChannel.register(selector, serverSocketChannel.validOps());
         SocketChannel clientChannel = null;
+        Set<SelectionKey> selectionKeys = selector.selectedKeys();
         System.out.println("8080 port begin listen");
         while (true) {
-//            Set<SelectionKey> keys = selector.keys();
-//            if (keys.n) {
-//            }
             int select = selector.select();
             if (select == 0) {
                 System.err.println("select wakes up with error");
             }
-            Set<SelectionKey> selectionKeys = selector.selectedKeys();
             Iterator<SelectionKey> iterator = selectionKeys.iterator();
-            while (iterator.hasNext() && 1 >= 1) {
+            while (iterator.hasNext()) {
                 SelectionKey key = iterator.next();
                 int ops = key.interestOps();
-
                 if ((ops & SelectionKey.OP_ACCEPT) != 0) {
                     clientChannel = serverSocketChannel.accept();
                     clientChannel.configureBlocking(false);
