@@ -2,10 +2,7 @@ package reactives.base;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-import reactor.core.publisher.BaseSubscriber;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import reactor.core.publisher.SynchronousSink;
+import reactor.core.publisher.*;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
@@ -24,7 +21,8 @@ import java.util.concurrent.atomic.AtomicReference;
  **/
 public class BackPressure {
     public static void main(String[] args) {
-        test_pressure();
+//        test_pressure();
+        test_producer();
     }
 
     public static void test_pressure() {
@@ -64,7 +62,14 @@ public class BackPressure {
         }
     }
 
-    public void test_flux() {
+    public static void test_producer() {
+        FluxProcessor<Integer, Integer> publisher = UnicastProcessor.create();
+        publisher.doOnNext(event -> System.out.println("receive event: " + event)).subscribe();
+        publisher.onNext(1); // print 'receive event: 1'
+        publisher.onNext(2); // print 'receive event: 2'
+    }
+
+    public static void test_flux() {
         Scheduler FLUX_POOL = Schedulers.newParallel("e-threads", 20);
         long endTimeSec = System.currentTimeMillis() / 1000;
         final long[] p_endTimeSec = new long[]{endTimeSec};
@@ -129,7 +134,7 @@ public class BackPressure {
         }
     }
 
-    class Pair<K, V> {
+    static class Pair<K, V> {
         private K key;
         private V value;
 
