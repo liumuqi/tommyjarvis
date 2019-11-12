@@ -1,3 +1,4 @@
+#![crate_type = "staticlib"]
 #[test]
 fn test_main_unsafe() {
     let mut num = 5i64;
@@ -51,7 +52,6 @@ unsafe fn dangerous() {   //unsafe声明
 
 
 //让其他语言调用rust
-#[crate_type = "staticlib"]
 #[no_mangle]
 pub extern "C" fn call_from_c() {
     println!("Just called a Rust function from C!");

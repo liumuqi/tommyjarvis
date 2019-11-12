@@ -46,7 +46,7 @@ pub fn use_iter<ITEM, ITER>(mut iter: ITER) where ITER: Iterator<Item=ITEM>, ITE
     }
 }
 
-pub fn fooIter(n: i32) -> impl Iterator<Item=i32> {
+pub fn foo_iter(n: i32) -> impl Iterator<Item=i32> {
     (0..n).map(|x| x * 100)
 }
 

@@ -1,3 +1,4 @@
+#![feature(exclusive_range_pattern)]
 pub fn test_base() {
     let ref a: i32;
     //a = 1;  // expected &i32，consider borrowing here: `&1`
@@ -14,7 +15,6 @@ pub enum Error {
     ConnectionRefued,
 }
 
-#[feature(exclusive_range_pattern)]
 fn deep_match(v: Option<Option<i32>>) -> Option<i32> {
     match v {
         Some(r @ Some(1..=10)) | Some(r @ Some(90..=100)) => r,

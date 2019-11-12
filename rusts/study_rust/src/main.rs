@@ -400,7 +400,7 @@ fn main() {
     println!("lambda======================");
     lambda::closure::c_test();
     println!("impl trait======================");
-    let ifi = base_concept::iters::fooIter(5);
+    let ifi = base_concept::iters::foo_iter(5);
     for x in ifi {
         println!("x:{}", x);
     }
@@ -410,6 +410,9 @@ fn main() {
     threads::share_convard();
     println!("cells test======================");
     base_concept::cells::test_cell();
+    println!("exter_my test======================");
+    base_concept::exter_test::exter_main();
+
 }
 
 //=============lifetime on With Impls and Traits start=========================================

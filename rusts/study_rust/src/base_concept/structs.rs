@@ -1,6 +1,6 @@
 use std::fmt::Display;
 
-use crate::trait_concept::basic::Summary;
+//use crate::trait_concept::basic::Summary;
 
 #[derive(PartialEq, PartialOrd, Debug)]//衍生属性
 pub struct TraitStArticle {

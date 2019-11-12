@@ -1,7 +1,6 @@
 use std::collections::HashMap;
-use std::fmt::Error;
 
-use crate::calc;
+//use crate::calc;
 
 struct Cacher<T> where T: Fn(u32, &str) -> u32 {
     calculation: T,
@@ -33,7 +32,7 @@ impl<T> Cacher<T> where T: Fn(u32, &str) -> u32 {
 
 //#[cfg(test)]
 mod tests {
-    use std::error::Error;
+//    use std::error::Error;
     use std::thread;
     use std::time::Duration;
 

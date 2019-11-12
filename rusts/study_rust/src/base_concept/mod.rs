@@ -7,3 +7,5 @@ pub mod base;
 pub mod fun;
 pub mod ft;
 pub mod cells;
+pub mod exter_test;
+pub mod array_my;
