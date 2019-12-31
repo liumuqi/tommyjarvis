@@ -11,6 +11,7 @@ use crate::base_concept::custom_impl_inherit::FullName;
 use crate::base_concept::custom_impl_inherit::Player;
 use num_traits::real::Real;
 use crate::trait_concept::trait_for_trait::Example;
+use std::ffi::CStr;
 
 mod base_concept;
 mod ownshiptest;
@@ -34,6 +35,21 @@ include!(concat!(env!("OUT_DIR"), "/commit_id.rs"));
 #[warn(unreachable_code)]
 fn main() {
     println!("current commit id is :{}", CURRENT_COMMIT_ID);
+    let mut a = String::from("foo");
+
+
+    let left = "Hello, ".to_string();
+    let right = "World".to_string();
+    let result = left + right.as_ref();
+    println!("+: {}", result);   //使用+连接字符串时，第二个必须为引用
+
+
+    println!("{:p}", a.as_ptr());
+    println!("{:p}", &a);
+    assert_eq!(a.len(), 3);
+    a.reserve(10);
+    assert_eq!(a.capacity(), 13);
+//    let xx : CStr = 's';
     let x = 42;
     let aa = x;
     println!("file:{}, line:{}", file!(), line!());
@@ -166,7 +182,8 @@ fn main() {
     base_concept::custom_impl_inherit::read_ext_read();
     base_concept::custom_impl_inherit::read_ext_read();
     base_concept::custom_impl_inherit::read_ext_read();
-    file_ops::file_ops_file::test_file_op();
+    println!("==========file_ops::file_ops_file::test_file_op();================================");
+//    file_ops::file_ops_file::test_file_op();
     ownshiptest::copy_test();
     study_rust::hello();
 //    main_test::other_test_hello();
@@ -404,6 +421,9 @@ fn main() {
     for x in ifi {
         println!("x:{}", x);
     }
+//    panic!("crash and burn");
+//    let v = vec![1, 2, 3];
+//    println!("panic:======================{}",v[99]);
     println!("coroutines======================");
     coroutines::base_coroutine::test_coroutine();
     println!("threads share data======================");
@@ -412,7 +432,6 @@ fn main() {
     base_concept::cells::test_cell();
     println!("exter_my test======================");
     base_concept::exter_test::exter_main();
-
 }
 
 //=============lifetime on With Impls and Traits start=========================================

@@ -10,6 +10,8 @@ edition = "2018"
 [profile.dev]
 debug = true
 opt-level = 0
+[profile.release]
+panic = 'abort'
 [build-dependencies]
 rand = "0.7.2"
 
