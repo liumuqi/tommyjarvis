@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!--<parent>-->
@@ -21,7 +21,7 @@
         <spring-boot.version>2.1.8.RELEASE</spring-boot.version>
         <ignite.version>2.3.0</ignite.version>
         <protostuff.version>1.5.2</protostuff.version>
-<!--        <spring-cloud.version>Dalston.RC1</spring-cloud.version>-->
+        <!--        <spring-cloud.version>Dalston.RC1</spring-cloud.version>-->
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <platform-bom.version>2.0.8.RELEASE</platform-bom.version>
         <scala.version>2.12.8</scala.version>
@@ -30,6 +30,17 @@
         <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
     </properties>
     <dependencies>
+        <!-- akka -->
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.12</artifactId>
+            <version>2.5.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-remote_2.12</artifactId>
+            <version>2.5.11</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-rsocket -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -376,15 +387,15 @@
                 <repository>
                     <id>central</id>
                     <name>central repo</name>
-<!--                    <url>https://repo.spring.io/libs-milestone/</url>-->
+                    <!--                    <url>https://repo.spring.io/libs-milestone/</url>-->
                     <url>https://repo1.maven.org/maven2/</url>
                     <layout>default</layout>
                 </repository>
-<!--                <repository>-->
-<!--                    <id>hbase</id>-->
-<!--                    <name>central main</name>-->
-<!--                    <url>https://repo1.maven.org/maven2/</url>-->
-<!--                </repository>-->
+                <!--                <repository>-->
+                <!--                    <id>hbase</id>-->
+                <!--                    <name>central main</name>-->
+                <!--                    <url>https://repo1.maven.org/maven2/</url>-->
+                <!--                </repository>-->
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
@@ -483,29 +494,29 @@
         </pluginManagement>
 
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.codehaus.mojo</groupId>-->
-<!--                <artifactId>aspectj-maven-plugin</artifactId>-->
-<!--                <version>1.7</version>-->
-<!--                <configuration>-->
-<!--                    <complianceLevel>1.8</complianceLevel>-->
-<!--                    <source>1.8</source>-->
-<!--                    <target>1.8</target>-->
-<!--                    <showWeaveInfo>true</showWeaveInfo>-->
-<!--                    <verbose>true</verbose>-->
-<!--                    <encoding>utf-8</encoding>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            &lt;!&ndash;use this goal to weave all your main classes&ndash;&gt;-->
-<!--                            <goal>compile</goal>-->
-<!--                            &lt;!&ndash;use this goal to weave all your test classes&ndash;&gt;-->
-<!--                            <goal>test-compile</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>org.codehaus.mojo</groupId>-->
+            <!--                <artifactId>aspectj-maven-plugin</artifactId>-->
+            <!--                <version>1.7</version>-->
+            <!--                <configuration>-->
+            <!--                    <complianceLevel>1.8</complianceLevel>-->
+            <!--                    <source>1.8</source>-->
+            <!--                    <target>1.8</target>-->
+            <!--                    <showWeaveInfo>true</showWeaveInfo>-->
+            <!--                    <verbose>true</verbose>-->
+            <!--                    <encoding>utf-8</encoding>-->
+            <!--                </configuration>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <goals>-->
+            <!--                            &lt;!&ndash;use this goal to weave all your main classes&ndash;&gt;-->
+            <!--                            <goal>compile</goal>-->
+            <!--                            &lt;!&ndash;use this goal to weave all your test classes&ndash;&gt;-->
+            <!--                            <goal>test-compile</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
             <plugin>
                 <groupId>io.gatling</groupId>
                 <artifactId>gatling-maven-plugin</artifactId>
