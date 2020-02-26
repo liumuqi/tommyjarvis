@@ -1,5 +1,4 @@
 package akkas;
-package com.study.akka;
 
 import java.util.Properties;
 

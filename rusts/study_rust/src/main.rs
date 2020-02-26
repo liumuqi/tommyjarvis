@@ -12,6 +12,7 @@ use crate::base_concept::custom_impl_inherit::Player;
 use num_traits::real::Real;
 use crate::trait_concept::trait_for_trait::Example;
 use std::ffi::CStr;
+use std::fs::File;
 
 mod base_concept;
 mod ownshiptest;
@@ -34,7 +35,18 @@ include!(concat!(env!("OUT_DIR"), "/commit_id.rs"));
 #[allow(unused_variables)]
 #[warn(unreachable_code)]
 fn main() {
+    let file = File::open("hello.text");
+    let hello = "Здравствуйте";
+    let x1 = hello.contains("3");
+    //获取第1个后的2个字符
+    let an : String = hello.chars().skip(1).take(5).collect();
+    println!("current hello :{} first :{}, x1:{}", hello, an, x1);
     println!("current commit id is :{}", CURRENT_COMMIT_ID);
+
+    let ts = String::from("a . b . c ");
+    let x2 = ts.split("t").next().expect("no a .");
+    println!("x2:{}", x2);
+
     let mut a = String::from("foo");
 
 

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
     <!--<parent>-->
     <!--<groupId>com.myjava</groupId>-->
@@ -28,6 +33,75 @@
         <encoding>UTF-8</encoding>
         <gatling.version>2.2.0-M3</gatling.version>
         <scala-maven-plugin.version>3.2.2</scala-maven-plugin.version>
+        <app.name>${project.artifactId}</app.name>
+        <java.version>1.8</java.version>
+        <!-- Overrides to parent POM -->
+        <boot-image.tag>1</boot-image.tag>
+
+        <!-- Maven Plugin Settings-->
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <maven.source.skip>true</maven.source.skip>
+
+        <docker.image.version>${project.version}</docker.image.version>
+        <!-- Additions to parent POM -->
+        <spring-boot-admin.version>2.1.2</spring-boot-admin.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <commons-collections4.version>4.1</commons-collections4.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
+        <commons-io.version>2.6</commons-io.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-compress.version>1.15</commons-compress.version>
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+        <druid.version>1.1.13</druid.version>
+        <fastjson.version>1.2.55</fastjson.version>
+        <guava.version>27.0.1-jre</guava.version>
+        <mybatis.version>3.5.0</mybatis.version>
+        <mybatis-spring.version>2.0.0</mybatis-spring.version>
+        <mybatis-generator.version>1.3.7</mybatis-generator.version>
+        <mybatis-spring-boot-starter.version>2.0.0</mybatis-spring-boot-starter.version>
+        <rocketmq.version>4.4.0</rocketmq.version>
+        <aliyun-sdk-oss.version>2.8.3</aliyun-sdk-oss.version>
+        <aliyun-sdk-mns.version>1.1.8.4</aliyun-sdk-mns.version>
+        <aliyun-openservices.version>1.2.3</aliyun-openservices.version>
+        <apache-poi.version>3.17</apache-poi.version>
+        <zxing.version>3.3.3</zxing.version>
+        <sharding-jdbc.version>1.5.1</sharding-jdbc.version>
+        <sharding-jdbc2.version>2.0.3</sharding-jdbc2.version>
+        <sharding-jdbc3.version>3.0.0</sharding-jdbc3.version>
+        <thumbnailator.version>0.4.8</thumbnailator.version>
+        <dozer.version>5.5.1</dozer.version>
+        <bcprov.version>1.58</bcprov.version>
+        <quartz.version>2.3.0</quartz.version>
+        <jsoup.version>1.11.3</jsoup.version>
+        <logback-ext-spring.version>0.1.5</logback-ext-spring.version>
+        <redisson.version>3.10.7</redisson.version>
+        <spongycastle.version>1.58.0.0</spongycastle.version>
+        <antlr-st4.version>4.0.8</antlr-st4.version>
+        <javacsv.version>2.1</javacsv.version>
+        <pinyin4j.version>2.5.1</pinyin4j.version>
+        <okhttp.version>3.12.1</okhttp.version>
+        <leancloud-java-sdk.version>0.1.7</leancloud-java-sdk.version>
+        <cors-filter.version>2.6</cors-filter.version>
+        <pagehelper.version>4.1.6</pagehelper.version>
+        <webmagic.version>0.7.3</webmagic.version>
+        <protobuf.version>3.6.1</protobuf.version>
+        <el-api.version>3.1.0</el-api.version>
+        <binarywang-weixin-java-mp.version>2.5.0</binarywang-weixin-java-mp.version>
+        <jodd-http.version>3.7.1</jodd-http.version>
+        <grpc.version>1.18.0</grpc.version>
+        <os.plugin.version>1.5.0.Final</os.plugin.version>
+        <protobuf.plugin.version>0.5.0</protobuf.plugin.version>
+        <protoc.version>3.5.1-1</protoc.version>
+        <curator.version>2.12.0</curator.version>
+        <swagger.version>2.9.2</swagger.version>
+        <io-swagger.version>1.5.21</io-swagger.version>
+        <hibernate-validator.version>6.0.12.Final</hibernate-validator.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-math3.version>3.6.1</commons-math3.version>
+        <jmockit.version>1.42</jmockit.version>
+        <aviator.version>3.3.0</aviator.version>
+        <brave-instrumentation.version>5.4.3</brave-instrumentation.version>
+        <feign.version>10.2.3</feign.version>
     </properties>
     <dependencies>
         <!-- akka -->
@@ -318,6 +392,15 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>1.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-all</artifactId>
+            <version>1.2.0</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -458,6 +541,23 @@
                     <exclude>data.**/*</exclude>
                 </excludes>
             </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/application*.yml</include>
+                    <include>**/bootstrap.yml</include>
+                    <include>**/logback*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**/application*.yml</exclude>
+                    <exclude>**/bootstrap.yml</exclude>
+                    <exclude>**/logback*.xml</exclude>
+                </excludes>
+            </resource>
         </resources>
         <testSourceDirectory>src/test/scala</testSourceDirectory>
         <pluginManagement>
@@ -490,9 +590,97 @@
                     <artifactId>scala-maven-plugin</artifactId>
                     <version>${scala-maven-plugin.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-maven-plugin</artifactId>
+                    <version>${kotlin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>compile</id>
+                            <phase>process-sources</phase>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                            <configuration>
+                                <sourceDirs>
+                                    <source>src/main/java</source>
+                                    <source>src/main/kotlin</source>
+                                    <source>src/main/resources</source>
+                                </sourceDirs>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>test-compile</id>
+                            <phase>process-test-sources</phase>
+                            <goals>
+                                <goal>test-compile</goal>
+                            </goals>
+                            <configuration>
+                                <sourceDirs>
+                                    <source>src/test/java</source>
+                                    <source>src/test/kotlin</source>
+                                    <source>src/test/resources</source>
+                                </sourceDirs>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+                        <mavenExecutorId>forked-path</mavenExecutorId>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <preparationGoals>validate</preparationGoals>
+                        <pushChanges>true</pushChanges>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <arguments>-DskipTests</arguments>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>build-info</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>1.0.1</version>
+                    <configuration>
+                        <baseImage>docker.shuiditech.com/infra/boot:${boot-image.tag}</baseImage>
+                        <imageName>docker.shuiditech.com/${app.group}/${app.name}</imageName>
+                        <imageTags>
+                            <imageTag>${project.version}</imageTag>
+                            <imageTag>${docker.image.version}</imageTag>
+                        </imageTags>
+                        <forceTags>true</forceTags>
+                        <resources>
+                            <resource>
+                                <targetPath>/opt</targetPath>
+                                <directory>${project.build.directory}</directory>
+                                <include>${project.build.finalName}.${project.packaging}</include>
+                            </resource>
+                        </resources>
+                        <cmd>["/opt/boot.sh", "/opt/${project.build.finalName}.${project.packaging}"]</cmd>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
-
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.5.0.Final</version>
+            </extension>
+        </extensions>
         <plugins>
             <!--            <plugin>-->
             <!--                <groupId>org.codehaus.mojo</groupId>-->
@@ -600,23 +788,93 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>io.btrace</groupId>-->
+<!--                <artifactId>btrace-maven-plugin</artifactId>-->
+<!--                <version>1.3.8.6</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>btracec</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <classpathElements>-->
+<!--                        <classpathElement>/Users/qishan/Documents/code/github/deep/tommyjarvis/javabase/target-->
+<!--                        </classpathElement>-->
+<!--                    </classpathElements>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
-                <groupId>io.btrace</groupId>
-                <artifactId>btrace-maven-plugin</artifactId>
-                <version>1.3.8.6</version>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <configuration>
+                    <verbose>false</verbose>
+                </configuration>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.codehaus.mojo</groupId>-->
+<!--                <artifactId>build-helper-maven-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>regex-property</id>-->
+<!--                        <goals>-->
+<!--                            <goal>regex-property</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <name>app.group</name>-->
+<!--                            <value>${project.groupId}</value>-->
+<!--                            <regex>^com\.shuidihuzhu\.(.*)$</regex>-->
+<!--                            <replacement>$1</replacement>-->
+<!--                            <failIfNoMatch>true</failIfNoMatch>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
+                        <id>attach-sources</id>
                         <goals>
-                            <goal>btracec</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>${protobuf.plugin.version}</version>
                 <configuration>
-                    <classpathElements>
-                        <classpathElement>/Users/qishan/Documents/code/github/deep/tommyjarvis/javabase/target
-                        </classpathElement>
-                    </classpathElements>
+                    <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compile-custom</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
