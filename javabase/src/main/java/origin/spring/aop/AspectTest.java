@@ -23,8 +23,8 @@ import java.lang.annotation.*;
  * @date 2018/6/9.
  */
 public class AspectTest {
-    @Aspect
-    @Component
+//    @Aspect
+//    @Component
     public static class ExecutionAspect {
 
         @Before("execution(* club.myapp.aspectJ.*.before*(..))")
@@ -54,8 +54,8 @@ public class AspectTest {
             return null;
         }
 
-        @Aspect
-        @Component
+//        @Aspect
+//        @Component
         public static class AnnotationAspect {
             @Around("@annotation(club.myapp.annotation.RpcService)")
             public void doAround(ProceedingJoinPoint joinPoint) throws Throwable {

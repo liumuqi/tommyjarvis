@@ -19,7 +19,7 @@ public class Jacksons {
        public static <K, V> String transToKvJsonString(List<Kv<K, V>> baseCodeKvs) {
             ObjectMapper objectMapper = new ObjectMapper();
             ObjectNode node = objectMapper.createObjectNode();
-            baseCodeKvs.stream().forEachOrdered(b -> {
+            baseCodeKvs.forEach(b -> {
                 System.out.println(">>>:" + b);
                 K k = b.getK();
                 V v = b.getV();
@@ -59,7 +59,7 @@ public class Jacksons {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             try {
-                T t = objectMapper.readValue(content, typeReference);
+                T t = (T) objectMapper.readValue(content, typeReference);
                 return t;
             } catch (IOException e) {
             }
@@ -72,7 +72,7 @@ public class Jacksons {
             try {
                 String s = objectMapper.writeValueAsString(c);
                 return s;
-            } catch (IOException e) {
+            } catch (IOException ignored) {
             }
             return null;
         }

@@ -20,9 +20,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Configuration
+//@Configuration
 //@AutoConfigureBefore(XXConfiguration.class)
-@MapperScan(basePackages = "xxx.dao", annotationClass = DataSourceScan.class, sqlSessionFactoryRef = DataSourceConfiguration.SQL_SESSION_FACTORY_NAME)
+//@MapperScan(basePackages = "xxx.dao", annotationClass = DataSourceScan.class, sqlSessionFactoryRef = DataSourceConfiguration.SQL_SESSION_FACTORY_NAME)
 public class DataSourceConfiguration {
     public static final String DATA_SOURCE_NAME = "mysqlSqlDatasource";
     public static final String JDBC_TEMPLATE_NAME = "mysqlJdbcTemplate";
