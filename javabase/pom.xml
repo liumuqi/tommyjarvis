@@ -642,8 +642,8 @@
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>1.0.1</version>
                     <configuration>
-                        <baseImage>docker.shuiditech.com/infra/boot:${boot-image.tag}</baseImage>
-                        <imageName>docker.shuiditech.com/${app.group}/${app.name}</imageName>
+                        <baseImage>docker.com/infra/boot:${boot-image.tag}</baseImage>
+                        <imageName>docker.com/${app.group}/${app.name}</imageName>
                         <imageTags>
                             <imageTag>${project.version}</imageTag>
                             <imageTag>${docker.image.version}</imageTag>
