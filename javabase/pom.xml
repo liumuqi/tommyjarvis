@@ -812,7 +812,7 @@
             <!--                        <configuration>-->
             <!--                            <name>app.group</name>-->
             <!--                            <value>${project.groupId}</value>-->
-            <!--                            <regex>^com\.shuidihuzhu\.(.*)$</regex>-->
+            <!--                            <regex>^com\.my\.(.*)$</regex>-->
             <!--                            <replacement>$1</replacement>-->
             <!--                            <failIfNoMatch>true</failIfNoMatch>-->
             <!--                        </configuration>-->
