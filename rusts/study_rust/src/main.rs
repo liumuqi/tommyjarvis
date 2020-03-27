@@ -44,7 +44,9 @@ fn main() {
     println!("current commit id is :{}", CURRENT_COMMIT_ID);
 
     let ts = String::from("a . b . c ");
-    let x2 = ts.split("t").next().expect("no a .");
+    let mut x4 = ts.split("x");
+    let x3 = x4.next();
+    let x2 = x3.expect("no a .");
     println!("x2:{}", x2);
 
     let mut a = String::from("foo");

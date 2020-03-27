@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"sync"
+	"time"
 )
 
 type Bar struct {
@@ -47,14 +49,46 @@ func main() {
 	fmt.Println("================================================")
 	query := map[string]string{}
 	// 需要按照字典排序
-	query["test0"] = "0"
 	query["test1"] = "1"
+	query["test0"] = "0"
 	query["test2"] = "2"
 
-	for i := 0; i < 100; i++ {
-		for _, v := range query {
-			fmt.Print(v)
-		}
-		fmt.Println()
+	//for i := 0; i < 100; i++ {
+	for i, v := range query {
+		fmt.Println(i, " # ", v)
 	}
+	//}
+	ch := make(chan bool, 2)
+	ch <- true
+	ch <- true
+	close(ch)
+	fmt.Println("len:==========cap:{}", len(ch), cap(ch))
+	for i := 0; i < cap(ch)+2; i++ {
+		v, ok := <-ch
+		fmt.Println(i, v, ok)
+	}
+	fmt.Println("testSelect======================================")
+	testSelect()
+}
+func testSelect() {
+	finish := make(chan bool)
+	var done sync.WaitGroup
+	done.Add(1)
+	go func() {
+		select {
+		case <-time.After(2 * time.Second):
+			fmt.Println("v")
+		case <-finish:
+		}
+		fmt.Println("done before")
+		done.Done()
+	}()
+	t0 := time.Now()
+	//<-time.After(3 * time.Second) //如果这里的时间超过 select case上的2秒 则 fatal error: all goroutines are asleep - deadlock!出现这个错误,因为finish是无buffer的channel,无buffer是'先消费后生产',
+	//// 不然会堵塞生产者 将channel改成有buffer可解决这个问题
+	//finish <- true // send the close signal
+	close(finish)
+	fmt.Println("done wait")
+	done.Wait() // wait for the goroutine to stop
+	fmt.Printf("Waited %v for goroutine to stop\n", time.Since(t0))
 }

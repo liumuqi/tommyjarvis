@@ -22,12 +22,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-<!--        <spring.version>4.3.9.RELEASE</spring.version>-->
+        <!--        <spring.version>4.3.9.RELEASE</spring.version>-->
         <spring-boot.version>2.2.4.RELEASE</spring-boot.version>
         <ignite.version>2.3.0</ignite.version>
         <protostuff.version>1.5.2</protostuff.version>
         <!--        <spring-cloud.version>Dalston.RC1</spring-cloud.version>-->
-<!--        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>-->
+        <!--        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>-->
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <platform-bom.version>2.0.8.RELEASE</platform-bom.version>
         <scala.version>2.12.8</scala.version>
@@ -298,11 +298,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-eureka</artifactId>-->
-<!--            <version>${spring-cloud.version}</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-eureka</artifactId>-->
+        <!--            <version>${spring-cloud.version}</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -388,15 +388,35 @@
             <artifactId>resilience4j-all</artifactId>
             <version>1.2.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-common</artifactId>
+            <version>4.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-tools</artifactId>
+            <version>4.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.7.0</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
-
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-all</artifactId>
+                <version>4.7.0</version>
+                <type>pom</type>
+            </dependency>
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-pom</artifactId>
                 <version>4.1.45.Final</version>
-<!--                <version>5.0.0.Alpha2</version>-->
+                <!--                <version>5.0.0.Alpha2</version>-->
             </dependency>
             <dependency>
                 <groupId>io.gatling</groupId>
@@ -418,12 +438,12 @@
                 <artifactId>scala-library</artifactId>
                 <version>${scala.version}</version>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>org.springframework</groupId>-->
-<!--                <artifactId>spring-framework-bom</artifactId>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework</groupId>-->
+            <!--                <artifactId>spring-framework-bom</artifactId>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--            </dependency>-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
