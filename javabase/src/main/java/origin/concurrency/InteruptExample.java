@@ -24,6 +24,40 @@ public class InteruptExample {
      * @throws InterruptedException
      */
     public static void main(String[] args) throws InterruptedException {
+//        testInterrupted();
+        testSleep();
+        return;
+    }
+
+    private static void testSleep() throws InterruptedException {
+        ThreadDemo04 t4 = new ThreadDemo04();
+        t4.start();
+        Thread.sleep(3000);
+        t4.interrupt();
+        flag = false;
+        t4.join();
+    }
+
+    public static class ThreadDemo04 extends Thread {
+        @Override
+        public void run() {
+            while (flag) {
+            }
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("本打印出现在第一个sleep()之后");
+            LockSupport.park();
+            System.out.println(Thread.interrupted());
+//            System.out.println(Thread.interrupted());
+//            LockSupport.park();
+            System.out.println("本打印出现在第二个park()之后");
+        }
+    }
+
+    private static void testInterrupted() throws InterruptedException {
         Thread thread = new Thread(() -> {
             System.out.println("------");
             System.out.println(Thread.currentThread().isInterrupted());//输出false
