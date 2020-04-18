@@ -102,8 +102,16 @@
         <aviator.version>3.3.0</aviator.version>
         <brave-instrumentation.version>5.4.3</brave-instrumentation.version>
         <feign.version>10.2.3</feign.version>
+        <joda-time.version>2.9.9</joda-time.version>
+        <feign-enhance-spring-boot-starter.version>2.0.28</feign-enhance-spring-boot-starter.version>
+
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.shuidihuzhu.infra</groupId>
+            <artifactId>feign-enhance-spring-boot-starter</artifactId>
+            <version>${feign-enhance-spring-boot-starter.version}</version>
+        </dependency>
         <!-- akka -->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -402,6 +410,11 @@
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
             <version>4.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
         </dependency>
     </dependencies>
     <dependencyManagement>
