@@ -1,3 +1,255 @@
+https://juejin.im/post/5e7bfd5b51882535f8733ded?utm_source=gold_browser_extension | 初创公司如何做DevOps - 掘金
+https://juejin.im/post/5e7c1382f265da42cb79949c?utm_source=gold_browser_extension | (15) SpringBoot2.x基础篇：使用YAML代替Properties的对应配置 - 掘金
+https://juejin.im/post/5e7c139df265da42ca4ccbcc?utm_source=gold_browser_extension | (15) 让 Linux 防火墙新秀 nftables 为你的 VPS 保驾护航 - 掘金
+https://juejin.im/post/5e7c0234e51d455c3120dfc4?utm_source=gold_browser_extension | (15) 10/24 设计模式之桥接模式 Bridge Pattern - 掘金
+https://juejin.im/post/5e7b5bfbe51d4526dc7c0706?utm_source=gold_browser_extension | (15) F版本SpringCloud 2—什么是SpringCloud？SpringCloud版本选择 - 掘金
+https://juejin.im/post/5e7c0ea8f265da42bb53cd8e?utm_source=gold_browser_extension | (15) Java 14 发布了，再也不怕 NullPointerException 了！ - 掘金
+https://juejin.im/post/5e7b78ee6fb9a0099877fdd3?utm_source=gold_browser_extension | (15) TCP的滑动窗口机制，谈谈其设计演化过程（如何从无到有？从不可靠到可靠？） - 掘金
+
+https://refactoring.guru/design-patterns/factory-method | Factory Method
+https://wiki.shuiditech.com/pages/viewpage.action?pageId=268043323 | 录入规范&技巧说明大全 - 保险产品库 - 知识库 - 纵情向前
+https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E9%AB%98%E6%A5%BC%E6%89%94%E9%B8%A1%E8%9B%8B%E9%97%AE%E9%A2%98.md | fucking-algorithm/高楼扔鸡蛋问题.md at master · labuladong/fucking-algorithm
+https://juejin.im/post/5e426a276fb9a07ccc45e10a | DDD-CQRS的落地案例 - 掘金
+https://juejin.im/post/5cf635066fb9a07ed911ae84 | (15) 李航：分布式存储 Ceph 介绍及原理架构分享 - 掘金
+https://juejin.im/post/5cbf2d58f265da0380436fde | (15) 简历写了会Kafka，面试官90%会让你讲讲acks参数对消息持久化的影响 - 掘金
+https://juejin.im/post/5bf201f7f265da610f63528a | (15) 拜托，面试请不要再问我TCC分布式事务的实现原理！ - 掘金
+https://blog.csdn.net/weixin_44296862/article/details/88666322 | Spring Cloud微服务中网关服务是如何实现的?（Zuul篇）_Java_无敌码农-CSDN博客
+https://juejin.im/post/5e7ca41c518825360310d3c5 | 全网最全微服务架构—Spring Cloud详解，没有比这更详细的了！ - 掘金
+https://juejin.im/post/5e7d2ff1e51d4546f70cfb5c | 「 Offer收割机之JVM」：生存还是毁灭 - 掘金
+https://juejin.im/post/5e7ca3686fb9a0094365f220 | F版本SpringCloud 3—大白话Eureka服务注册与发现 - 掘金
+https://juejin.im/post/5e7d5447f265da799376cdd1 | java中ThreadLocalRandom的使用 - 掘金
+https://juejin.im/post/5d61407be51d4561cd246657 | 当面试遇到 Redis，我作为一个面试官是这么“刁难”你的！ - 掘金
+https://juejin.im/post/5d5c9c7ae51d4561eb0b2691 | 快看，我们的分布式缓存就是这样把注册中心搞崩的！ - 掘金
+https://juejin.im/post/5d5b44ecf265da038f480ea6 | 记一次JVM FullGC引发严重线上事故的定位、分析、解决过程 - 掘金
+https://juejin.im/post/5d557c24f265da03f66dbad7 | 【性能优化实战】4次版本迭代，我们将项目性能提升了360倍！ - 掘金
+https://juejin.im/post/5d52e83df265da03a1484edb | 一次业务逻辑优化，竟然解决了MySQL CPU消耗800%的性能问题！ - 掘金
+https://juejin.im/post/5d50aa556fb9a06ad00560a8 | 案例实战：每秒10万并发的BI系统是如何频繁发生Young GC的？ - 掘金
+https://juejin.im/post/5ab09943f265da238f125ee8 | (15) 聊聊Dubbo（三）：架构原理 - 掘金
+https://juejin.im/post/5e6ce50f51882549315fcb32?utm_source=gold_browser_extension | (15) Redis 6.0 权限控制基于 Bitmap 实现 - 掘金
+https://juejin.im/post/5e79702af265da570c75580a?utm_source=gold_browser_extension | (15) 《吐血整理》Redis 性能优化的 13 条军规！史上最全 - 掘金
+https://juejin.im/post/5e79d8bb6fb9a07cd52c06a3?utm_source=gold_browser_extension | (15) TiKV 源码解析系列文章（十八）Raft Propose 的 Commit 和 Apply 情景分析 - 掘金
+https://juejin.im/post/5e781696f265da57434bde9e?utm_source=gold_browser_extension | (15) 新版任你发，我用Java 8 - 掘金
+https://github.com/jwasham/coding-interview-university/blob/master/README.md | coding-interview-university/README.md at master · jwasham/coding-interview-university
+https://docs.spring.io/spring-boot/docs/2.1.8.RELEASE/reference/html/configuration-metadata.html#configuration-metadata-annotation-processor | Appendix B. Configuration Metadata
+https://www.cnblogs.com/wangtao_20/p/3243009.html | 技术工作者上升到思想，哲学层面也许更好 - 王滔 - 博客园
+
+https://www.cl.cam.ac.uk/sitemap/ | Department of Computer Science and Technology: Sitemap
+https://www.cl.cam.ac.uk/teaching/1819/ConcDisSys/ | Department of Computer Science and Technology – Course pages 2018–19: Concurrent and Distributed Systems
+
+https://juejin.im/post/5e8140afe51d4546cc26aa6d?utm_source=gold_browser_extension | 99%的程序员都在用Lombok，原理竟然这么简单？我也手撸了一个！|建议收藏 - 掘金
+
+https://www.jianshu.com/p/163c96983ca9 | MySQL优化笔记（八）--锁机制超详细解析（锁分类、事务并发、引擎并发控制） - 简书
+https://www.jianshu.com/p/163c96983ca9 | MySQL优化笔记（八）--锁机制超详细解析（锁分类、事务并发、引擎并发控制） - 简书
+https://blog.51cto.com/louisyang/1379813 | show engine innodb status 详细介绍-MySQL 初学者到专家之路-51CTO博客
+https://juejin.im/post/5e72e97c6fb9a07cb346083f?utm_source=gold_browser_extension | 一口气说出 6种，@Transactional注解的失效场景 - 掘金
+https://juejin.im/post/5e73249bf265da573c0c9912?utm_source=gold_browser_extension | (15) 什么是TCP拥塞控制算法？ - 掘金
+https://juejin.im/post/5e72c4ac518825491b11e805?utm_source=gold_browser_extension | (15) 《 面试又挂了》这次竟然和 Random 有关...... - 掘金
+https://juejin.im/post/5e72246ae51d4527143e6a0d?utm_source=gold_browser_extension | (15) 浅谈MySQL并发控制：隔离级别、锁与MVCC - 掘金
+https://juejin.im/post/5c21b584e51d4548ac6f6c99 | (15) 深入Babel，这一篇就够了 - 掘金
+https://juejin.im/post/5decff136fb9a016544bce67 | (15) 深入理解Golang之channel - 掘金
+https://juejin.im/post/5da2e31ef265da5b5a721f9f | 深入理解Golang之interface和reflect - 掘金
+
+https://fangjian0423.github.io/2019/04/03/spring-cloud-stream-intro/ | 干货｜Spring Cloud Stream 体系及原理介绍 | Format's Notes
+https://www.jianshu.com/p/fb7d11c7f798 | 使用 Spring Cloud Stream 构建消息驱动微服务 - 简书
+https://www.cnblogs.com/fengzheng/p/11576661.html | Spring Cloud 系列之 Spring Cloud Stream - 风的姿态 - 博客园
+https://www.baeldung.com/spring-cloud-stream | Introduction to Spring Cloud Stream | Baeldung
+https://blog.csdn.net/qq_26545305/article/details/80381146 | 【Spring Cloud Stream】异步任务_Java_柠檬树-CSDN博客
+https://blog.csdn.net/u012702547/article/details/78710120 | Spring Cloud Stream使用细节_Java_江南一点雨的专栏-CSDN博客
+https://juejin.im/post/5d2201346fb9a07ee4638512 | 消息驱动式微服务：Spring Cloud Stream & RabbitMQ - 掘金
+
+https://juejin.im/post/5e69c5136fb9a07ccc460306?utm_source=gold_browser_extension | (15) 近2万字详解JAVA NIO2文件操作，过瘾！ - 掘金
+https://juejin.im/post/5e736d71f265da572e4f49ce?utm_source=gold_browser_extension | (15) Redis 服务端程序实现原理 - 掘金
+https://juejin.im/post/5e72d2fbe51d45271c301136?utm_source=gold_browser_extension | (15) 你能搞懂connectTimeout和socketTimeout的区别么？ - 掘金
+https://juejin.im/post/5e746002f265da57663ff6b4?utm_source=gold_browser_extension | 美团面试题：Hashmap的结构，1.7和1.8有哪些区别（史上最深入的分析） - 掘金
+https://juejin.im/post/5e74713651882549564b7a79?utm_source=gold_browser_extension | 大白话聊聊秒杀系统的优化思路 - 掘金
+
+https://juejin.im/post/5e78626ae51d45270c27a66f?utm_source=gold_browser_extension | 后端程序员不得不会的 Nginx 转发匹配规则 - 掘金
+https://juejin.im/post/5e7865dc5188255dd240fb2c?utm_source=gold_browser_extension | (15) 观察者模式，这一篇就搞定 - 掘金
+https://juejin.im/post/5e7782976fb9a07cdf5368de?utm_source=gold_browser_extension | (15) 送别了好友，敖丙跟你聊聊【离职】这个话题 - 掘金
+https://juejin.im/post/5e781696f265da57434bde9e?utm_source=gold_browser_extension | (15) 新版任你发，我用Java 8 - 掘金
+https://juejin.im/post/5e786bcce51d45761319541c?utm_source=gold_browser_extension | (15) 面试官：如何快速排查死锁？如何避免死锁？ - 掘金
+https://juejin.im/post/5e737d155188254943200ed0?utm_source=gold_browser_extension | (15) 基于RocketMQ分布式事务 - 完整示例 - 掘金
+https://juejin.im/post/5e639014e51d45270f52cbac?utm_source=gold_browser_extension | (15) [万字长文，建议收藏]关于Synchronized锁升级，你该了解这些 - 掘金
+https://juejin.im/post/5e624d156fb9a07ca80ab6f2?utm_source=gold_browser_extension | (15) 后端程序员必备：书写高质量SQL的30条建议 - 掘金
+https://juejin.im/post/5e749c77518825490762125d?utm_source=gold_browser_extension | (15) 字节跳动在 RocksDB 存储引擎上的改进实践 - 掘金
+https://juejin.im/post/5e776c53e51d45270b7d843d?utm_source=gold_browser_extension | (15) 多维度分析 Express、Koa 之间的区别 - 掘金
+https://juejin.im/post/5e74b9f051882549746818a7?utm_source=gold_browser_extension | (15) 面试问到IOC我该如何回答呢？ - 掘金
+
+https://juejin.im/post/5e7b14ca5188255e103b4ebf?utm_source=gold_browser_extension | Reactor模型 - 掘金
+https://juejin.im/post/5e7a3346e51d4526cf482467?utm_source=gold_browser_extension | (15) MySQL InnoDB 中 B+ 树索引，哈希索引，全文索引 详解 - 掘金
+https://juejin.im/post/5e7b13505188255e0f0bf689?utm_source=gold_browser_extension | (15) JVM源码分析之javaagent原理完全解读 - 掘金
+https://juejin.im/post/5e7ab80d5188255e143906b3?utm_source=gold_browser_extension | (15) 面试官再问我如何保证 RocketMQ 不丢失消息,这回我笑了！ - 掘金
+
+https://juejin.im/post/5e6aee11e51d452703137ce6?utm_source=gold_browser_extension | 你一定不知道的有关HttpServletResponse和HttpServletRequest取值的两个坑 - 掘金
+https://juejin.im/post/5e64540ef265da5735505f6e?utm_source=gold_browser_extension | (15) 「是时候升级java11了」HTTP/2.0 协议 - 掘金
+https://juejin.im/post/5e48a9af6fb9a07cc200c203?utm_source=gold_browser_extension | (15) 一口气说出 9种 分布式ID生成方式，面试官有点懵了 - 掘金
+https://juejin.im/post/5e6b5913518825492442e2cb?utm_source=gold_browser_extension | (15) 腾讯面试官这样问我二叉树，我刚好都会 - 掘金
+https://juejin.im/post/5e6d01ca518825496814b78a?utm_source=gold_browser_extension | (15) MySQL性能优化步骤演进 - 掘金
+https://juejin.im/post/5e6588fc6fb9a07cbe347747?utm_source=gold_browser_extension | (15) 编程老司机带你玩转 CompletableFuture 异步编程 - 掘金
+https://juejin.im/post/5e6b1acef265da576543c3ec?utm_source=gold_browser_extension | (15) 收藏 | 15 个你非了解不可的 Linux 特殊字符，妈妈再也不用担心我看不懂这些符号了！ - 掘金
+https://juejin.im/post/5e6ce50f51882549315fcb32?utm_source=gold_browser_extension | (15) Redis 6.0 权限控制基于 Bitmap 实现 - 掘金
+https://juejin.im/post/5e6f8a1951882549380ca93b?utm_source=gold_browser_extension | (15) 聊聊skywalking的sharding-sphere-plugin - 掘金
+https://juejin.im/post/5e6c80516fb9a07c8076ce81?utm_source=gold_browser_extension | (15) 面试总被问分布式ID怎么办？ 滴滴（Tinyid）甩给他 - 掘金
+https://juejin.im/post/5e6f703fe51d45270531a214?utm_source=gold_browser_extension | (15) Spring Data Redis 最佳实践！ - 掘金
+https://juejin.im/post/5e707fdfe51d45271d5d55b2?utm_source=gold_browser_extension | (15) 排序算法(Java) - 掘金
+https://juejin.im/post/5e6f7eee518825491b11e420?utm_source=gold_browser_extension | (15) 存储优化(2)-排序引起的慢查询优化 - 掘金
+https://juejin.im/post/5e6f550f51882549087dbd04?utm_source=gold_browser_extension | (15) 一次百万长连接压测 Nginx OOM 的问题排查分析 - 掘金
+https://juejin.im/post/5e7040536fb9a07c8334f965?utm_source=gold_browser_extension | (15) 手把手教你实现一个方法耗时统计的 java agent - 掘金
+
+https://juejin.im/post/5e7ec9506fb9a03c5b2faeb9?utm_source=gold_browser_extension | Nacos + Grafana + Prometheu安装（standalone-derby） - 掘金
+https://juejin.im/post/5e7aea03f265da57616abd46?utm_source=gold_browser_extension | 简直不要太硬了！一文带你彻底理解文件系统 - 掘金
+https://juejin.im/post/5e7c0ea8f265da42bb53cd8e?utm_source=gold_browser_extension | Java 14 发布了，再也不怕 NullPointerException 了！ - 掘金
+https://juejin.im/post/5e7c8a68f265da42b3480fdd?utm_source=gold_browser_extension | 为什么我们要从 MySQL 迁移到 TiDB？ - 掘金
+https://juejin.im/post/5e7da390f265da79a16d9a56?utm_source=gold_browser_extension | 高并发场景-请求合并（二）揭秘HystrixCollapser-利用Queue和线程池异步实现 - 掘金
+https://juejin.im/post/5e7c3348f265da42f26476eb?utm_source=gold_browser_extension | 高并发场景-请求合并（一）SpringCloud中Hystrix请求合并 - 掘金
+https://juejin.im/post/5e7b6e2351882535bc7b944d?utm_source=gold_browser_extension | 听说你 ping 用的很 6 ？给我图解一下 ping 的工作原理！ - 掘金
+https://juejin.im/post/5e7db22ff265da796f63f55b?utm_source=gold_browser_extension | TiDB 4.0 新特性前瞻（三）再也不用担心我的 SQL 突然变慢了 - 掘金
+
+https://pulsar.apache.org/docs/en/pulsar-2.0/ | Pulsar 2.0 · Apache Pulsar
+https://www.google.com/search?newwindow=1&sxsrf=ALeKk02cfWZzNYCCfloLtGs7h7QA0JlfEA%3A1585745450852&source=hp&ei=Ko6EXoS6MaeHr7wPqsqRkAs&q=ConfigurableBeanFactory+defaultlistable&oq=ConfigurableBeanFactory+defaultlistable&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAE6AggAOgQIABAeOgUIABDLAToGCAAQCBAeUJAGWLORAWCqmwFoA3AAeACAAe8BiAHEGZIBBjAuMTIuNZgBAKABAqABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwiE97KSosfoAhWnw4sBHSplBLIQ4dUDCAY&uact=5 | ConfigurableBeanFactory defaultlistable - Google 搜索
+
+https://htmlpreview.github.io/?https://github.com/get-set/reactor-core/blob/master-zh/src/docs/index.html#about-doc | Reactor 3 参考文档
+
+https://www.google.com/search?newwindow=1&sxsrf=ALeKk01JpLeJvOYfVw_IJSllH7gxc4gigg%3A1584444683851&ei=C7VwXqfGM-yIr7wP-5iU-AE&q=redisson+bounded+blockingqueue+delete+&oq=redisson+bounded+blockingqueue+delete+&gs_l=psy-ab.3...301206.305199..306752...0.0..0.167.1531.0j10......0....1..gws-wiz.......35i39j33i160.SeYqfWkDm5Q&ved=0ahUKEwjn96-0tKHoAhVsxIsBHXsMBR8Q4dUDCAs&uact=5 | redisson bounded blockingqueue delete - Google 搜索
+https://www.bookstack.cn/read/redisson-wiki-zh/spilt.10.7.-%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E5%90%88.md | 7. 分布式集合 - 7.10. 阻塞队列（Blocking Queue） - 《Redisson 使用手册》 - 书栈网 · BookStack
+https://juejin.im/post/5cf5ec9af265da1bc23f642a | (15) Redisson之几种分布式队列 - 掘金
+
+https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html | 从ReentrantLock的实现看AQS的原理及应用 - 美团技术团队
+https://tech.meituan.com/2019/11/07/java-dynamic-debugging-technology.html | Java 动态调试技术原理及实践 - 美团技术团队
+https://tech.meituan.com/2019/10/10/jvm-cpu-profiler.html | JVM CPU Profiler技术原理及源码深度解析 - 美团技术团队
+https://tech.meituan.com/2019/09/19/common-method-of-reduce-complexity.html | 降低软件复杂性一般原则和方法 - 美团技术团队
+https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html | 字节码增强技术探索 - 美团技术团队
+https://tech.meituan.com/2019/01/03/spring-boot-native-memory-leak.html | Spring Boot引起的“堆外内存泄漏”排查及经验总结 - 美团技术团队
+https://tech.meituan.com/2018/12/20/lrucache-practice-dsp.html | LruCache在美团DSP系统中的应用演进 - 美团技术团队
+https://tech.meituan.com/2018/11/22/mysql-pingcap-practice.html | 新一代数据库TiDB在美团的实践 - 美团技术团队
+https://tech.meituan.com/2018/08/02/erp-cd-jenkins-pipeline.html | Jenkins的Pipeline脚本在美团餐饮SaaS中的实践 - 美团技术团队
+https://tech.meituan.com/2018/03/16/redis-high-concurrency-optimization.html | Redis 高负载下的中断优化 - 美团技术团队
+https://tech.meituan.com/2017/12/04/logictree.html | 智能分析最佳实践——指标逻辑树 - 美团技术团队
+https://tech.meituan.com/2017/12/22/ddd-in-practice.html | 领域驱动设计在互联网业务开发中的实践 - 美团技术团队
+https://tech.meituan.com/2017/06/09/maze-framework.html | 从0到1：构建强大且易用的规则引擎 - 美团技术团队
+https://tech.meituan.com/2017/05/19/speculative-partial-writes-erasure-coded-systems.html | 纠删码存储系统中的投机性部分写技术 - 美团技术团队
+https://tech.meituan.com/2017/05/19/about-desk-io.html | 磁盘I/O那些事 - 美团技术团队
+https://tech.meituan.com/2017/05/26/ios-hyperloop.html | Hyperloop，让发布简洁高效 - 美团技术团队
+https://tech.meituan.com/2016/12/02/redblack-tree.html | 红黑树深入剖析及Java实现 - 美团技术团队
+https://tech.meituan.com/2016/11/18/disruptor.html | 高性能队列——Disruptor - 美团技术团队
+https://tech.meituan.com/2016/07/29/distributed-queue-based-programming.html | 分布式队列编程：模型、实战 - 美团技术团队
+https://tech.meituan.com/2016/08/05/distributed-queue-based-programming-optimization.html | 分布式队列编程优化篇 - 美团技术团队
+https://blog.7street.top/2018/04/13/pangu/ | 阿里云分布式存储系统的研究与分享 | 老K的杂货铺
+
+https://www.google.com/maps/place/%E6%AF%94%E5%88%A9%E6%97%B6/@49.8149637,18.6717117,2543630m/data=!3m1!1e3!4m5!3m4!1s0x47c17d64edf39797:0x47ebf2b439e60ff2!8m2!3d50.503887!4d4.469936 | 比利时 - Google地图
+http://primeurmagazine.com/flash/AE-PF-09-15-38.html | Why Twitter prefers BookKeeper over Kafka for its high-performance distributed log service
+
+https://www.google.com/search?newwindow=1&sxsrf=ALeKk03k0EdIF8Nuc6B1bTSQVKipumcwQg%3A1585030882650&ei=4qZ5XrmTJ4H4hwOlwoHQCw&q=Mockito+&oq=Mockito+&gs_l=psy-ab.3..0i67l7j0l2j0i203.17210.17210..17541...0.2..0.222.222.2-1......0....1..gws-wiz.......0i71.VUn_tZRsoyE&ved=0ahUKEwi5jN-VvLLoAhUB_GEKHSVhALoQ4dUDCAs&uact=5 | Mockito - Google 搜索
+https://waylau.com/mockito-quick-start/ | Mockito 简明教程 | waylau.com
+https://juejin.im/post/5b3a23cd6fb9a024e53ce223 | (15) 单元测试利器Mockito框架 - 掘金
+https://juejin.im/post/5ca408f0e51d453a0c6e276c | (15) Java单元测试神器之Mockito - 掘金
+https://blog.csdn.net/zhangxin09/article/details/42422643 | JUnit + Mockito 单元测试（二）_Java_zhangxin09的专栏-CSDN博客
+https://blog.csdn.net/u010834071/article/details/47665791 | Mockito的简单用法示例_Java_欲望以提升热忱 毅力以磨平高山-CSDN博客
+https://juejin.im/post/5ca408f0e51d453a0c6e276c | (15) Java单元测试神器之Mockito - 掘金
+
+https://github.com/ | GitHub
+http://www.zdingke.com/2018/10/16/%e6%95%b0%e6%8d%ae%e9%ab%98%e5%8f%af%e7%94%a8%e6%9e%b6%e6%9e%842%ef%bc%9a%e6%97%a0%e7%8a%b6%e6%80%81%e6%9c%8d%e5%8a%a1%e5%b1%82/ | 数据高可用架构 系列二：无状态服务层 – DATAV
+http://www.zdingke.com/2018/11/27/%e5%85%b3%e8%81%94%e6%97%b6%ef%bc%8c%e5%b0%8f%e8%a1%a8%e6%b0%b8%e8%bf%9c%e5%9c%a8%e5%89%8d/ | 关联时，小表永远在前 – DATAV
+http://lxkaka.wang/2019/03/25/pulsar/ | Pulsar(新一代高性能消息系统)核心总结 | lxkaka
+http://www.uml.org.cn/zjjs/2016111505.asp | Twitter开源DistributedLog，对比Kafka和雅虎Pulsar
+https://www.cnblogs.com/hzmark/p/pulsar.html | Apache Pulsar简介 - 杭州.Mark - 博客园
+http://www.kgula.com/article/1521501.html | Apache Pulsar和Kafka之间的性能比较-热门资讯
+https://blog.csdn.net/liyiming2017/article/details/82875068 | Kafka的时代已经过去了，未来是Pulsar的吗？_大数据_稀有气体的技术博客-CSDN博客
+https://kknews.cc/code/pvqg4p2.html
+http://www.mobabel.net/%E8%BD%AC%E6%AF%94%E6%8B%BCkafka%EF%BC%8C%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%96%B0%E7%A7%80pulsar%E5%88%B0%E5%BA%95%E5%A5%BD%E5%9C%A8%E5%93%AA/ | [转]比拼Kafka，大数据分析新秀Pulsar到底好在哪 | Mobabel
+https://www.google.com/search?q=%CE%BA%E6%9E%B6%E6%9E%84&oq=%CE%BA%E6%9E%B6%E6%9E%84&aqs=chrome..69i57&sourceid=chrome&ie=UTF-8 | κ架构 - Google 搜索
+https://cloud.tencent.com/developer/article/1580657 | Kafka Consumer 的 Rebalance 机制 - 云+社区 - 腾讯云
+https://www.cnblogs.com/yoke/p/11405397.html | Kafka Rebalance机制分析 - gaoyanliang - 博客园
+https://yhyr.github.io/2018/12/26/Kafka%E7%90%86%E8%AE%BA%E4%B9%8BConsumer-Group-Coordinator/
+http://lday.me/2017/07/24/0011_kafka_consumer_rebalance_evolution/
+https://blog.csdn.net/wingofeagle/article/details/60966125 | kafka rebalance机制_大数据_北方的雪之博客专栏-CSDN博客
+https://matt33.com/2017/01/16/kafka-group/
+https://zhuanlan.zhihu.com/p/46963810 | 困扰许久的Kafka Rebalance问题 - 知乎
+https://juejin.im/post/5dd3a552f265da0bf045f3ed | Kafka Consumer 的 Rebalance 机制 - 掘金
+https://intellij-rust.github.io/2020/03/30/changelog-119.html
+
+https://blog.csdn.net/lizhitao/article/details/51718185 | Kafka副本同步机制理解_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45380811#comments | apache Kafka中partition的leader为-1情况分析_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/23744675#comments | apache kafka系列之在zookeeper中存储结构_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/52426850#comments | 基于Kafka时间粒度消息回溯设计方案_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/52426477#comments | apache Kafka Replication设计分析_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/44907417#comments | Apache Kafka消息传递可靠性分析_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/39499283 | apache kafka技术分享系列(目录索引)_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/51728925 | Kafka Consumer机制优化-保证每条消息至少消费一次_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/51714963 | Mafka消息中间件系统SLA_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079803 | 『大型网站技术架构：核心原理与案例分析』（一）_数据库_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079825 | 大型网站技术架构』（二）：高性能架构_网络_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079847 | 『大型网站技术架构：核心原理与案例分析』（三）_数据库_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079875 | 『大型网站技术架构：核心原理与案例分析』（五）_数据库_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079861 | 『大型网站技术架构：核心原理与案例分析』（四）_数据库_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079847 | 『大型网站技术架构：核心原理与案例分析』（三）_数据库_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079825 | 大型网站技术架构』（二）：高性能架构_网络_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079803 | 『大型网站技术架构：核心原理与案例分析』（一）_数据库_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45066437 | Apache Kafka中Follower如何与Leader同步数据_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/qq_36142114/article/details/80314947 | Kafka副本同步机制理解_大数据_leofionn的博客-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/52296102 | Kafka数据可靠性与一致性解析_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/qrne06/article/details/79586212 | 一张图看懂kafka：leader， follower ，分区， 节点(broker)_大数据_qrne06的博客-CSDN博客
+https://blog.csdn.net/lingbo229/article/details/80761778 | Kafka史上最详细原理总结 ----用于自己看的_大数据_微步的博客-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/9405479 | Linux内存管理之mmap详解_运维_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/9358579 | PACKET_MMAP实现原理分析_网络_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lingbo229/article/details/80761778 | Kafka史上最详细原理总结 ----用于自己看的_大数据_微步的博客-CSDN博客
+https://blog.csdn.net/qrne06/article/details/79586212 | 一张图看懂kafka：leader， follower ，分区， 节点(broker)_大数据_qrne06的博客-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/52296102 | Kafka数据可靠性与一致性解析_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/qq_36142114/article/details/80314947 | Kafka副本同步机制理解_大数据_leofionn的博客-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45066437 | Apache Kafka中Follower如何与Leader同步数据_大数据_李志涛的专栏-CSDN博客
+https://blog.csdn.net/lizhitao/article/details/45079803 | 『大型网站技术架构：核心原理与案例分析』（一）_数据库_李志涛的专栏-CSDN博客
+
+https://blog.csdn.net/zzp448561636/article/details/103012153 | Resilience4j+Feign实现熔断，fallback_Java_Michael曾的博客-CSDN博客
+https://blog.csdn.net/zzp448561636/article/details/101443007 | FeignClient Hystrix超时重试降级_Java_Michael曾的博客-CSDN博客
+https://blog.csdn.net/eson_15/article/details/83651732 | 【夯实Spring Cloud】Dubbo沉睡5年，Spring Cloud开始崛起！_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/83585344 | 【夯实Spring Cloud】Spring Cloud中基于maven的分布式项目框架的搭建_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/85002026 | 【夯实Spring Cloud】Spring Cloud中的Eureka服务注册与发现详解_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/85226439 | 【夯实Spring Cloud】Spring Cloud中如何完善Eureka中的服务信息_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/85252697 | 【夯实Spring Cloud】Spring Cloud中使用Eureka集群搭建高可用服务注册中心_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/85561179 | 【夯实Spring Cloud】Spring Cloud中的Eureka和Zookeeper的区别在哪？_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86182477 | 【夯实Spring Cloud】Spring Cloud中使用Ribbon实现负载均衡详解（上）_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86225272 | 【夯实Spring Cloud】Spring Cloud中使用Ribbon实现负载均衡详解（下）_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86578207 | 【夯实Spring Cloud】Spring Cloud中自定义Ribbon负载均衡策略_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86590402 | 【夯实Spring Cloud】Spring Cloud中使用Feign实现负载均衡详解_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86628622 | 【夯实Spring Cloud】Spring Cloud中使用Hystrix实现断路器原理详解（上）_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86673843 | 【夯实Spring Cloud】Spring Cloud中使用Hystrix实现断路器原理详解（下）_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86689681 | 【夯实Spring Cloud】Spring Cloud中使用Zuul实现路由网关详解_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86715157 | 【夯实Spring Cloud】Spring Cloud分布式配置中心详解_Java_武哥聊编程-CSDN博客
+https://blog.csdn.net/eson_15/article/details/86673843?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task | 【夯实Spring Cloud】Spring Cloud中使用Hystrix实现断路器原理详解（下）_Java_武哥聊编程-CSDN博客
+
+https://juejin.im/post/5e82b1e9e51d4547052ce9b1?utm_source=gold_browser_extension | 4. Go语言中byte、rune与字符串区别？ - 掘金
+https://juejin.im/post/5e82c4c76fb9a03c875c870e?utm_source=gold_browser_extension | Apache Druid底层存储设计 - 掘金
+https://juejin.im/post/5e829b6df265da47ca691085?utm_source=gold_browser_extension | JUC 中提供的限流利器-Semaphore（信号量） - 掘金
+
+https://www.google.com/search?newwindow=1&sxsrf=ALeKk00DjkDDw-Qag4Zonsqk-UIwQP-klw%3A1585932433361&source=hp&ei=kWiHXu3lE869rQGDv42QAg&q=rust+fibonacci&oq=rust+fib&gs_lcp=CgZwc3ktYWIQARgIMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgQIABAKMgUIABDLATIFCAAQywE6AggAOgYIIxAnEBM6BAgjECc6BAgAEAw6BAgAEA06BAgAEB46BQghEKABUKcOWPo9YPtqaAVwAHgBgAGtCYgByC2SAQ0yLTIuMS4yLjIuMi4xmAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab | rust fibonacci - Google 搜索
+https://benjaminbrandt.com/fibonacci-in-rust/ | Fibonacci in Rust
+
+https://blog.csdn.net/qiushangren/article/details/94128407 | B树，r树，k-d树，bvh(bound volumn heuristic)树, octtree ,quadtree（待更）_数据结构与算法_qiushangren的专栏-CSDN博客
+https://stackoverrun.com/cn/q/6358614
+http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=jsjgc200715029 | 面向移动GIS的动态四叉树空间索引算法
+http://html.rhhz.net/CHXB/html/2016-11-1342.htm | M-Quadtree索引:一种基于改进四叉树编码方法的云存储环境下空间索引方法
+https://blog.csdn.net/zhouxuguang236/article/details/12312099 | 四叉树空间索引原理及其实现_数据库_心如止水-GISer的成长之路-CSDN博客
+
+https://www.google.com/search?newwindow=1&sxsrf=ALeKk00C3QVB-33JCQw0zLuFGqLc_j50CQ%3A1584276550914&source=hp&ei=RiRuXoXVNY2NoASX-quIBA&q=github+the+system+design+primer&oq=github+the+system+&gs_l=psy-ab.3.0.0i203j0i8i30j0i333.89226.95602..96949...2.0..0.446.4564.0j1j14j2j1......0....1..gws-wiz.....10..35i362i39j0i131j0j35i39j0i12j0i30.OSFJ0al87lE | github the system design primer - Google 搜索
+https://github.com/donnemartin/system-design-primer | donnemartin/system-design-primer: Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards.
+
+https://www.iflym.com/index.php/code/201911290001.html | spring体系中控制List注入时的顺序 – i flym
+
+https://www.google.com/search?newwindow=1&sxsrf=ALeKk03I1zHXU4KwGWW1ZSqzNZ2LmKl63w%3A1585550778008&ei=upWBXtILhqX1A4vDhagD&q=java+sandbox-module+luanjia&oq=java+sandbox-module+luanjia&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAEyBQghEKABMgUIIRCgATIFCCEQoAE6BAgjECdQj6QCWNiuAmC8sAJoAHAAeAGAAaIDiAGRFpIBBzItNC40LjGYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjS0JX3zMHoAhWGUn0KHYthATUQ4dUDCAs&uact=5 | java sandbox-module luanjia - Google 搜索
+https://github.com/alibaba/jvm-sandbox | alibaba/jvm-sandbox: Real - time non-invasive AOP framework container based on JVM
+http://www.programmersought.com/article/3362652617/ | Decrypt Ali online problem diagnosis tools Arthas and jvm-sandbox - Programmer Sought
+https://zhuanlan.zhihu.com/p/92217141 | Java线上问题排查神器Arthas快速上手与原理浅谈 - 知乎
+https://blog.csdn.net/hancky/article/details/88593011 | Arthas、BTrace线上问题诊断工具比较_Java_HankYue's Blog-CSDN博客
+http://javaquan.com/post/31066_1_1.html | 阿里在线分析诊断工具Arthas和jvm-sandbox使用demo-天下java本站尽知
+https://www.cnblogs.com/ttzzyy/p/11414051.html | 阿里在线分析诊断工具Arthas和jvm-sandbox使用demo - 咘雷扎克 - 博客园
+https://my.oschina.net/u/4072299/blog/3005300 | 解密阿里线上问题诊断工具Arthas和jvm-sandbox - 咖啡拿铁的技术分享的个人空间 - OSCHINA
+
+https://blog.csdn.net/shenchaohao12321/article/details/79302791 | 【maven实战】42-使用maven-release-plugin自动化版本发布_Java_通往神秘的道路的专栏-CSDN博客
+https://www.jianshu.com/p/c4c2ae1686a2 | maven release 插件使用 - 简书
+https://blog.csdn.net/shenchaohao12321/article/details/79302791 | 【maven实战】42-使用maven-release-plugin自动化版本发布_Java_通往神秘的道路的专栏-CSDN博客
+
+https://www.google.com/search?newwindow=1&sxsrf=ALeKk02zLxcDv5wHTPU3H-nMA2xm-4mPng%3A1585218438450&source=hp&ei=hoN8XufoGJfrwQO09broBg&q=redisson+RBuckets+&oq=redisson+RBuckets+&gs_l=psy-ab.3..0i19j0i13i30i19l2j0i333l4.916.9403..10006...2.0..2.2969.10644.0j7j1j7-1j0j3......0....1j2..gws-wiz.......0j35i39j0i131j0i203j0i13j0i13i30.l9qMdhgHKP4&ved=0ahUKEwjnw6bv9rfoAhWXdXAKHbS6Dm0Q4dUDCAY&uact=5 | redisson RBuckets - Google 搜索
+https://github.com/redisson/redisson/wiki/6.-%E5%88%86%E5%B8%83%E5%BC%8F%E5%AF%B9%E8%B1%A1 | 6. 分布式对象 · redisson/redisson Wiki
 
 https://www.google.com/search?newwindow=1&sxsrf=ACYBGNRHwpCDl_-B01VzYqFwzkhMZnto3Q%3A1576089891217&source=hp&ei=IznxXfO4CpjT-Qbw1Y6AAw&q=rust+clap+tutorial&oq=rust+clap+&gs_l=psy-ab.3.2.0i203l10.250.1655..5304...1.0..0.759.2124.0j3j2j1j6-1......0....1j2..gws-wiz.......35i39j0.Id6DAr1pqHI | rust clap tutorial - Google 搜索
 http://siciarz.net/24-days-rust-clap/ | 24 days of Rust - clap | siciarz.net
