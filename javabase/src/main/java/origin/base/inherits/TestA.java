@@ -6,5 +6,7 @@ package origin.base.inherits;
  * @Desc:
  **/
 public class TestA extends Test {
-    
+    public void setPd() {
+        pushDataCount = 333;
+    }
 }

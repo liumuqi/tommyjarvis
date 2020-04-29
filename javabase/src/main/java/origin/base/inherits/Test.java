@@ -8,13 +8,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Desc:
  **/
 public abstract class Test {
-    AtomicInteger pushDataCount = new AtomicInteger(0);
+   protected int pushDataCount = 10;
 
-    public AtomicInteger getPushDataCount() {
+    public Object getPushDataCount() {
         return pushDataCount;
     }
 
-    public void setPushDataCount(AtomicInteger pushDataCount) {
+    public void setPushDataCount(int pushDataCount) {
         this.pushDataCount = pushDataCount;
     }
 }
