@@ -39,7 +39,7 @@ fn main() {
     let hello = "Здравствуйте";
     let x1 = hello.contains("3");
     //获取第1个后的2个字符
-    let an : String = hello.chars().skip(1).take(5).collect();
+    let an: String = hello.chars().skip(1).take(5).collect();
     println!("current hello :{} first :{}, x1:{}", hello, an, x1);
     println!("current commit id is :{}", CURRENT_COMMIT_ID);
 
@@ -446,6 +446,8 @@ fn main() {
     base_concept::cells::test_cell();
     println!("exter_my test======================");
     base_concept::exter_test::exter_main();
+    println!("lambda closure test======================");
+    lambda::closure::ref_closure();
 }
 
 //=============lifetime on With Impls and Traits start=========================================
