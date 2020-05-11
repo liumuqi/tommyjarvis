@@ -2,7 +2,7 @@ use std::fmt::Display;
 
 //use crate::trait_concept::basic::Summary;
 
-#[derive(PartialEq, PartialOrd, Debug)]//衍生属性
+#[derive(PartialEq, PartialOrd)]//衍生属性
 pub struct TraitStArticle {
     pub headline: String,
     pub location: String,
@@ -11,11 +11,11 @@ pub struct TraitStArticle {
 }
 
 
-//impl std::fmt::Debug for TraitStArticle {
-//    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-//        write!(f, "headline:{},location:{},author:{},content:{}", self.headline, self.author, self.location, self.content)
-//    }
-//}
+impl std::fmt::Debug for TraitStArticle {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "headline:{},location:{},author:{},content:{}", self.headline, self.author, self.location, self.content)
+    }
+}
 
 impl std::fmt::Display for TraitStArticle {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
@@ -25,9 +25,9 @@ impl std::fmt::Display for TraitStArticle {
 
 #[derive(PartialEq, PartialOrd, Debug)]//衍生属性
 pub struct TraitStUser {
-    pub  username: String,
-    pub  age: u8,
-    pub  location: String,
+    pub username: String,
+    pub age: u8,
+    pub location: String,
 }
 
 //impl std::fmt::Debug for TraitStUser {

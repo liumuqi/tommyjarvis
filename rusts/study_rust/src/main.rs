@@ -29,6 +29,7 @@ mod other_hard;
 mod examples;
 mod lambda;
 mod coroutines;
+mod reflects;
 
 
 include!(concat!(env!("OUT_DIR"), "/commit_id.rs"));
@@ -448,6 +449,16 @@ fn main() {
     base_concept::exter_test::exter_main();
     println!("lambda closure test======================");
     lambda::closure::ref_closure();
+    println!("ownship basic test======================");
+    ownshiptest::own_ship_two::baisc_ow_test();
+    println!("ownship basic test_cell======================");
+    ownshiptest::own_ship_two::test_cell();
+    println!("ownship ai pointer test======================");
+    ownshiptest::own_ship_two::test_ai_pointer();
+    println!("inherit test======================");
+    trait_concept::inherits::test_inherit();
+    println!("reflects test======================");
+    reflects::refs::test_ref();
 }
 
 //=============lifetime on With Impls and Traits start=========================================
