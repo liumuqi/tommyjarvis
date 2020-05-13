@@ -3,7 +3,7 @@ use std::fmt::Debug;
 
 fn load_config<T: Any + Debug>(value: &T) -> Vec<String> {
     let mut cfgs: Vec<String> = vec![];
-    let value = value as &Any;
+    let value = value as &dyn Any;
     match value.downcast_ref::<String>() {
         Some(cfp) => cfgs.push(cfp.clone()),
         None => (),
