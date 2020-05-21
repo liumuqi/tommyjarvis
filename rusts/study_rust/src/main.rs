@@ -30,6 +30,7 @@ mod examples;
 mod lambda;
 mod coroutines;
 mod reflects;
+mod otherlibs;
 
 
 include!(concat!(env!("OUT_DIR"), "/commit_id.rs"));
@@ -459,6 +460,8 @@ fn main() {
     trait_concept::inherits::test_inherit();
     println!("reflects test======================");
     reflects::refs::test_ref();
+    println!("otherlibs test======================");
+    otherlibs::sourcemaptest::test_sourcemap();
 }
 
 //=============lifetime on With Impls and Traits start=========================================
