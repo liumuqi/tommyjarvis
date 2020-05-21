@@ -17,4 +17,9 @@ public class TestB extends Test{
     public void setPd(){
         pushDataCount = 111;
     }
+
+    @Override
+    public void p() {
+        System.out.println("second p");
+    }
 }

@@ -17,4 +17,8 @@ public abstract class Test {
     public void setPushDataCount(int pushDataCount) {
         this.pushDataCount = pushDataCount;
     }
+
+    public void p(){
+        System.out.println("abstract root");
+    }
 }
