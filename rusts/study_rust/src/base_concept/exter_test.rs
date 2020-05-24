@@ -4,18 +4,18 @@
 //! Chapter 1
 //!
 
-use std::thread;
-use std::sync::{Mutex, Arc};
-use std::sync::mpsc::{channel, Sender, Receiver};
-use std::rc::Rc;
 use std::cell::RefCell;
 use std::collections::{HashMap, VecDeque};
-use std::num::ParseIntError;
 use std::error::Error;
-use std::string::ParseError;
-use std::time::Duration;
 use std::fmt::Debug;
+use std::num::ParseIntError;
 use std::ops::Deref;
+use std::rc::Rc;
+use std::string::ParseError;
+use std::sync::mpsc::{channel, Receiver, Sender};
+use std::sync::{Arc, Mutex};
+use std::thread;
+use std::time::Duration;
 //use std::borrow::BorrowMut;
 use crate::base_concept::exter_test::List::{Cons, Nil};
 
@@ -23,7 +23,12 @@ fn shared_state() {
     let v = Arc::new(Mutex::new(vec![]));
     let handles = (0..10).map(|i| {
         let numbers = v.clone();
-        println!("v clone size:{},num size :{},{:?}", Arc::strong_count(&v), Arc::strong_count(&numbers), *v.lock().unwrap());
+        println!(
+            "v clone size:{},num size :{},{:?}",
+            Arc::strong_count(&v),
+            Arc::strong_count(&numbers),
+            *v.lock().unwrap()
+        );
         thread::spawn(move || {
             let mut vector = numbers.lock().unwrap();
             (*vector).push(i);
@@ -32,7 +37,11 @@ fn shared_state() {
     for handle in handles {
         handle.join().unwrap();
     }
-    println!("final v clone size:{},{:?}", Arc::strong_count(&v), *v.lock().unwrap());
+    println!(
+        "final v clone size:{},{:?}",
+        Arc::strong_count(&v),
+        *v.lock().unwrap()
+    );
 
     let xxx = String::from("fdsafs");
     let xx = "a";
@@ -43,7 +52,12 @@ fn shared_state() {
     let mut vv = vec![];
     for i in 0..4 {
         let numbers = v.clone();
-        println!("######v clone size:{},num size :{},{:?}", Arc::strong_count(&v), Arc::strong_count(&numbers), *v.lock().unwrap());
+        println!(
+            "######v clone size:{},num size :{},{:?}",
+            Arc::strong_count(&v),
+            Arc::strong_count(&numbers),
+            *v.lock().unwrap()
+        );
         let join_handle = thread::spawn(move || {
             let mut vector = numbers.lock().unwrap();
             (*vector).push(i);
@@ -101,7 +115,10 @@ fn ref_counter() {
     let ext = Rc::new(String::from("rs"));
 
     for _ in 0..3 {
-        let f = FileName { name: name.clone(), ext: ext.clone() };
+        let f = FileName {
+            name: name.clone(),
+            ext: ext.clone(),
+        };
         println!("{:?}", f);
     }
 }
@@ -141,7 +158,6 @@ fn item_quantity_is_an_invalid_number() {
     println!("datax:{}", x);
 }
 
-
 #[derive(Debug, PartialEq, Eq)]
 pub enum DivisionError {
     NotDivisible(NotDivisibleError),
@@ -162,7 +178,10 @@ pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
     } else if b == 0 {
         Err(DivisionError::DivideByZero)
     } else {
-        Err(DivisionError::NotDivisible(NotDivisibleError { dividend: a, divisor: b }))
+        Err(DivisionError::NotDivisible(NotDivisibleError {
+            dividend: a,
+            divisor: b,
+        }))
     }
 }
 
@@ -172,7 +191,7 @@ fn result_with_list() {
     let x: Result<Vec<i32>, DivisionError> = division_results.collect(); //... Fill in here!
     let string = format!("{:?}", x);
     println!("{}", string)
-//    assert_eq!(string, "Ok([1, 11, 1426, 3])");
+    //    assert_eq!(string, "Ok([1, 11, 1426, 3])");
 }
 
 fn test1() {
@@ -180,36 +199,52 @@ fn test1() {
     let fc = || std::mem::drop(input.as_ptr());
     fc();
     println!("===={:?}", input);
-//    let iterator = input.iter();
-//    let mapped = iterator.map(|&x| {
-//        return x * 2;
-//    });
-//    // Gather the result in a RingBuf.
-//    let output = mapped.collect::<VecDeque<_>>();
-//    println!("{:?}", output);
+    //    let iterator = input.iter();
+    //    let mapped = iterator.map(|&x| {
+    //        return x * 2;
+    //    });
+    //    // Gather the result in a RingBuf.
+    //    let output = mapped.collect::<VecDeque<_>>();
+    //    println!("{:?}", output);
 }
 
 fn use_names_for_something_else(_names: Vec<&str>) {}
 
 fn countSize() {
     let names = vec!["Jane", "Jill", "Jack", "John", "中"];
-    let total_bytes = names.iter().map(|name| name.len()).fold(0, |acc, len| acc + len);
+    let total_bytes = names
+        .iter()
+        .map(|name| name.len())
+        .fold(0, |acc, len| acc + len);
     println!("total size:{}", total_bytes);
     use_names_for_something_else(names);
 }
 
 fn destructure() {
-    let player_scores = [
-        ("Jack", 20), ("Jane", 23), ("Jill", 18), ("John", 19),
-    ];
-    let players = player_scores.iter().map(|&(player, _)| { player }).collect::<Vec<_>>();
+    let player_scores = [("Jack", 20), ("Jane", 23), ("Jill", 18), ("John", 19)];
+    let players = player_scores
+        .iter()
+        .map(|&(player, _)| player)
+        .collect::<Vec<_>>();
     assert_eq!(players, ["Jack", "Jane", "Jill", "John"]);
 }
 
 fn iter_mut_test() {
     let mut teams = [
-        [("Jack", 20), ("Jane", 23), ("Jill", 18), ("John", 19), ("jarvis", 33)],
-        [("Bill", 17), ("Brenda", 16), ("Brad", 18), ("Barbara", 17), ("tt", 111)]
+        [
+            ("Jack", 20),
+            ("Jane", 23),
+            ("Jill", 18),
+            ("John", 19),
+            ("jarvis", 33),
+        ],
+        [
+            ("Bill", 17),
+            ("Brenda", 16),
+            ("Brad", 18),
+            ("Barbara", 17),
+            ("tt", 111),
+        ],
     ];
     let teams_in_score_order = teams
         .iter_mut()
@@ -226,7 +261,13 @@ fn iter_mut_test() {
 }
 
 fn iter_mut2_test() {
-    let mut teams = [("Jack", 20), ("Jane", 23), ("Jill", 18), ("John", 19), ("jarvis", 33)];
+    let mut teams = [
+        ("Jack", 20),
+        ("Jane", 23),
+        ("Jill", 18),
+        ("John", 19),
+        ("jarvis", 33),
+    ];
     let teams_in_score_order = teams.sort_by(|&a, &b| a.1.cmp(&b.1).reverse());
     println!("teams_in_score_order: {:?}", teams_in_score_order);
     println!("Teams: {:?}", teams);
@@ -240,16 +281,23 @@ enum Message {
     T(i32),
 }
 
+struct MyBox<T>(T)
+where
+    T: Debug;
 
-struct MyBox<T>(T) where T: Debug;
-
-impl<T> MyBox<T> where T: Debug {
+impl<T> MyBox<T>
+where
+    T: Debug,
+{
     fn new(x: T) -> MyBox<T> {
         MyBox(x)
     }
 }
 
-impl<T> Deref for MyBox<T> where T: Debug {
+impl<T> Deref for MyBox<T>
+where
+    T: Debug,
+{
     type Target = T;
 
     fn deref(&self) -> &T {
@@ -257,7 +305,10 @@ impl<T> Deref for MyBox<T> where T: Debug {
     }
 }
 
-impl<T> Drop for MyBox<T> where T: Debug {
+impl<T> Drop for MyBox<T>
+where
+    T: Debug,
+{
     fn drop(&mut self) {
         println!("Dropping MyBox with data `{:?}`!", self.0);
     }
@@ -266,7 +317,6 @@ impl<T> Drop for MyBox<T> where T: Debug {
 fn hello(name: &str) {
     println!("Hello, {}!", name);
 }
-
 
 pub trait Messenger {
     fn send(&mut self, msg: &str);
@@ -278,7 +328,10 @@ pub struct LimitTracker<'a, T: Messenger> {
     max: usize,
 }
 
-impl<'a, T> LimitTracker<'a, T> where T: Messenger {
+impl<'a, T> LimitTracker<'a, T>
+where
+    T: Messenger,
+{
     pub fn new(messenger: &mut T, max: usize) -> LimitTracker<T> {
         LimitTracker {
             messenger,
@@ -292,13 +345,14 @@ impl<'a, T> LimitTracker<'a, T> where T: Messenger {
         if percentage_of_max >= 1.0 {
             self.messenger.send("Error: You are over your quota!");
         } else if percentage_of_max >= 0.9 {
-            self.messenger.send("Urgent warning: You've used up over 90% of your quota!");
+            self.messenger
+                .send("Urgent warning: You've used up over 90% of your quota!");
         } else if percentage_of_max >= 0.75 {
-            self.messenger.send("Warning: You've used up over 75% of your quota!");
+            self.messenger
+                .send("Warning: You've used up over 75% of your quota!");
         }
     }
 }
-
 
 #[derive(Debug)]
 enum List {
@@ -339,7 +393,7 @@ fn cycle_test() {
 
     // Uncomment the next line to see that we have a cycle;
     // it will overflow the stack
-//     println!("a next item = {:?}", a.tail());
+    //     println!("a next item = {:?}", a.tail());
 }
 
 fn rc_test() {
@@ -381,7 +435,7 @@ pub fn exter_main() {
         .inspect(|&x| println!("Pre map:\t{}", x))
         .map(|&x| x * 10) // This gets fed into...
         .inspect(|x| println!("First map:\t{}", x))
-        .map(|x| x + 5)   // ... This.
+        .map(|x| x + 5) // ... This.
         .inspect(|x| println!("Second map:\t{}", x));
     mapped.collect::<Vec<usize>>();
     println!("haha  input pointer:{:p}, :{:?}", input.as_ptr(), input);
@@ -416,7 +470,6 @@ pub fn exter_main() {
     println!("done-----------");
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -427,7 +480,9 @@ mod tests {
 
     impl MockMessenger {
         fn new() -> MockMessenger {
-            MockMessenger { sent_messages: vec![] }
+            MockMessenger {
+                sent_messages: vec![],
+            }
         }
     }
 
@@ -457,7 +512,13 @@ mod tests {
 
     #[test]
     fn test_not_divisible() {
-        assert_eq!(divide(81, 6), Err(DivisionError::NotDivisible(NotDivisibleError { dividend: 81, divisor: 6 })));
+        assert_eq!(
+            divide(81, 6),
+            Err(DivisionError::NotDivisible(NotDivisibleError {
+                dividend: 81,
+                divisor: 6
+            }))
+        );
     }
 
     #[test]
@@ -471,6 +532,5 @@ mod tests {
     }
 
     // Iterator exercises using your `divide` function
-//    #[test]
+    //    #[test]
 }
-

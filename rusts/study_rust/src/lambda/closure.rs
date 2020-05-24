@@ -1,9 +1,10 @@
 pub fn c_test() {
     let mut x = 1_i32;
-//    fn inner_add() -> i32 {
-//        x + 1
-//    }
-    let mut inner_add = move || { //加上move 原来的x还是1,不加就是3 move代表所有权转移
+    //    fn inner_add() -> i32 {
+    //        x + 1
+    //    }
+    let mut inner_add = move || {
+        //加上move 原来的x还是1,不加就是3 move代表所有权转移
         x = x + 2;
         x + 1
     };
@@ -18,7 +19,10 @@ struct Person {
 }
 
 pub fn ref_closure() {
-    let p = Person { name: "Hao Chen".to_string(), age: 44 };
+    let p = Person {
+        name: "Hao Chen".to_string(),
+        age: 44,
+    };
     //可以运行，因为 `u8` 有 Copy Trait
     let age = |p: &Person| p.age;
     // String 没有Copy Trait，所以，这里所有权就 Move 走了

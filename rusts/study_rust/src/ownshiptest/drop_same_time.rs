@@ -25,7 +25,7 @@ impl<'a> R<'a> {
 }
 #[feature(generic_param_attrs, dropck_eyepatch)]
 impl<'a> Drop for R<'a> {
-// unsafe impl<#[may_dangle] 'a> Drop for R<'a> {
+    // unsafe impl<#[may_dangle] 'a> Drop for R<'a> {
     fn drop(&mut self) {
         if let Some(inner) = self.inner {
             println!("drop R when T is {}", inner.dropped);

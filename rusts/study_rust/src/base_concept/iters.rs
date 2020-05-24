@@ -39,37 +39,39 @@ impl Iterator for Counter {
     }
 }
 
-pub fn use_iter<ITEM, ITER>(mut iter: ITER) where ITER: Iterator<Item=ITEM>, ITEM: fmt::Debug,
+pub fn use_iter<ITEM, ITER>(mut iter: ITER)
+where
+    ITER: Iterator<Item = ITEM>,
+    ITEM: fmt::Debug,
 {
     while let Some(i) = iter.next() {
         println!("{:?}", i);
     }
 }
 
-pub fn foo_iter(n: i32) -> impl Iterator<Item=i32> {
+pub fn foo_iter(n: i32) -> impl Iterator<Item = i32> {
     (0..n).map(|x| x * 100)
 }
 
-fn consume_iter_static<I: Iterator<Item=u8>>(iter: I) {
-//fn consume_iter_static<I: Iterator>(iter: I) {
+fn consume_iter_static<I: Iterator<Item = u8>>(iter: I) {
+    //fn consume_iter_static<I: Iterator>(iter: I) {
     println!("static")
 }
 
-fn consume_iter_dynamic(iter: Box<dyn Iterator<Item=u8>>) {
+fn consume_iter_dynamic(iter: Box<dyn Iterator<Item = u8>>) {
     println!("dynamic")
 }
 
 fn multiply(m: i32) -> Box<dyn Fn(i32) -> i32> {
-    Box::new(|m|m*20)
+    Box::new(|m| m * 20)
 }
 
 fn multiply2<T>(m: T) -> impl Fn(T) -> T {
-    |m|m
+    |m| m
 }
 
 //错误写法
 //fn multiply3<T: Fn(i32) -> i32>(m: i32) -> T {}
-
 
 #[cfg(test)]
 mod test {

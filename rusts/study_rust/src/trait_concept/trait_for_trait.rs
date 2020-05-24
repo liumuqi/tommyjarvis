@@ -1,7 +1,7 @@
 #![feature(specialization)]
 
-use std::future::Future;
 use std::fmt::Display;
+use std::future::Future;
 
 extern crate http;
 
@@ -11,7 +11,7 @@ trait Shape {
 
 trait Round {
     fn get_radius(&self) -> f64;
-//    fn default() -> Self;
+    //    fn default() -> Self;
 }
 
 trait MyDefault {
@@ -37,9 +37,9 @@ impl Round for Circle {
         self.radius
     }
 
-//    fn default() -> Self {
-//        Self
-//    }
+    //    fn default() -> Self {
+    //        Self
+    //    }
 }
 
 impl Round for MCircle {
@@ -73,7 +73,10 @@ impl<T> Example for T {
     }
 }
 
-impl<T> Example for T where T: Display {
+impl<T> Example for T
+where
+    T: Display,
+{
     default fn call_e(&self) {
         println!("generic T call !!!!!!!!!!");
     }
@@ -96,7 +99,7 @@ mod tests {
         let circle = Circle { radius: 2f64 };
         let c = circle;
         // c.area() not work
-        let b = Box::new(circle);// circle 指针
+        let b = Box::new(circle); // circle 指针
         println!("1 data:{}, st:{}", b.get_radius(), Circle::st(&circle));
         let b = Box::new(Circle { radius: 3.2f64 }) as Box<dyn Round>;
         b.get_radius();

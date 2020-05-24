@@ -7,7 +7,7 @@ pub fn test_file_op() {
 
     for line in buf_reader.lines() {
         println!("{}", line.unwrap());
-    };
+    }
     let f = File::open("hello.txt");
 
     let f = match f {
@@ -29,8 +29,8 @@ pub fn test_file_op() {
             panic!("Problem opening the file: {:?}", error);
         }
     });
-// let x1 = file!("src/main_test.rs");
+    // let x1 = file!("src/main_test.rs");
 
-//    fs::create_dir("some_dir").expect("Can not create the directry!");
-//    File::create("some_dir/empty.txt").expect("Can not create the file!");
+    //    fs::create_dir("some_dir").expect("Can not create the directry!");
+    //    File::create("some_dir/empty.txt").expect("Can not create the file!");
 }

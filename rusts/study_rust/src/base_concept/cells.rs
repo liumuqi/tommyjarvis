@@ -1,4 +1,4 @@
-use std::cell::{RefCell, Cell};
+use std::cell::{Cell, RefCell};
 
 struct ThingWithCell {
     counter: Cell<u8>,
@@ -6,7 +6,9 @@ struct ThingWithCell {
 
 impl ThingWithCell {
     fn new() -> Self {
-        ThingWithCell { counter: Cell::new(0) }
+        ThingWithCell {
+            counter: Cell::new(0),
+        }
     }
     fn increment(&self) {
         let i = self.counter.get() + 1;
@@ -23,7 +25,9 @@ struct ThingWithRefCell {
 
 impl ThingWithRefCell {
     fn new() -> Self {
-        ThingWithRefCell { counter: RefCell::new(0) }
+        ThingWithRefCell {
+            counter: RefCell::new(0),
+        }
     }
     fn increment(&self) {
         let mut counter = self.counter.borrow_mut();
@@ -42,7 +46,13 @@ pub fn test_cell() {
     cell.increment();
     println!("cell counter pointer:{:p}", cell.counter.as_ptr());
     let with_ref_cell = ThingWithRefCell::new();
-    println!("ref cell counter pointer:{:p}", with_ref_cell.counter.as_ptr());
+    println!(
+        "ref cell counter pointer:{:p}",
+        with_ref_cell.counter.as_ptr()
+    );
     with_ref_cell.increment();
-    println!("ref cell counter pointer:{:p}", with_ref_cell.counter.as_ptr());
+    println!(
+        "ref cell counter pointer:{:p}",
+        with_ref_cell.counter.as_ptr()
+    );
 }

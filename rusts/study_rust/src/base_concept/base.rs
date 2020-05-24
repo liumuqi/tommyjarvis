@@ -18,10 +18,9 @@ pub enum Error {
 fn deep_match(v: Option<Option<i32>>) -> Option<i32> {
     match v {
         Some(r @ Some(1..=10)) | Some(r @ Some(90..=100)) => r,
-        _ => None
+        _ => None,
     }
 }
-
 
 #[derive(Debug)]
 struct P(f32, f32, f32);
@@ -35,7 +34,6 @@ pub fn test() {
     let t = P(1.0, 2.0, 3.0);
     println!("{}", calc(&t));
     println!(" p {:?}", t);
-
 
     let x = Error::ConnectionRefued;
     match x {
@@ -66,7 +64,7 @@ pub fn test() {
     };
 
     match xi {
-        ref r => println!("got ref:{}", r)// r type : &i32
+        ref r => println!("got ref:{}", r), // r type : &i32
     }
 
     let mut vv = vec![1, 2, 3];
@@ -75,28 +73,26 @@ pub fn test() {
     let mut mx = Some("hello".into());
 
     match &mut mx {
-        Some(i) => { *i = "vvv" }
+        Some(i) => *i = "vvv",
         _ => {}
     };
     println!("mx: {:?}", mx);
 
-
     let int_vec = [1, 2, 3];
-//    //数组切片
+    //    //数组切片
     for i in int_vec[1..2].iter() {
         println!("i : {}", i);
-    };
-
+    }
 
     for i in &int_vec {
         println!("{:?}", i);
-    };
+    }
 
     for i in int_vec.iter() {
         println!("{:?}", i);
-    };
+    }
 
     let option = int_vec.iter().max();
     let f_v = [1.0_f32, 2.0, 3.0];
-//    let option1 = f_v.iter().max();
+    //    let option1 = f_v.iter().max();
 }

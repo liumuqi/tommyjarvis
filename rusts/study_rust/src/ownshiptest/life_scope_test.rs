@@ -1,10 +1,10 @@
+use std::fmt::Debug;
 use std::marker::PhantomData;
 use std::ptr::null;
-use std::fmt::Debug;
 
 #[derive(Debug)]
 struct T {
-    member: i32
+    member: i32,
 }
 
 fn return_life<'a: 'b, 'b>(arg: &'a T) -> &'a i32 {
@@ -44,15 +44,18 @@ impl<'a, T: Debug + 'a> R<'a, T> {
 fn test_r() -> () {
     let local = S {};
     {
-        let mut r = R { x: null(), _marker: PhantomData };
+        let mut r = R {
+            x: null(),
+            _marker: PhantomData,
+        };
         r.ref_to(&local);
     }
 }
 
-fn test_a<'a>( x: &'a str, y: &'a str) -> &'a str{
+fn test_a<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
-    }else{
+    } else {
         y
     }
 }

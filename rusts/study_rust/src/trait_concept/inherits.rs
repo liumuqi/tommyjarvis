@@ -1,6 +1,6 @@
-use std::f64::consts::PI;
 use std::any::Any;
 use std::borrow::Borrow;
+use std::f64::consts::PI;
 
 struct Rectangle {
     width: u32,
@@ -33,29 +33,46 @@ impl Circle {
 }
 
 impl<'a> IShape<'a> for Rectangle {
-    fn as_any(&self) -> &dyn Any { self }
-    fn area(&self) -> f32 { (self.height * self.width) as f32 }
+    fn as_any(&self) -> &dyn Any {
+        self
+    }
+    fn area(&self) -> f32 {
+        (self.height * self.width) as f32
+    }
     fn to_string(&self) -> String {
-        format!("Rectangle -> width={} height={} area={}",
-                self.width, self.height, self.area())
+        format!(
+            "Rectangle -> width={} height={} area={}",
+            self.width,
+            self.height,
+            self.area()
+        )
     }
 }
 
-
 impl<'a> IShape<'a> for Circle {
-    fn as_any(&self) -> &dyn Any { self }
-    fn area(&self) -> f32 { (self.radius * self.radius) as f32 * PI as f32 }
+    fn as_any(&self) -> &dyn Any {
+        self
+    }
+    fn area(&self) -> f32 {
+        (self.radius * self.radius) as f32 * PI as f32
+    }
     fn to_string(&self) -> String {
-        format!("Circle -> x={}, y={}, area={}",
-                self.x, self.y, self.area())
+        format!("Circle -> x={}, y={}, area={}", self.x, self.y, self.area())
     }
 }
 
 pub fn test_inherit() {
     use std::vec::Vec;
 
-    let rect = Box::new(Rectangle { width: 4, height: 6 });
-    let circle = Box::new(Circle { x: 0, y: 0, radius: 5 });
+    let rect = Box::new(Rectangle {
+        width: 4,
+        height: 6,
+    });
+    let circle = Box::new(Circle {
+        x: 0,
+        y: 0,
+        radius: 5,
+    });
     let mut v: Vec<Box<dyn IShape>> = Vec::new();
     v.push(rect);
     v.push(circle);
