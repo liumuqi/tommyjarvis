@@ -61,6 +61,7 @@ impl<'a> IShape<'a> for Circle {
     }
 }
 
+
 pub fn test_inherit() {
     use std::vec::Vec;
 

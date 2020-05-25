@@ -1,4 +1,4 @@
-#![feature(specialization)]
+// #![feature(specialization)]
 
 use std::fmt::Display;
 use std::future::Future;
@@ -88,14 +88,37 @@ impl Example for str {
     }
 }
 
+trait Foo {
+    fn default_impl(&self) {
+        println!("corrent impl!")
+    }
+}
+
+impl Foo {
+    fn trait_object() {
+        println!("trait object impl")
+    }
+}
+
+struct Bar {}
+
+impl Foo for Bar {}
+
+pub fn  test_trait_object(){
+    let b = Bar {};
+    b.default_impl();
+    Foo::trait_object();
+}
+
 #[allow(unused_variables)]
 #[cfg(test)]
 mod tests {
-    use crate::trait_concept::trait_for_trait::{Circle, Round};
+    use crate::trait_concept::trait_for_trait::{Circle, Round, test_trait_object};
     use std::ops::Deref;
 
     #[test]
     fn it_works() {
+        test_trait_object();
         let circle = Circle { radius: 2f64 };
         let c = circle;
         // c.area() not work

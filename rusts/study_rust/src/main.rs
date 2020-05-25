@@ -501,6 +501,8 @@ fn main() {
     ownshiptest::own_ship_two::test_ai_pointer();
     println!("inherit test======================");
     trait_concept::inherits::test_inherit();
+    println!("inherit trait for trait test======================");
+    trait_concept::trait_for_trait::test_trait_object();
     println!("reflects test======================");
     reflects::refs::test_ref();
     println!("otherlibs test======================");

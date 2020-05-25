@@ -87,7 +87,7 @@ mod test {
         assert_eq!(counter.next(), Some(5));
         assert_eq!(counter.next(), None);
 
-        let sum = Counter::new()
+        let sum :u32 = Counter::new()
             .zip(Counter::new().skip(2))
             .map(|(a, b)| a * b)
             .filter(|x| x % 3 == 0)
