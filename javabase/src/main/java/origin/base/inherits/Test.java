@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Date: 2020/4/10
  * @Desc:
  **/
-public abstract class Test {
+public class Test extends XT {
    protected int pushDataCount = 10;
 
     public Object getPushDataCount() {

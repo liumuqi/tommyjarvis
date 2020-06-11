@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"runtime"
 	"sync"
 	"time"
 )
@@ -26,6 +27,14 @@ func (f *Foo) Hash() uint32 {
 		h *= 16777619
 	}
 	return h
+}
+
+// 获取正在运行的函数名
+func runFuncName() string {
+	pc := make([]uintptr, 1)
+	runtime.Callers(2, pc)
+	f := runtime.FuncForPC(pc[0])
+	return f.Name()
 }
 
 func main() {
@@ -71,6 +80,7 @@ func main() {
 	testSelect()
 }
 func testSelect() {
+	fmt.Println(runFuncName(), " 测试函数调用:")
 	finish := make(chan bool)
 	var done sync.WaitGroup
 	done.Add(1)
