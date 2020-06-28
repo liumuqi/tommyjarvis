@@ -38,6 +38,15 @@ public class MethodHandleTest {
         }
     }
 
+    /**
+     * invokevirtual——对实例方法的标准分派
+     * invokestatic——用于分派静态方法
+     * invokeinterface——用于通过接口进行方法调用的分派
+     * invokespecial——当需要进行非虚（也就是“精确”）分派时会用到
+     *
+     * @param args
+     * @throws Throwable
+     */
     public static void main(String[] args) throws Throwable {
 //        MethodHandleTest.Son son = new MethodHandleTest().new Son();
 //        son.thinking();
@@ -74,6 +83,10 @@ public class MethodHandleTest {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodHandle maxHandle = lookup.findStatic(Math.class, "max", type);
         callSite.setTarget(maxHandle);
+        //需要考虑的是多线程情况下的可见性问题。有可能在一个线程中对MutableCallSite的目标方法句柄做了修改，而在另外一个线程中不能及时看到这个变化。对于这种情况，MutableCallSite提供了一个静态方法syncAll来强制要求各个线程中MutableCallSite的使用者立即获取最新的目标方法句柄。该方法接收一个MutableCallSite类型的数组作为参数。
+        //如果一个目标方法句柄可变的调用点被设计为在多线程的情况下使用，可以直接使用VolatileCallSite，而不使用MutableCallSite。当使用VolatileCallSite的时候，每当目标方法句柄发生变化的时候，其他线程会自动看到这个变化。这与Java中volatile关键词的语义是一样的。这比使用MutableCallSite再加上syncAll方法要简单得多。除了这一点之外，VolatileCallSite的作用与MutableCallSite完全相同。
+        MutableCallSite.syncAll(new MutableCallSite[]{callSite});
+
         int result = (int) invoker.invoke(3, 5);
         System.out.println(result == 5);
 
@@ -83,4 +96,9 @@ public class MethodHandleTest {
         System.out.println(result == 3);
     }
 
+
+    public static CallSite bootstrap(MethodHandles.Lookup lookup, String name, MethodType type, String value) throws Exception {
+        MethodHandle mh = lookup.findVirtual(String.class, "toUpperCase", MethodType.methodType(String.class)).bindTo(value);
+        return new ConstantCallSite(mh);
+    }
 }
