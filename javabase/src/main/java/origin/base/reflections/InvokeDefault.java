@@ -84,7 +84,8 @@ public class InvokeDefault {
         dynamic.printInfo();
         out.println("=========invoke default==done====");
 
-        MethodHandle sayHelloHandle = MethodHandles.lookup().findVirtual(ExampleMixin.class, "printInfo", MethodType.methodType(void.class));
+        MethodType type = MethodType.methodType(void.class);
+        MethodHandle sayHelloHandle = MethodHandles.lookup().findVirtual(ExampleMixin.class, "printInfo", type);
 //        sayHelloHandle.bindTo((ExampleMixin) () -> "vv").invoke();
         sayHelloHandle.bindTo(target).invoke();//这样的话 default不会调用,调用的是override的
 
