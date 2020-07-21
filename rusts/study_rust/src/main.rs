@@ -460,7 +460,7 @@ fn main() {
     phrases::greetings::hello();
 
     println!("======base_concept::base::test();=================================");
-    base_concept::base::test();
+    base_concept::base::mytesttest();
     ownshiptest::life_scope_test::test();
     println!("======trait_for_trait test;=================================");
     let v1 = vec![1, 2, 3];
