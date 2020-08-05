@@ -12,24 +12,24 @@ import java.lang.reflect.Type;
  **/
 @Component
 public class BaseProvider<T> {
-    @Autowired
-    private T t;
-
-    public T getT() {
-        return t;
-    }
-
-    public void setT(T t) {
-        this.t = t;
-    }
-
+//    @Autowired
+//    private T t;
+//
+//    public T getT() {
+//        return t;
+//    }
+//
+//    public void setT(T t) {
+//        this.t = t;
+//    }
+//
     public void doSomething() {
         Class<?> clazz = getClass();
         System.out.println(clazz.getName() + " doSomething");
         Type superclass = clazz.getGenericSuperclass();
         System.out.println("superclass=" + superclass);
     }
-    public void test(T t){
-
-    }
+//    public void test(T t){
+//
+//    }
 }
