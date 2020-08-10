@@ -108,6 +108,11 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-cassandra-reactive</artifactId>
+<!--            <version>2.3.2.RELEASE</version>-->
+        </dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>7.0.0.Alpha6</version>
@@ -117,11 +122,11 @@
             <artifactId>gson</artifactId>
             <version>2.8.6</version>
         </dependency>
-        <dependency>
-            <groupId>com.shuidihuzhu.infra</groupId>
-            <artifactId>feign-enhance-spring-boot-starter</artifactId>
-            <version>${feign-enhance-spring-boot-starter.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.shuidihuzhu.infra</groupId>-->
+<!--            <artifactId>feign-enhance-spring-boot-starter</artifactId>-->
+<!--            <version>${feign-enhance-spring-boot-starter.version}</version>-->
+<!--        </dependency>-->
         <!-- akka -->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -603,29 +608,29 @@
         <testSourceDirectory>src/test/scala</testSourceDirectory>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>aspectj-maven-plugin</artifactId>
-                    <version>1.7</version>
-                    <configuration>
-                        <complianceLevel>1.8</complianceLevel>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                        <showWeaveInfo>true</showWeaveInfo>
-                        <verbose>true</verbose>
-                        <encoding>utf-8</encoding>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <!--use this goal to weave all your main classes-->
-                                <goal>compile</goal>
-                                <!--use this goal to weave all your test classes-->
-                                <goal>test-compile</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.codehaus.mojo</groupId>-->
+<!--                    <artifactId>aspectj-maven-plugin</artifactId>-->
+<!--                    <version>1.7</version>-->
+<!--                    <configuration>-->
+<!--                        <complianceLevel>1.8</complianceLevel>-->
+<!--                        <source>1.8</source>-->
+<!--                        <target>1.8</target>-->
+<!--                        <showWeaveInfo>true</showWeaveInfo>-->
+<!--                        <verbose>true</verbose>-->
+<!--                        <encoding>utf-8</encoding>-->
+<!--                    </configuration>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <goals>-->
+<!--                                &lt;!&ndash;use this goal to weave all your main classes&ndash;&gt;-->
+<!--                                <goal>compile</goal>-->
+<!--                                &lt;!&ndash;use this goal to weave all your test classes&ndash;&gt;-->
+<!--                                <goal>test-compile</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
                 <plugin>
                     <groupId>net.alchim31.maven</groupId>
                     <artifactId>scala-maven-plugin</artifactId>
@@ -691,28 +696,28 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin>
-                    <groupId>com.spotify</groupId>
-                    <artifactId>docker-maven-plugin</artifactId>
-                    <version>1.0.1</version>
-                    <configuration>
-                        <baseImage>docker.com/infra/boot:${boot-image.tag}</baseImage>
-                        <imageName>docker.com/${app.group}/${app.name}</imageName>
-                        <imageTags>
-                            <imageTag>${project.version}</imageTag>
-                            <imageTag>${docker.image.version}</imageTag>
-                        </imageTags>
-                        <forceTags>true</forceTags>
-                        <resources>
-                            <resource>
-                                <targetPath>/opt</targetPath>
-                                <directory>${project.build.directory}</directory>
-                                <include>${project.build.finalName}.${project.packaging}</include>
-                            </resource>
-                        </resources>
-                        <cmd>["/opt/boot.sh", "/opt/${project.build.finalName}.${project.packaging}"]</cmd>
-                    </configuration>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>com.spotify</groupId>-->
+<!--                    <artifactId>docker-maven-plugin</artifactId>-->
+<!--                    <version>1.0.1</version>-->
+<!--                    <configuration>-->
+<!--                        <baseImage>docker.com/infra/boot:${boot-image.tag}</baseImage>-->
+<!--                        <imageName>docker.com/${app.group}/${app.name}</imageName>-->
+<!--                        <imageTags>-->
+<!--                            <imageTag>${project.version}</imageTag>-->
+<!--                            <imageTag>${docker.image.version}</imageTag>-->
+<!--                        </imageTags>-->
+<!--                        <forceTags>true</forceTags>-->
+<!--                        <resources>-->
+<!--                            <resource>-->
+<!--                                <targetPath>/opt</targetPath>-->
+<!--                                <directory>${project.build.directory}</directory>-->
+<!--                                <include>${project.build.finalName}.${project.packaging}</include>-->
+<!--                            </resource>-->
+<!--                        </resources>-->
+<!--                        <cmd>["/opt/boot.sh", "/opt/${project.build.finalName}.${project.packaging}"]</cmd>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
             </plugins>
         </pluginManagement>
         <extensions>
@@ -899,24 +904,24 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.xolstice.maven.plugins</groupId>
-                <artifactId>protobuf-maven-plugin</artifactId>
-                <version>${protobuf.plugin.version}</version>
-                <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
-                    <pluginId>grpc-java</pluginId>
-                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>compile-custom</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.xolstice.maven.plugins</groupId>-->
+<!--                <artifactId>protobuf-maven-plugin</artifactId>-->
+<!--                <version>${protobuf.plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>-->
+<!--                    <pluginId>grpc-java</pluginId>-->
+<!--                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>compile</goal>-->
+<!--                            <goal>compile-custom</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>

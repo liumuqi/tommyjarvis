@@ -44,8 +44,20 @@ public class M {
         test_generics();
         System.out.println("=======================");
         testf();
-
+        printInstance(testA1, t);
     }
+
+    private static void printInstance(Test testA1, T t) {
+        System.out.println("instacne check--------------------");
+        //等式  左=右  x = y (x.getClass.isAssignablefrom y.getclass)
+        boolean assignableFrom = testA1.getClass().isAssignableFrom(TestB.class);
+        //等式 左边的 类型 X x = .....   X.class.isInstance(x);
+        boolean instance = T.class.isInstance(t);
+        System.out.println(assignableFrom);
+        System.out.println(instance);
+        System.out.println( t instanceof T);
+    }
+
     public static void testf() throws Exception {
 
         ArrayList<Integer> list = new ArrayList<Integer>();
@@ -79,7 +91,6 @@ public class M {
     }
 
 
-
     //因为? extends T给外界的承诺语义是，这个集合内的元素都是T的子类型，但是到底是哪个子类型不知道，所以添加哪个子类型，编译器都认为是危险的，所以直接禁止添加。
     //因为? super T 给外界的承诺语义是，这个集合内的元素的下界是T，所以向集合中添加T以及T的子类型是安全的，不会破坏这个承诺语义。
     //List, List 都是List<? super Apple>的子类型。
@@ -94,7 +105,7 @@ public class M {
         test.add(tb);
         List<TestA> testAS = Arrays.asList(ta);
         List<? extends Test> tt = testAS;//只能这样, 不能直接用tt.add,会报错
-        System.out.println(">>>>>>"+tt.size());
+        System.out.println(">>>>>>" + tt.size());
     }
 
     static class T extends TestB {

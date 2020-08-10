@@ -6,7 +6,6 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.codehaus.jackson.map.ObjectReader;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -30,12 +29,12 @@ public class JacksonTest {
             jsonGenerator.writeString("name");
             // 写对象（记得先写key 否则无效）
             jsonGenerator.writeFieldName("person");
-              jsonGenerator.writeStartObject();
-              jsonGenerator.writeFieldName("enName");
-              jsonGenerator.writeString("YourBatman");
-              jsonGenerator.writeFieldName("age");
-              jsonGenerator.writeNumber(18);
-              jsonGenerator.writeEndObject();
+            jsonGenerator.writeStartObject();
+            jsonGenerator.writeFieldName("enName");
+            jsonGenerator.writeString("YourBatman");
+            jsonGenerator.writeFieldName("age");
+            jsonGenerator.writeNumber(18);
+            jsonGenerator.writeEndObject();
 
             jsonGenerator.writeFieldName("pers");
             jsonGenerator.writeStartArray();
@@ -57,5 +56,10 @@ public class JacksonTest {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonNode = objectMapper.readTree(j);
         System.out.println(jsonNode);
+    }
+
+    @Test
+    public void test_check_instance() {
+
     }
 }
