@@ -49,12 +49,14 @@ public class M {
 
     private static void printInstance(Test testA1, T t) {
         System.out.println("instacne check--------------------");
-        //等式  左=右  x = y (x.getClass.isAssignablefrom y.getclass)
+        //等式  左=右  x = y (x.getClass.isAssignablefrom y.getclass)  x可以是超类 超超类....
         boolean assignableFrom = testA1.getClass().isAssignableFrom(TestB.class);
         //等式 左边的 类型 X x = .....   X.class.isInstance(x);
         boolean instance = T.class.isInstance(t);
+        boolean instance2 = TestB.class.isInstance(t);
         System.out.println(assignableFrom);
         System.out.println(instance);
+        System.out.println(instance2);
         System.out.println( t instanceof T);
     }
 
