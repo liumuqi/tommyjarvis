@@ -49,9 +49,9 @@ public class M {
 
     private static void printInstance(Test testA1, T t) {
         System.out.println("instacne check--------------------");
-        //等式  左=右  x = y (x.getClass.isAssignablefrom y.getclass)  x可以是超类 超超类....
+        //等式  左=右  x = y (x.getClass.isAssignablefrom y.getclass)  x可以是超类 超超类....   作用  x是变量
         boolean assignableFrom = testA1.getClass().isAssignableFrom(TestB.class);
-        //等式 左边的 类型 X x = .....   X.class.isInstance(x);
+        //等式 左边的 类型 X x = .....   X.class.isInstance(x);  作用:  参数 是变量....
         boolean instance = T.class.isInstance(t);
         boolean instance2 = TestB.class.isInstance(t);
         System.out.println(assignableFrom);
