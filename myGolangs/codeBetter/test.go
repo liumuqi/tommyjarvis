@@ -69,6 +69,7 @@ func (w Worker) Stop() {
 }
 
 type PayloadCollection struct {
+	Payloads []Payload
 }
 
 func payloadHandler(w http.ResponseWriter, r *http.Request) {
