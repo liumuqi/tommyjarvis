@@ -1,5 +1,8 @@
 package origin.base.inherits;
 
+import com.google.common.collect.ImmutableList;
+
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -9,8 +12,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  **/
 public class Test extends XT {
    protected int pushDataCount = 10;
+    private List<String> NOTIFY_USER = ImmutableList.of("Test..........");
 
-    public Object getPushDataCount() {
+    public List<String> getUser(){
+        return this.NOTIFY_USER;
+    }
+    public Object getPushDataCount(Object o) {
+        System.out.println("haha Test invoke"+NOTIFY_USER.toString());
         return pushDataCount;
     }
 

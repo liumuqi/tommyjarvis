@@ -31,6 +31,7 @@ mod thread_web;
 mod threads;
 mod trait_concept;
 mod unsafes;
+mod advances;
 
 include!(concat!(env!("OUT_DIR"), "/commit_id.rs"));
 #[allow(unused_variables)]
@@ -507,6 +508,13 @@ fn main() {
     reflects::refs::test_ref();
     println!("otherlibs test======================");
     otherlibs::sourcemaptest::test_sourcemap();
+    println!("advancespin test======================");
+    advances::pin_test::test_main();
+    println!("advances_pined test======================");
+    advances::pined_test::test_main();
+    base_concept::custom_error::test_catch_panic();
+    base_concept::custom_error::erase_panic();
+
 }
 
 //=============lifetime on With Impls and Traits start=========================================

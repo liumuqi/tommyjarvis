@@ -25,8 +25,8 @@ fn deep_match(v: Option<Option<i32>>) -> Option<i32> {
 #[derive(Debug)]
 struct P(f32, f32, f32);
 
-#[feature(non_exhaustive)]
-#[test]
+// #[feature(non_exhaustive)]
+// #[test]
 pub fn mytesttest() {
     fn calc(P(x, _, y): &P) -> f32 {
         x * x + y * y

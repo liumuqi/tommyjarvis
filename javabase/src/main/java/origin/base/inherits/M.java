@@ -1,6 +1,7 @@
 package origin.base.inherits;
 
 
+import com.google.common.collect.ImmutableList;
 import lombok.SneakyThrows;
 import org.joda.time.format.DateTimeFormat;
 
@@ -16,21 +17,21 @@ public class M {
     public static void main(String[] args) {
         TestA testA = new TestA();
         TestB testB = new TestB();
-        System.out.println("10 testA:" + testA.getPushDataCount().toString());
-        System.out.println("10 testB:" + testB.getPushDataCount().toString());
-        Test testA1 = testB;
-        System.out.println("10 testA1:" + testA1.getPushDataCount().toString());
-
-        testA.setPd();
-
-        testB.setPd();
-
-        System.out.println("333 testA:" + testA.getPushDataCount().toString());
-        System.out.println("111 testB:" + testB.getPushDataCount().toString());
-
-        System.out.println("111 testA1 ref testB:" + testA1.getPushDataCount());
-        TestA testAa = new TestA();
-        System.out.println("10 testAa:" + testAa.getPushDataCount());
+//        System.out.println("10 testA:" + testA.getPushDataCount().toString());
+//        System.out.println("10 testB:" + testB.getPushDataCount().toString());
+//        Test testA1 = testB;
+//        System.out.println("10 testA1:" + testA1.getPushDataCount().toString());
+//
+//        testA.setPd();
+//
+//        testB.setPd();
+//
+//        System.out.println("333 testA:" + testA.getPushDataCount().toString());
+//        System.out.println("111 testB:" + testB.getPushDataCount().toString());
+//
+//        System.out.println("111 testA1 ref testB:" + testA1.getPushDataCount());
+//        TestA testAa = new TestA();
+//        System.out.println("10 testAa:" + testAa.getPushDataCount());
 
 
         Date yyyyMMdd = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("19831201").toDate();
@@ -40,11 +41,15 @@ public class M {
         T t = new T();
         ((Test) t).p();
 
+        System.out.println("#################invoke test===================");
+        Test.class.cast(t).getPushDataCount(new Object());
+        System.out.println("##############invoke test====done===============");
+
         System.out.println("=======================");
         test_generics();
         System.out.println("=======================");
         testf();
-        printInstance(testA1, t);
+//        printInstance(testA1, t);
     }
 
     private static void printInstance(Test testA1, T t) {
@@ -57,7 +62,7 @@ public class M {
         System.out.println(assignableFrom);
         System.out.println(instance);
         System.out.println(instance2);
-        System.out.println( t instanceof T);
+        System.out.println(t instanceof T);
     }
 
     public static void testf() throws Exception {
@@ -108,12 +113,5 @@ public class M {
         List<TestA> testAS = Arrays.asList(ta);
         List<? extends Test> tt = testAS;//只能这样, 不能直接用tt.add,会报错
         System.out.println(">>>>>>" + tt.size());
-    }
-
-    static class T extends TestB {
-//        @Override
-//        public void p() {
-//            System.out.println("thrid p");
-//        }
     }
 }
