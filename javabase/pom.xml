@@ -145,6 +145,12 @@
             <artifactId>jersey-client</artifactId>
             <version>${jersey2.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>2.3.4.RELEASE</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.glassfish.main.packager</groupId>-->
 <!--            <artifactId>jersey</artifactId>-->
