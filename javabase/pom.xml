@@ -111,7 +111,7 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>
-            <artifactId>sharding-jdbc-spring</artifactId>
+            <artifactId>sharding-jdbc-core</artifactId>
             <version>4.1.1</version>
         </dependency>
         <dependency>
