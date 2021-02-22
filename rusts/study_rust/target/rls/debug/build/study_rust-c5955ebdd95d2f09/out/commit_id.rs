@@ -1,2 +1,0 @@
-pub const CURRENT_COMMIT_ID : &'static str = "d3f3381708932d43a16b5014143850543447f6a7
-";

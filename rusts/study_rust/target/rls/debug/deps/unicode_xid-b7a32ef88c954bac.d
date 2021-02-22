@@ -1,8 +1,0 @@
-/Users/lmq/Documents/code/github/myself/tommyjarvis/rusts/study_rust/target/rls/debug/deps/unicode_xid-b7a32ef88c954bac.rmeta: /Users/lmq/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/lib.rs /Users/lmq/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/tables.rs
-
-/Users/lmq/Documents/code/github/myself/tommyjarvis/rusts/study_rust/target/rls/debug/deps/libunicode_xid-b7a32ef88c954bac.rlib: /Users/lmq/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/lib.rs /Users/lmq/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/tables.rs
-
-/Users/lmq/Documents/code/github/myself/tommyjarvis/rusts/study_rust/target/rls/debug/deps/unicode_xid-b7a32ef88c954bac.d: /Users/lmq/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/lib.rs /Users/lmq/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/tables.rs
-
-/Users/lmq/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/lib.rs:
-/Users/lmq/.cargo/registry/src/github.com-1ecc6299db9ec823/unicode-xid-0.2.0/src/tables.rs:
