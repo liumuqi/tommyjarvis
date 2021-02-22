@@ -1,0 +1,7 @@
+
+w	java:S116"VRename this field "NOTIFY_USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Þ³ä”þÿÿÿÿ8å®Š¦Â.
+X	java:S125"<This block of commented-out lines of code should be removed.(î±™8å®Š¦Â.
+W
+java:S1161":Add the "@Override" annotation above this method signature(õŠÄŸ8õ¾ÐéÂ.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(é…Í8å®Š¦Â.
+T	java:S106"9Replace this use of System.out or System.err by a logger.(Ì¸Í8å®Š¦Â.

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="29739133-866a-4c68-b6f7-bf48938512fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../javabase/src/main/java/meters/FunctionCounterMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/base/inherits/T.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/mbeans/JmxConnectorInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/spring/JerseyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/spring/JerseyResourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/spring/JerseyServletBeanConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/advances/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/advances/pin_test.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/advances/pined_heap.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/advances/pined_test.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c/test" beforeDir="false" afterPath="$PROJECT_DIR$/../../c/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javabase/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../javabase/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javabase/src/main/java/origin/base/inherits/M.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/base/inherits/M.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javabase/src/main/java/origin/base/inherits/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/base/inherits/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javabase/src/main/java/origin/base/inherits/TestB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/base/inherits/TestB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javabase/src/main/java/origin/utils/nets.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javabase/src/main/java/origin/utils/nets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../myGolangs/mem/mem.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../myGolangs/mem/mem.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base_concept/base.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_concept/base.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base_concept/custom_error.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/base_concept/custom_error.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="uKCZslHU" />
+  </component>
+  <component name="ProjectId" id="1U44YlOfjBxmkZsOPtOIJ1OsO8q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="cargo run" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Cargo Command.Run study_rust">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run study_rust" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="run --package study_rust --bin study_rust" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test base_concept::array_my::test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package study_rust --bin study_rust base_concept::array_my::test -- --exact" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test base_concept::base::mytesttest" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package study_rust --bin study_rust base_concept::base::mytesttest -- --exact" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test base_concept::base::test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package study_rust --bin study_rust base_concept::base::test -- --exact" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test trait_for_trait" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package study_rust --bin study_rust trait_concept::trait_for_trait" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Cargo Command.Run study_rust" />
+      <item itemvalue="Cargo Command.Test trait_for_trait" />
+      <item itemvalue="Cargo Command.Test base_concept::array_my::test" />
+      <item itemvalue="Cargo Command.Test base_concept::base::test" />
+      <item itemvalue="Cargo Command.Test base_concept::base::mytesttest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo Command.Run study_rust" />
+        <item itemvalue="Cargo Command.Test base_concept::base::mytesttest" />
+        <item itemvalue="Cargo Command.Test base_concept::base::test" />
+        <item itemvalue="Cargo Command.Test base_concept::array_my::test" />
+        <item itemvalue="Cargo Command.Test trait_for_trait" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="externalLinter" value="Clippy" />
+    <option name="runExternalLinterOnTheFly" value="true" />
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29739133-866a-4c68-b6f7-bf48938512fe" name="Default Changelist" comment="" />
+      <created>1574602583791</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574602583791</updated>
+      <workItem from="1574602585811" duration="1414000" />
+      <workItem from="1574604420803" duration="1030000" />
+      <workItem from="1574614096954" duration="222000" />
+      <workItem from="1574614334698" duration="1093000" />
+      <workItem from="1574652814923" duration="427000" />
+      <workItem from="1574758347173" duration="52000" />
+      <workItem from="1575092137297" duration="90000" />
+      <workItem from="1575092364511" duration="550000" />
+      <workItem from="1575093106170" duration="34000" />
+      <workItem from="1575389992619" duration="1861000" />
+      <workItem from="1575555789959" duration="35000" />
+      <workItem from="1581171941663" duration="5628000" />
+      <workItem from="1581258093973" duration="1975000" />
+      <workItem from="1582209299736" duration="201000" />
+      <workItem from="1582210303943" duration="1099000" />
+      <workItem from="1582213588244" duration="679000" />
+      <workItem from="1582787187389" duration="596000" />
+      <workItem from="1583307185272" duration="584000" />
+      <workItem from="1584706058379" duration="629000" />
+      <workItem from="1584938447166" duration="481000" />
+      <workItem from="1584938960319" duration="236000" />
+      <workItem from="1584944885546" duration="1183000" />
+      <workItem from="1585931463783" duration="8000" />
+      <workItem from="1588160698064" duration="3053000" />
+      <workItem from="1588228629313" duration="9089000" />
+      <workItem from="1589170562159" duration="456000" />
+      <workItem from="1589171067481" duration="1222000" />
+      <workItem from="1589268122281" duration="756000" />
+      <workItem from="1589424954487" duration="700000" />
+      <workItem from="1589446145317" duration="945000" />
+      <workItem from="1589885502914" duration="6000" />
+      <workItem from="1589943247713" duration="5000" />
+      <workItem from="1589943330136" duration="2191000" />
+      <workItem from="1589957293544" duration="1104000" />
+      <workItem from="1590278475374" duration="1857000" />
+      <workItem from="1590315711217" duration="1335000" />
+      <workItem from="1590494647956" duration="44000" />
+      <workItem from="1590886699484" duration="541000" />
+      <workItem from="1590893517471" duration="618000" />
+      <workItem from="1591242310729" duration="636000" />
+      <workItem from="1591251257961" duration="1705000" />
+      <workItem from="1591587274067" duration="174000" />
+      <workItem from="1591704277750" duration="261000" />
+      <workItem from="1595329384408" duration="1912000" />
+      <workItem from="1598669660928" duration="5623000" />
+      <workItem from="1598708910579" duration="857000" />
+      <workItem from="1598712476438" duration="526000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="647" y="304" key="#HTTP_Proxy" timestamp="1590966907479">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="647" y="304" key="#HTTP_Proxy/0.23.1920.1177@0.23.1920.1177" timestamp="1590966907479" />
+    <state x="560" y="259" width="910" height="704" key="#Plugins" timestamp="1591253774936">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="560" y="259" width="910" height="704" key="#Plugins/0.23.1920.1177@0.23.1920.1177" timestamp="1591253774936" />
+    <state x="177" y="273" width="1318" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591704363359">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="177" y="273" width="1318" height="676" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1591704363359" />
+    <state x="648" y="354" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591250705267">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="648" y="354" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1591250705267" />
+    <state width="1878" height="343" key="GridCell.Tab.0.bottom" timestamp="1598712395915">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="343" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1598712395915" />
+    <state width="1878" height="343" key="GridCell.Tab.0.center" timestamp="1598712395914">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="343" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1598712395914" />
+    <state width="1878" height="343" key="GridCell.Tab.0.left" timestamp="1598712395914">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="343" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1598712395914" />
+    <state width="1878" height="343" key="GridCell.Tab.0.right" timestamp="1598712395915">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="343" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1598712395915" />
+    <state width="1878" height="404" key="GridCell.Tab.1.bottom" timestamp="1595332124839">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="404" key="GridCell.Tab.1.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1595332124839" />
+    <state width="1878" height="404" key="GridCell.Tab.1.center" timestamp="1595332124836">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="404" key="GridCell.Tab.1.center/0.23.1920.1177@0.23.1920.1177" timestamp="1595332124836" />
+    <state width="1878" height="404" key="GridCell.Tab.1.left" timestamp="1595332124835">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="404" key="GridCell.Tab.1.left/0.23.1920.1177@0.23.1920.1177" timestamp="1595332124835" />
+    <state width="1878" height="404" key="GridCell.Tab.1.right" timestamp="1595332124837">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="1878" height="404" key="GridCell.Tab.1.right/0.23.1920.1177@0.23.1920.1177" timestamp="1595332124837" />
+    <state x="461" y="250" key="SettingsEditor" timestamp="1595329558991">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="461" y="250" key="SettingsEditor/0.23.1920.1177@0.23.1920.1177" timestamp="1595329558991" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1598709135090">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1920.1177@0.23.1920.1177" timestamp="1598709135090" />
+    <state x="382" y="368" width="1372" height="660" key="find.popup" timestamp="1598713604362">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="382" y="368" width="1372" height="660" key="find.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1598713604362" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1598712492467">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="803" height="580" key="javadoc.popup.new" timestamp="1598709144147">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state width="803" height="580" key="javadoc.popup.new/0.23.1920.1177@0.23.1920.1177" timestamp="1598709144147" />
+    <state width="600" height="428" key="javadoc.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1598712492467" />
+    <state x="610" y="335" width="700" height="530" key="recent.locations.popup" timestamp="1590494664867">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="610" y="335" width="700" height="530" key="recent.locations.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1590494664867" />
+    <state x="625" y="288" width="670" height="470" key="search.everywhere.popup" timestamp="1590316097204">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="625" y="288" width="670" height="470" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1590316097204" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/file_ops/file_ops_file.rs</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/main.rs</url>
+          <line>90</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/main.rs</url>
+          <line>177</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/main.rs</url>
+          <line>68</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/main.rs</url>
+          <line>50</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/base_concept/base.rs</url>
+          <line>33</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

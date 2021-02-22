@@ -1,0 +1,18 @@
+
+X	java:S125F"<This block of commented-out lines of code should be removed.(À¨ÉÂ8‘¬äÀ¹.
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çµí‘8ÌûÄ¿¹.
+]	java:S125@"<This block of commented-out lines of code should be removed.(­ƒò¶úÿÿÿÿ8‘¬äÀ¹.
+]	java:S125J"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8‘¬äÀ¹.
+]	java:S125R"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8‘¬äÀ¹.
+L
+java:S1172T"/Remove this unused method parameter "treeNode".(É‹ÇÏ8É·åÀ¹.
+]	java:S125D"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8‘¬äÀ¹.
+]	java:S125P"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8‘¬äÀ¹.
+]	java:S125B"<This block of commented-out lines of code should be removed.(ãòÉßúÿÿÿÿ8‘¬äÀ¹.
+m
+java:S11492"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ŠÈİà8º¼ö¿¹.
+{
+java:S1488U"^Immediately return this expression instead of assigning it to the temporary variable "result".(©½Ò8É·åÀ¹.
+`
+java:S11553">Use isEmpty() to check whether the collection is empty or not.(áä®ùÿÿÿÿ8ùœÀ¹.

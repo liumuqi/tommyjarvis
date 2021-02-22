@@ -1,0 +1,18 @@
+
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(û£ııÿÿÿÿ
+J
+java:S3740,"/Provide the parametrized type for this generic.(’»Öøÿÿÿÿ
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(Óì™§ûÿÿÿÿ
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(ÓâÜùÿÿÿÿ
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(è›œº
+r
+java:S3077"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(¿¥åšÿÿÿÿÿ
+I
+java:S3011.",This accessibility update should be removed.(Á°‡â8¨ŒÕ†¼.
+V	java:S125"<This block of commented-out lines of code should be removed.(¡ÕÂ”ûÿÿÿÿ
+L
+java:S3985!"1Remove this unused private "SingletonEnum" class.(€Ş•øÿÿÿÿ
+H
+java:S1068"-Remove this unused "singleton" private field.(¿¥åšÿÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¿¥åšÿÿÿÿÿ

@@ -1,0 +1,38 @@
+
+U	java:S106."9Replace this use of System.out or System.err by a logger.(ÄÃ‡—8ƒµ¦Â.
+W	java:S125"<This block of commented-out lines of code should be removed.(úá¨8äõ¦Â.
+b	java:S112D"FDefine and throw a dedicated exception instead of using a generic one.(Øò²Ï8‡ Œ¦Â.
+U	java:S106,"9Replace this use of System.out or System.err by a logger.(õÕ¡Í8‡ Œ¦Â.
+Z	java:S106A"9Replace this use of System.out or System.err by a logger.(ÚÃÓ¤ÿÿÿÿÿ8‡ Œ¦Â.
+a
+java:S1128"DRemove this unused import 'com.google.common.collect.ImmutableList'.(Ã½¸8¥Ğ¦Â.
+I
+java:S1905*"'Remove this unnecessary cast to "Test".(Ş—µÚüÿÿÿÿ8÷¾ĞéÂ.
+]	java:S125"<This block of commented-out lines of code should be removed.(€µÆ€øÿÿÿÿ8äõ¦Â.
+U	java:S106s"9Replace this use of System.out or System.err by a logger.(Ã¢ã¯8‡ Œ¦Â.
+U	java:S1068"9Replace this use of System.out or System.err by a logger.(¯ˆ¿è8‡ Œ¦Â.
+o	java:S100i"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥ö§éûÿÿÿÿ8‡ Œ¦Â.
+]	java:S125 "<This block of commented-out lines of code should be removed.(êÿ”êøÿÿÿÿ8äõ¦Â.
+U	java:S106@"9Replace this use of System.out or System.err by a logger.(¶Ä¯á8‡ Œ¦Â.
+V
+java:S1854"9Remove this useless assignment to local variable "testB".(Ô›´æ8äõ¦Â.
+Z	java:S1060"9Replace this use of System.out or System.err by a logger.(ôÆõÍúÿÿÿÿ8‡ Œ¦Â.
+G
+java:S1481"*Remove this unused "testB" local variable.(Ô›´æ8äõ¦Â.
+]	java:S125"<This block of commented-out lines of code should be removed.(—¹±Õşÿÿÿÿ8äõ¦Â.
+U	java:S106>"9Replace this use of System.out or System.err by a logger.(å‡×8‡ Œ¦Â.
+X	java:S1254"<This block of commented-out lines of code should be removed.(’Ÿü…8ş¦Ÿ¦Â.
+X	java:S125"<This block of commented-out lines of code should be removed.(ª°…ş8äõ¦Â.
+U	java:S106&"9Replace this use of System.out or System.err by a logger.(Ÿì®ª8‡ Œ¦Â.
+U	java:S106M"9Replace this use of System.out or System.err by a logger.(ŸÏÍè8‡ Œ¦Â.
+L
+java:S1481"*Remove this unused "testA" local variable.(Çª›Ñùÿÿÿÿ8äõ¦Â.
+[
+java:S1854"9Remove this useless assignment to local variable "testA".(Çª›Ñùÿÿÿÿ8äõ¦Â.
+Z	java:S106?"9Replace this use of System.out or System.err by a logger.(ÍÎÆ¥ùÿÿÿÿ8‡ Œ¦Â.
+T
+java:S11447"2Remove this unused private "printInstance" method.(Æœöùÿÿÿÿ8ş¦Ÿ¦Â.
+U	java:S106("9Replace this use of System.out or System.err by a logger.(ä¹¿“8‡ Œ¦Â.
+Z	java:S1062"9Replace this use of System.out or System.err by a logger.(ôÆõÍúÿÿÿÿ8‡ Œ¦Â.
+{
+java:S2293F"YReplace the type specification in this constructor call with the diamond operator ("<>").(çÔ‹¶şÿÿÿÿ8‡ Œ¦Â.
