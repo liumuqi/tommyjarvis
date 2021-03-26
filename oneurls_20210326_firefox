@@ -1,0 +1,19 @@
+
+https://www.youtube.com/watch?v=5DngpoH7WIY | #109 Don’t be clever - understand memory ordering - YouTube
+https://www.youtube.com/watch?v=dPdXxex1v_4 | #34 go plan9 汇编入门，带你打通应用和底层 【 Go 夜读 】 - YouTube
+https://www.youtube.com/watch?v=XJx0eTP-y9I | #74 time.Timer 源码分析 (Go 1.14) 【 Go 夜读 】 - YouTube
+https://www.youtube.com/watch?v=sMBgYYEgm3c | #17 grpc 开发及 grpcp 的源码分析 【 Go 夜读 】 - YouTube
+https://www.youtube.com/watch?v=sL02PsR20gE | #32 etcd raft 源码阅读 【 Go 夜读 】 - YouTube
+
+https://blog.csdn.net/u010853261/article/details/100941972 | golang的值接收者和指针接收者的区别_惜暮-CSDN博客
+http://shouce.jb51.net/gopl-zh/ch6/ch6-03.html | 504 Gateway Time-out
+https://blog.biezhi.me/2018/10/values-or-pointers-in-golang.html | Warning: Potential Security Risk Ahead
+https://studygolang.com/articles/2935 | Go 语言中的方法，接口和嵌入类型 - Go语言中文网 - Golang中文社区
+https://www.coder.work/article/212117 | go - 将struct vs指针嵌入到用作指针的struct中 - IT工具网
+
+https://www.notion.so/reflect-7426c7d1fb0a49c68d9b4c45d1499076 | reflect 阅读材料
+https://mp.weixin.qq.com/s/OO-kwB4Fp_FnCaNXwGJoEw | 深度解密Go语言之unsafe
+https://www.slideshare.net/StrikrHQ/reflection-in-go | Problem loading page
+https://mp.weixin.qq.com/s/ALhSKrLwNdA_GkozJQXn5g | 巧用 Protobuf 反射来优化代码，拒做 PB Boy
+https://mp.weixin.qq.com/s/onl3sBCSNs8l42uihi_p4A | 解密 Go 语言之反射 reflect
+https://github.com/vision9527/paxos | vision9527/paxos: paxos for studying
