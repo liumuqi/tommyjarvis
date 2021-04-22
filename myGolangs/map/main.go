@@ -32,6 +32,7 @@ func main() {
 	foo := Foo{bar}
 	m[foo] = "foo"
 	fmt.Printf("foo: %s bar one:%s\n", foo, m[foo])
+	fmt.Printf("foo: %s bar one:%s\n", foo, m[foo])
 	bar.Id = "two"
 	fmt.Printf("bar id change two:%s\n", m)
 

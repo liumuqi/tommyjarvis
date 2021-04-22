@@ -1,11 +1,11 @@
 package main
 
 import (
-	"net/http"
+	"context"
 	"fmt"
+	"net/http"
 	"os"
 	"time"
-	"context"
 )
 
 func preCancel() {
@@ -42,7 +42,7 @@ func main() {
 			// If we receive a message after 2 seconds
 			// that means the request has been processed
 			// We then write this as the response
-			w.Write([]byte( "request processed"))
+			w.Write([]byte("request processed"))
 		case <-ctx.Done():
 			// If the request gets cancelled, log it
 			// to STDERR

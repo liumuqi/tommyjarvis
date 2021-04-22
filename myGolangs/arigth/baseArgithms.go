@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	s := " a b c  d e f "
 	bytes := trim([]byte(s))
-	fmt.Printf(">>%s<<",string(bytes))
+	fmt.Printf(">>%s<<", string(bytes))
 	//s := []byte("")
 	//s1 := append(s, 'a')
 	//s2 := append(s, 'b')

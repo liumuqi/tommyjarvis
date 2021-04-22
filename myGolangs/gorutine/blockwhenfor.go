@@ -42,6 +42,6 @@ func server() {
 		log.Fatal("ListenAndServe: ", err)
 	}
 	var mmap = make(map[string]string, 10)
-	mmap["s"]= "2"
+	mmap["s"] = "2"
 	println(len(mmap))
 }

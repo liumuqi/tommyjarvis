@@ -1,10 +1,10 @@
 package main
 
 import (
-	"time"
+	"context"
 	"errors"
 	"fmt"
-	"context"
+	"time"
 )
 
 func operation1(ctx context.Context) error {

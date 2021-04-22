@@ -20,7 +20,7 @@ type data struct {
 	sync.Mutex
 }
 
-func (d data) test(s string) {
+func (d data) test(s ...string) {
 	d.Lock()
 	defer func() {
 		d.Unlock()
